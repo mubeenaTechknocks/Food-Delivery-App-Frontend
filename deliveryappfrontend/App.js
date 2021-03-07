@@ -14,6 +14,7 @@ import RegisterMessage from './screens/RegisterMessage';
 import Register from './screens/Register';
 import HomeDrawer from './screens/HomeDrawer';
 import HomeScreen from './screens/HomeScreen';
+import SearchOrder from './screens/SearchOrder';
 
 const Stack = createStackNavigator();
 
@@ -101,7 +102,12 @@ export default function App() {
               headerShown: false
             }}
           /> 
-          <Stack.Screen name="HomeScreen" component={HomeScreen}
+          {/* <Stack.Screen name="HomeScreen" component={HomeScreen}
+            options={{
+              headerShown: false
+            }}
+          /> */}
+          <Stack.Screen name="SearchOrder" component={SearchOrder}
             options={{
               headerShown: false
             }}

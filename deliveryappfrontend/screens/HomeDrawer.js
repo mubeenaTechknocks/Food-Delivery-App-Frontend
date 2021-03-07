@@ -1,8 +1,10 @@
-import 'react-native-gesture-handler';
-import React from 'react';
+import React from 'react'
+import { View } from 'react-native'
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { useTheme } from '@react-navigation/native';
+import { DrawerContent } from './DrawerContent';
+import { useTheme } from '@react-navigation/native'
 import HomeScreen from './HomeScreen';
+import SearchOrder from './SearchOrder';
 
 
 const Drawer = createDrawerNavigator();
@@ -11,8 +13,9 @@ const HomeDrawer = () => {
 
   const { colors } = useTheme()
 
+
   return (
-    <Drawer.Navigator
+    <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}
       drawerContentOptions={{
         style: {
           backgroundColor: colors.background,
@@ -29,33 +32,36 @@ const HomeDrawer = () => {
       }}>
       <Drawer.Screen
         name="HomeScreen"
-        // options={{ drawerLabel: 'Dashboard' }}
         component={HomeScreen} />
+         <Drawer.Screen
+        name="SearchOrder" 
+        component={SearchOrder} />
       {/* <Drawer.Screen
-        name="Menu"
-        options={{ drawerLabel: 'Menu' }}
-        component={Menu} />
-      <Drawer.Screen
-        name="Restaurant"
-        options={{ drawerLabel: 'Restaurant' }}
-        component={Restaurant} />
-      <Drawer.Screen
-        name="Delivery_Boy"
-        options={{ drawerLabel: 'Delivery_Boy' }}
-        component={Delivery_Boy} />
-      <Drawer.Screen
-        name="Offers"
-        options={{ drawerLabel: 'Offers' }}
-        component={Offer} />
-      <Drawer.Screen
-        name="Accounts"
-        options={{ drawerLabel: 'Accounts' }}
-        component={Accounts} />
-      <Drawer.Screen
-        name="Settings"
-        options={{ drawerLabel: 'Settings' }}
-        component={Settings} /> */}
+      name="Menu"
+      options={{ drawerLabel: 'Menu' }}
+      component={Menu} />
+    <Drawer.Screen
+      name="Restaurant"
+      options={{ drawerLabel: 'Restaurant' }}
+      component={Restaurant} />
+    <Drawer.Screen
+      name="Delivery_Boy"
+      options={{ drawerLabel: 'Delivery_Boy' }}
+      component={Delivery_Boy} />
+    <Drawer.Screen
+      name="Offers"
+      options={{ drawerLabel: 'Offers' }}
+      component={Offer} />
+    <Drawer.Screen
+      name="Accounts"
+      options={{ drawerLabel: 'Accounts' }}
+      component={Accounts} />
+    <Drawer.Screen
+      name="Settings"
+      options={{ drawerLabel: 'Settings' }}
+      component={Settings} /> */}
     </Drawer.Navigator>
-  );
+  )
 }
-export default HomeDrawer;
+
+export default HomeDrawer

@@ -6,7 +6,7 @@ import Icon2 from 'react-native-vector-icons/Foundation'
 import Icon3 from 'react-native-vector-icons/MaterialIcons'
 import { DrawerActions, useTheme } from '@react-navigation/native';
 
-const HomeScreen = ({ navigation }) => {
+const SearchOrder = ({ navigation }) => {
 
     const { colors } = useTheme()
     const theme = useTheme()
@@ -31,8 +31,8 @@ const HomeScreen = ({ navigation }) => {
                 </View>
 
                 <View style={styles.start}>
-                    <TouchableOpacity onPress={()=>navigation.navigate("SearchOrder")} > 
-                        <Text style={styles.startcontainer}>START DUTY</Text>
+                    <TouchableOpacity  >
+                        <Text style={styles.startcontainer}>Searching for Orders</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.option}>
@@ -79,21 +79,21 @@ const HomeScreen = ({ navigation }) => {
     )
 }
 
-export default HomeScreen
+export default SearchOrder
 
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
         paddingLeft: 20,
         paddingRight: 20,
-        paddingTop:10
+        paddingTop: 10
 
     },
     iconcontainer: {
         flexDirection: 'row',
-        paddingBottom:30
+        paddingBottom: 30
     },
-   option: {
+    option: {
         paddingTop: 20,
         flexDirection: 'row',
         justifyContent: 'center'
@@ -122,57 +122,57 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         color: '#f5fffa'
     },
-    icon1:{
-        paddingLeft:200,
-        paddingRight:25,
-        paddingTop:5
+    icon1: {
+        paddingLeft: 200,
+        paddingRight: 25,
+        paddingTop: 5
     },
-    icon2:{
-        paddingRight:25,
-        paddingTop:5
+    icon2: {
+        paddingRight: 25,
+        paddingTop: 5
     },
-    icon3:{
-        paddingTop:5
+    icon3: {
+        paddingTop: 5
     },
-    start:{
-        backgroundColor:'#FDC913',
-        padding:50,
-        borderRadius:20,
+    start: {
+        backgroundColor: '#FDC913',
+        padding: 50,
+        borderRadius: 20,
     },
-    startcontainer:{
-        backgroundColor:'white',
-        borderRadius:10,
-        padding:10,
-       
-        elevation:5,
-        alignSelf:"center",
-        fontFamily:'OpenSansBold'
+    startcontainer: {
+        backgroundColor: 'white',
+        borderRadius: 10,
+        padding: 10,
+        // width: 106,
+        elevation: 5,
+        alignSelf: "center",
+        fontFamily: 'OpenSansBold'
     },
-    pad:{
-        paddingBottom:20,
-      
-    },
-    card:{
-        backgroundColor:'#FDC913',
-        paddingTop:20,
-        paddingLeft:20,
-        paddingBottom:50,
-        borderRadius:20
+    pad: {
+        paddingBottom: 20,
 
     },
-    cardcontainer:{
-        backgroundColor:'white',
-        borderRadius:10,
-        padding:10,
-        width:130,
-        elevation:5,
-        // alignSelf:"center",
-        fontFamily:'OpenSansBold'
+    card: {
+        backgroundColor: '#FDC913',
+        paddingTop: 20,
+        paddingLeft: 20,
+        paddingBottom: 50,
+        borderRadius: 20
+
     },
-    cardtext:{
-        fontFamily:'OpenSansSemiBold',
-        paddingBottom:20,
-        fontSize:18
+    cardcontainer: {
+        backgroundColor: 'white',
+        borderRadius: 10,
+        padding: 10,
+        width:130,
+        elevation: 5,
+        // alignSelf:"center",
+        fontFamily: 'OpenSansBold'
+    },
+    cardtext: {
+        fontFamily: 'OpenSansSemiBold',
+        paddingBottom: 20,
+        fontSize: 18
     }
-    
+
 })
