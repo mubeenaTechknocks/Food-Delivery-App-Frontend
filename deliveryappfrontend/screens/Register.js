@@ -3,21 +3,22 @@ import { View, Text, TextInput, TouchableOpacity, Keyboard, StyleSheet } from 'r
 import { RadioButton } from 'react-native-paper'
 import DropDownPicker from 'react-native-dropdown-picker';
 
-const Register = ({navigation}) => {
+const Register = ({ navigation }) => {
 
     const [userName, setUserName] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [userPhone, setUserPhone] = useState('');
     const [city, setCity] = useState('');
-    const [job, setJob] = useState('');
-    const [vechicle, setVechicle] = useState('');
-    const [checked, setChecked] = useState('first');
+    const [job, setJob] = useState('Full Time');
+    const [vechicle, setVechicle] = useState('Bike');
+    const [checked, setChecked] = useState('All');
 
     const [errortext, setErrortext] = useState('');
 
     const nameInputRef = createRef();
     const emailInputRef = createRef();
     const phoneInputRef = createRef();
+    const cityInputRef = createRef();
 
     var items
 
@@ -39,8 +40,8 @@ const Register = ({navigation}) => {
         var dataToSend = {
             dname: userName,
             dphone: userPhone,
-            demail: userEmail
-
+            demail: userEmail,
+            dcity: city
 
         };
 
@@ -82,139 +83,141 @@ const Register = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.inputcontainer}>
-                <Text style={styles.text}>Register</Text>
-                <View style={styles.textinput}>
-                    <Text style={styles.textstyle}>Name</Text>
-                    <TextInput
-                        keyboardType="default"
-                        onChangeText={(userName) => setUserName(userName)}
-                        autoCapitalize="sentences"
-                        returnKeyType="next"
-                        ref={nameInputRef}
-                        onSubmitEditing={() =>
-                            emailInputRef.current &&
-                            emailInputRef.current.focus()
-                        }
-                        blurOnSubmit={false}
-                    />
-                    <View style={styles.line}></View>
+                <View style={styles.registercontainer}>
+                    <Text style={styles.text}>REGISTRATION</Text>
                 </View>
-                <View style={styles.textinput}>
-                    <Text style={styles.textstyle}>Email</Text>
-                    <TextInput
-                        keyboardType="email-address"
-                        onChangeText={(userEmail) => setUserEmail(userEmail)}
-                        autoCapitalize="none"
-                        returnKeyType="next"
-                        ref={emailInputRef}
-                        onSubmitEditing={() =>
-                            phoneInputRef.current &&
-                            phoneInputRef.current.focus()
-                        }
-                        blurOnSubmit={false} />
-                    <View style={styles.line}></View>
-                </View>
-                <View style={styles.textinput}>
-                    <Text style={styles.textstyle}>Phone</Text>
-                    <TextInput
-                        keyboardType="phone-pad"
-                        onChangeText={(userPhone) => setUserPhone(userPhone)}
-                        maxLength={10}
-                        returnKeyType="next"
-                        ref={phoneInputRef}
-                        onSubmitEditing={Keyboard.dismiss}
-                        blurOnSubmit={false} />
-                    <View style={styles.line}></View>
-                </View>
-                <View style={styles.textinput}>
-                    <Text style={styles.textstyle}>City</Text>
-                    <DropDownPicker
-                        items={[
-                            { label: 'Mundakayam', value: 'Mundakayam' },
-                            { label: 'Kottayam', value: 'Kottayam' },
-                            { label: 'Kanjirappaly', value: 'Kanjirappaly' },
-                            { label: 'Ponkunnam', value: 'Ponkunnam' },
-                        ]}
-                        defaultValue={items}
-                        containerStyle={{ height: 40 }}
-                        style={styles.drop}
-                        globalTextStyle={{ fontFamily: 'OpenSansRegular' }}
-                        itemStyle={{
-                            justifyContent: 'flex-start'
-                        }}
-                        dropDownStyle={{ backgroundColor: '#fafafa' }}
-                        onChangeItem={(city) => setCity(city.value)}
-
-                    />
-                </View>
-                <View style={styles.textinput}>
-                    <Text style={styles.textstyle}>Job Type</Text>
-                    <DropDownPicker
-                        items={[
-                            { label: 'Full Time', value: 'Full Time' },
-                            { label: 'Part Time', value: 'Part Time' },
-                            
-                        ]}
-                        defaultValue={items}
-                        containerStyle={{ height: 40 }}
-                        style={styles.drop}
-                        globalTextStyle={{ fontFamily: 'OpenSansRegular' }}
-                        itemStyle={{
-                            justifyContent: 'flex-start'
-                        }}
-                        dropDownStyle={{ backgroundColor: '#fafafa' }}
-                        onChangeItem={(job) => setJob(job.value)}
-
-                    />
-                </View>
-                <View style={styles.textinput}>
-                    <Text style={styles.textstyle}>Type of Vechicle</Text>
-                    <DropDownPicker
-                        items={[
-                            { label: 'Bike', value: 'Bike' },
-                            { label: 'Bicycle', value: 'Bicycle' },
-                            
-                        ]}
-                        defaultValue={items}
-                        containerStyle={{ height: 40 }}
-                        style={styles.drop}
-                        globalTextStyle={{ fontFamily: 'OpenSansRegular' }}
-                        itemStyle={{
-                            justifyContent: 'flex-start'
-                        }}
-                        dropDownStyle={{ backgroundColor: '#fafafa' }}
-                        onChangeItem={(vechicle) => setVechicle(vechicle.value)}
-
-                    />
-                </View>
-                <View style={styles.textinput}>
-                    <Text style={styles.textstyle}>Delivery Access</Text>
-                    <View style={styles.textinputdelivery}>
-                    <RadioButton
-                        value="first"
-                        status={checked === 'first' ? 'checked' : 'unchecked'}
-                        onPress={() => setChecked('first')}
-                        color="#696969"
-
-                    />
-                    <Text style={styles.textstyledelivery}>All</Text>
-
-                    <RadioButton
-                        value="second"
-                        status={checked === 'second' ? 'checked' : 'unchecked'}
-                        onPress={() => setChecked('second')}
-                        color="#696969"
-                    />
-                   
-                    <Text style={styles.textstyledelivery}>Choose Restaurant</Text>
+                <View style={styles.padcontainer}>
+                    <View style={styles.textinput}>
+                        <Text style={styles.textstyle}>Name</Text>
+                        <TextInput
+                            keyboardType="default"
+                            onChangeText={(userName) => setUserName(userName)}
+                            autoCapitalize="sentences"
+                            returnKeyType="next"
+                            ref={nameInputRef}
+                            onSubmitEditing={() =>
+                                emailInputRef.current &&
+                                emailInputRef.current.focus()
+                            }
+                            blurOnSubmit={false}
+                        />
+                        <View style={styles.line}></View>
                     </View>
-                </View>
-                <View style={styles.padbutton}>
-                    <TouchableOpacity style={styles.inputButton}>
-                        <Text
-                            style={styles.button}
-                            onPress={handleSubmitPress}>REGISTER</Text>
-                    </TouchableOpacity>
+                    <View style={styles.textinput}>
+                        <Text style={styles.textstyle}>Email</Text>
+                        <TextInput
+                            keyboardType="email-address"
+                            onChangeText={(userEmail) => setUserEmail(userEmail)}
+                            autoCapitalize="none"
+                            returnKeyType="next"
+                            ref={emailInputRef}
+                            onSubmitEditing={() =>
+                                phoneInputRef.current &&
+                                phoneInputRef.current.focus()
+                            }
+                            blurOnSubmit={false} />
+                        <View style={styles.line}></View>
+                    </View>
+                    <View style={styles.textinput}>
+                        <Text style={styles.textstyle}>Phone</Text>
+                        <TextInput
+                            keyboardType="phone-pad"
+                            onChangeText={(userPhone) => setUserPhone(userPhone)}
+                            maxLength={10}
+                            returnKeyType="next"
+                            ref={phoneInputRef}
+                            onSubmitEditing={() =>
+                                cityInputRef.current &&
+                                cityInputRef.current.focus()
+                            }
+                            blurOnSubmit={false} />
+                        <View style={styles.line}></View>
+                    </View>
+                    <View style={styles.textinput}>
+                        <Text style={styles.textstyle}>City</Text>
+                        <TextInput
+                            keyboardType="phone-pad"
+                            onChangeText={(city) => setCity(city)}
+                            maxLength={10}
+                            returnKeyType="next"
+                            ref={cityInputRef}
+                            onSubmitEditing={Keyboard.dismiss}
+                            blurOnSubmit={false} />
+                        <View style={styles.line}></View>
+                    </View>
+                    <View style={styles.textinput}>
+                        <Text style={styles.textstyle}>Job Type</Text>
+                        <View style={styles.textinputdelivery}>
+                            <RadioButton
+                                value="first"
+                                status={job === 'Full Time' ? 'checked' : 'unchecked'}
+                                onPress={() => setJob('Full Time')}
+                                color="#696969"
+
+                            />
+                            <Text style={styles.textstyledelivery}>Full Time</Text>
+
+                            <RadioButton
+                                value="second"
+                                status={job === 'Part Time' ? 'checked' : 'unchecked'}
+                                onPress={() => setJob('Part Time')}
+                                color="#696969"
+                            />
+
+                            <Text style={styles.textstyledelivery}>Part Time</Text>
+                        </View>
+                    </View>
+                    <View style={styles.textinput}>
+                        <Text style={styles.textstyle}>Vechicle Type</Text>
+                        <View style={styles.textinputdelivery}>
+                            <RadioButton
+                                value="first"
+                                status={vechicle === 'Bike' ? 'checked' : 'unchecked'}
+                                onPress={() => setVechicle('Bike')}
+                                color="#696969"
+
+                            />
+                            <Text style={styles.textstyledelivery1}>Bike</Text>
+
+                            <RadioButton
+                                value="second"
+                                status={vechicle === 'Bicycle' ? 'checked' : 'unchecked'}
+                                onPress={() => setVechicle('Bicycle')}
+                                color="#696969"
+                            />
+
+                            <Text style={styles.textstyledelivery}>Bicycle</Text>
+                        </View>
+                    </View>
+                    <View style={styles.textinput}>
+                        <Text style={styles.textstyle}>Delivery Access</Text>
+                        <View style={styles.textinputdelivery}>
+                            <RadioButton
+                                value="first"
+                                status={checked === 'All' ? 'checked' : 'unchecked'}
+                                onPress={() => setChecked('All')}
+                                color="#696969"
+
+                            />
+                            <Text style={styles.textstyledelivery2}>All</Text>
+
+                            <RadioButton
+                                value="second"
+                                status={checked === 'Choose Restaurant' ? 'checked' : 'unchecked'}
+                                onPress={() => setChecked('Choose Restaurant')}
+                                color="#696969"
+                            />
+
+                            <Text style={styles.textstyledelivery}>Choose Restaurant</Text>
+                        </View>
+                    </View>
+                    <View style={styles.padbutton}>
+                        <TouchableOpacity style={styles.inputButton}>
+                            <Text
+                                style={styles.button}
+                                onPress={handleSubmitPress}>REGISTER</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </View>
 
@@ -235,47 +238,66 @@ const styles = StyleSheet.create({
 
     },
     inputcontainer: {
-        backgroundColor: '#FDC913',
-        paddingTop: 30,
+        backgroundColor: 'white',
+        borderRadius: 10,
+        elevation: 5
+    },
+    padcontainer: {
+        paddingTop: 20,
         paddingLeft: 20,
         paddingRight: 20,
-        borderRadius: 20
+        paddingBottom:10
+
+
     },
     text: {
-        paddingBottom: 30,
         fontFamily: 'OpenSansBold',
         alignSelf: 'center',
-        fontSize: 25
+        fontSize: 20,
     },
 
     textinput: {
-        paddingBottom: 10
+        paddingBottom: 20
     },
 
     textstyle: {
-        fontFamily:'OpenSansSemiBold',
-        fontSize:16,
-        paddingBottom:10,
+        fontFamily: 'OpenSansSemiBold',
+        fontSize: 16,
+        paddingBottom: 10,
     },
     line: {
         borderBottomWidth: 1,
-        borderBottomColor: 'white'
+        borderBottomColor: 'black'
     },
     textinputdelivery: {
-        flexDirection:'row',
+        flexDirection: 'row',
     },
     textstyledelivery: {
-        fontFamily:'OpenSansSemiBold',
-        fontSize:16,
-        paddingTop:6,
-        
+        fontFamily: 'OpenSansSemiBold',
+        fontSize: 16,
+        paddingTop: 6,
+
+    },
+    textstyledelivery1: {
+        fontFamily: 'OpenSansSemiBold',
+        fontSize: 16,
+        paddingTop: 6,
+        paddingRight:35
+
+    },
+    textstyledelivery2: {
+        fontFamily: 'OpenSansSemiBold',
+        fontSize: 16,
+        paddingTop: 6,
+        paddingRight:50
+
     },
     inputButton: {
         paddingTop: 10,
         backgroundColor: 'black',
         paddingBottom: 10,
         borderRadius: 100,
-        width: 150,
+        width: 140,
         alignSelf: "center"
 
     },
@@ -290,5 +312,12 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         paddingBottom: 20
     },
-    
+    registercontainer: {
+        backgroundColor: '#FDC913',
+        paddingBottom: 5,
+        paddingTop: 5,
+        // marginLeft:10
+
+    }
+
 })

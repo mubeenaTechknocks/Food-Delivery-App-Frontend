@@ -86,32 +86,32 @@ export default function App() {
               options={{
                 headerShown: false
               }}
-              />
-          <Stack.Screen name="Register" component={Register}
-            options={{
-              headerShown: false
-            }}
-          />
-          <Stack.Screen name="RegisterMessage" component={RegisterMessage}
+              /> */}
+          {/* <Stack.Screen name="Register" component={Register}
             options={{
               headerShown: false
             }}
           /> */}
-            <Stack.Screen name="HomeDrawer" component={HomeDrawer}
-            options={{
-              headerShown: false
-            }}
-          /> 
-          {/* <Stack.Screen name="HomeScreen" component={HomeScreen}
+          {/* <Stack.Screen name="RegisterMessage" component={RegisterMessage}
             options={{
               headerShown: false
             }}
           /> */}
-          <Stack.Screen name="SearchOrder" component={SearchOrder}
+            {/* <Stack.Screen name="HomeDrawer" component={HomeDrawer}
+            options={{
+              headerShown: false
+            }}
+          />  */}
+          <Stack.Screen name="HomeScreen" component={HomeScreen}
             options={{
               headerShown: false
             }}
           />
+          {/* <Stack.Screen name="SearchOrder" component={SearchOrder}
+            options={{
+              headerShown: false
+            }}
+          /> */}
           
         
 

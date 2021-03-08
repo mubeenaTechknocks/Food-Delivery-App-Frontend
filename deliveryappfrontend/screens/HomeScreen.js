@@ -1,9 +1,8 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, StatusBar, StyleSheet } from 'react-native'
-import Icon from 'react-native-vector-icons/Feather'
+import Icon from 'react-native-vector-icons/Entypo'
 import Icon1 from 'react-native-vector-icons/Ionicons'
-import Icon2 from 'react-native-vector-icons/Foundation'
-import Icon3 from 'react-native-vector-icons/MaterialIcons'
+
 import { DrawerActions, useTheme } from '@react-navigation/native';
 
 const HomeScreen = ({ navigation }) => {
@@ -16,64 +15,68 @@ const HomeScreen = ({ navigation }) => {
             <View >
                 <View style={styles.iconcontainer}>
                     <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-                        <Icon name="menu" size={30} color="#FDC913" />
+                        <Icon name="dots-three-vertical" size={25} color="black" />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.icon1}>
-                        <Icon1 name="notifications" size={25} color="#FDC913" />
+                        <Icon1 name="notifications" size={25} color="black" />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.icon2}>
-                        <Icon2 name="map" size={25} color="#FDC913" />
+                        <Icon1 name="location-sharp" size={25} color="black" />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.icon3}>
-                        <Icon3 name="help-outline" size={25} color="#FDC913" />
+                        <Icon1 name="help-circle" size={25} color="black" />
                     </TouchableOpacity>
 
                 </View>
+                <View style={styles.homecontainer}>
 
-                <View style={styles.start}>
-                    <TouchableOpacity onPress={()=>navigation.navigate("SearchOrder")} > 
-                        <Text style={styles.startcontainer}>START DUTY</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.option}>
-                    <TouchableOpacity style={styles.touch1} >
-                        <Text style={styles.text}>Rs.50</Text>
-                        <Text style={styles.text}>Today's Earning</Text>
+                    <View style={styles.start}>
+                        <TouchableOpacity onPress={() => navigation.navigate("SearchOrder")} >
+                            <Text style={styles.startcontainer}>START DUTY</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.pad}></View>
+                    <View style={styles.menucontainer}>
+                        <View style={styles.option}>
+                            <TouchableOpacity style={styles.touch1} >
+                                <Text style={styles.text}>Rs.50</Text>
+                                <Text style={styles.text}>Today's Earning</Text>
 
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.touch1} >
-                        <Text style={styles.text}>Rs.100</Text>
-                        <Text style={styles.text}>Week's Earning</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.option}>
-                    <TouchableOpacity style={styles.touch1}>
-                        <Text style={styles.text}>Rs.10 </Text>
-                        <Text style={styles.text}>COD</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.touch1}>
-                        <Text style={styles.text}>Rs.20</Text>
-                        <Text style={styles.text}>Delivery Tip</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.option}>
-                    <TouchableOpacity style={styles.touch1} >
-                        <Text style={styles.text}>Shift Details</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.touch1} >
+                                <Text style={styles.text}>Rs.100</Text>
+                                <Text style={styles.text}>Week's Earning</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.option}>
+                            <TouchableOpacity style={styles.touch1}>
+                                <Text style={styles.text}>Rs.10 </Text>
+                                <Text style={styles.text}>COD</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.touch1}>
+                                <Text style={styles.text}>Rs.20</Text>
+                                <Text style={styles.text}>Delivery Tip</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.option}>
+                            <TouchableOpacity style={styles.shift} >
+                                <Text style={styles.shifttext}>Shift Details</Text>
+                            </TouchableOpacity>
+                            
+                            <TouchableOpacity style={styles.login} >
+                                <Text style={styles.logintext}>Login History</Text>
 
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.touch1} >
-                        <Text style={styles.text}>Login History</Text>
-
-                    </TouchableOpacity>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                    <View style={styles.pad}></View>
+                    <View style={styles.card}>
+                        <Text style={styles.cardtext}>See your ID card</Text>
+                        <TouchableOpacity>
+                            <Text style={styles.cardcontainer}>GO TO PROFILE</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-                <View style={styles.pad}></View>
-                <View style={styles.card}>
-                    <Text style={styles.cardtext}>See your ID card</Text>
-                    <TouchableOpacity>
-                        <Text style={styles.cardcontainer}>GO TO PROFILE</Text>
-                    </TouchableOpacity>
-                </View>
-
             </View>
         </View>
     )
@@ -83,17 +86,26 @@ export default HomeScreen
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        backgroundColor: '#FDC913',
+        height:'100%'
+    },
+    homecontainer: {
         paddingLeft: 20,
         paddingRight: 20,
-        paddingTop:10
-
+        paddingTop: 50,
+        // backgroundColor:'white'
     },
     iconcontainer: {
         flexDirection: 'row',
-        paddingBottom:30
+        // paddingBottom:30,
+        backgroundColor: 'white',
+        elevation: 5,
+        paddingTop: 10,
+        paddingRight: 20,
+        paddingLeft: 20,
+        paddingBottom: 10
     },
-   option: {
+    option: {
         paddingTop: 20,
         flexDirection: 'row',
         justifyContent: 'center'
@@ -102,14 +114,14 @@ const styles = StyleSheet.create({
         // textAlign: 'center',
         // borderWidth: 0.5,
         padding: 15,
-        width: 160,
+        width: 146,
         marginLeft: 10,
         marginRight: 10,
         height: 70,
-        backgroundColor: '#FDC913',
+        backgroundColor: 'white',
         justifyContent: 'center',
         borderRadius: 5,
-        elevation: 2,
+        elevation: 8,
         fontSize: 15,
         fontFamily: 'OpenSansSemiBold',
         flexDirection: 'column'
@@ -120,59 +132,97 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontFamily: 'OpenSansSemiBold',
         flexDirection: 'column',
-        color: '#f5fffa'
+        color: 'black'
     },
-    icon1:{
-        paddingLeft:200,
-        paddingRight:25,
-        paddingTop:5
+    icon1: {
+        paddingLeft: 200,
+        paddingRight: 25,
+        // paddingTop:5
     },
-    icon2:{
-        paddingRight:25,
-        paddingTop:5
+    icon2: {
+        paddingRight: 25,
+        // paddingTop:5
     },
-    icon3:{
-        paddingTop:5
+    icon3: {
+        // paddingTop:5
     },
-    start:{
-        backgroundColor:'#FDC913',
-        padding:50,
-        borderRadius:20,
+    start: {
+        backgroundColor: 'white',
+        padding: 50,
+        borderRadius: 20,
+        elevation:10
     },
-    startcontainer:{
-        backgroundColor:'white',
-        borderRadius:10,
-        padding:10,
-       
-        elevation:5,
-        alignSelf:"center",
-        fontFamily:'OpenSansBold'
+    startcontainer: {
+        backgroundColor: 'black',
+        borderRadius: 10,
+        padding: 10,
+        color: '#FDC913',
+        elevation: 5,
+        alignSelf: "center",
+        fontFamily: 'OpenSansBold'
     },
-    pad:{
-        paddingBottom:20,
-      
-    },
-    card:{
-        backgroundColor:'#FDC913',
-        paddingTop:20,
-        paddingLeft:20,
-        paddingBottom:50,
-        borderRadius:20
+    pad: {
+        paddingBottom: 30,
 
     },
-    cardcontainer:{
-        backgroundColor:'white',
-        borderRadius:10,
-        padding:10,
-        width:130,
-        elevation:5,
-        // alignSelf:"center",
-        fontFamily:'OpenSansBold'
+    card: {
+        backgroundColor: 'white',
+        paddingTop: 20,
+        paddingLeft: 20,
+        paddingBottom: 50,
+        borderRadius: 20,
+        elevation:10
+
     },
-    cardtext:{
+    cardcontainer: {
+        backgroundColor: 'black',
+        borderRadius: 10,
+        padding: 10,
+        color: '#FDC913',
+        elevation: 5,
+        alignSelf: "center",
+        fontFamily: 'OpenSansBold'
+    },
+    cardtext: {
+        fontFamily: 'OpenSansSemiBold',
+        paddingBottom: 20,
+        fontSize: 18,
+        alignSelf: 'center',
+        color: 'black'
+    },
+    menucontainer: {
+        backgroundColor: 'white',
+        paddingBottom: 20,
+        borderRadius: 20,
+        paddingLeft: 20,
+        paddingRight: 20,
+        elevation:10
+    },
+    shift: {
+        backgroundColor: "black",
+        justifyContent: 'center',
+        borderRadius: 20,
+        height:40,
+        paddingLeft:20,
+        paddingRight:20,
+        width:130
+
+    },
+    shifttext:{
+        color:'#FDC913',
         fontFamily:'OpenSansSemiBold',
-        paddingBottom:20,
-        fontSize:18
+        fontSize:15,
+        borderBottomWidth:1,
+        borderBottomColor:'#FDC913'
+    },
+    logintext:{
+        fontFamily:'OpenSansSemiBold',
+        fontSize:15,
+        borderBottomWidth:1
+    },
+    login:{
+        paddingLeft:50,
+        paddingTop:10
     }
-    
+
 })
