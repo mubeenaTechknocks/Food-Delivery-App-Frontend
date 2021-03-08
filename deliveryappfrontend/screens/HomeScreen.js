@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         padding: 50,
         borderRadius: 20,
-        elevation:10
+        elevation:20
     },
     startcontainer: {
         backgroundColor: 'black',
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         paddingBottom: 50,
         borderRadius: 20,
-        elevation:10
+        elevation:20
 
     },
     cardcontainer: {
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         paddingLeft: 20,
         paddingRight: 20,
-        elevation:10
+        elevation:20
     },
     shift: {
         backgroundColor: "black",

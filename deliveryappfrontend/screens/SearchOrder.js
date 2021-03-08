@@ -87,7 +87,8 @@ export default HomeScreen
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        backgroundColor: '#FDC913',
+        height:'100%'
     },
     homecontainer: {
         paddingLeft: 20,
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         justifyContent: 'center',
         borderRadius: 5,
-        elevation: 2,
+        elevation: 8,
         fontSize: 15,
         fontFamily: 'OpenSansSemiBold',
         flexDirection: 'column'
@@ -146,9 +147,10 @@ const styles = StyleSheet.create({
         // paddingTop:5
     },
     start: {
-        backgroundColor: '#FDC913',
+        backgroundColor: 'white',
         padding: 50,
         borderRadius: 20,
+        elevation:20
     },
     startcontainer: {
         // backgroundColor: 'b',
@@ -165,11 +167,12 @@ const styles = StyleSheet.create({
 
     },
     card: {
-        backgroundColor: '#FDC913',
+        backgroundColor: 'white',
         paddingTop: 20,
         paddingLeft: 20,
         paddingBottom: 50,
-        borderRadius: 20
+        borderRadius: 20,
+        elevation:20
 
     },
     cardcontainer: {
@@ -189,11 +192,12 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     menucontainer: {
-        backgroundColor: '#FDC913',
+        backgroundColor: 'white',
         paddingBottom: 20,
         borderRadius: 20,
         paddingLeft: 20,
-        paddingRight: 20
+        paddingRight: 20,
+        elevation:20
     },
     shift: {
         backgroundColor: "black",
