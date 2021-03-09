@@ -11,7 +11,7 @@ const HomeScreen = ({ navigation }) => {
     const theme = useTheme()
     return (
         <View style={styles.container}>
-            <StatusBar backgroundColor={colors.background} barStyle={theme.dark ? "light-content" : "dark-content"} />
+            <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
             <View >
                 <View style={styles.iconcontainer}>
                     <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
@@ -86,7 +86,7 @@ export default HomeScreen
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#FDC913',
+        // backgroundColor: '#FDC913',
         height:'100%'
     },
     homecontainer: {

@@ -1,10 +1,15 @@
 import React, { useState, createRef } from 'react';
-import { TextInput, Text, Image, Button, View, StyleSheet, Keyboard, TouchableOpacity } from 'react-native';
+import { TextInput, Text, Image, Button, View, StyleSheet, Keyboard, TouchableOpacity,StatusBar } from 'react-native';
 // import { values } from './global'
 import Icon from 'react-native-vector-icons/Feather'
+import { RadioButton, useTheme } from 'react-native-paper'
 
 
 const Login = ({ navigation }) => {
+
+    const { colors } = useTheme()
+    const theme = useTheme()
+
     const [userId, setUserId] = useState('');
     // const [userPassword, setUserPassword] = useState('');
     const [errortext, setErrortext] = useState('');
@@ -64,6 +69,8 @@ const Login = ({ navigation }) => {
 
     return (
         <View style={styles.inputContainer}>
+                    <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
+
             <View style={styles.container}>
                 <View >
                     <Text style={styles.texthead}>Login</Text>

@@ -1,9 +1,12 @@
 import React, { useState, createRef } from 'react'
-import { View, Text, TextInput, TouchableOpacity, Keyboard, StyleSheet } from 'react-native'
-import { RadioButton } from 'react-native-paper'
+import { View, Text, TextInput, TouchableOpacity, Keyboard, StyleSheet, StatusBar } from 'react-native'
+import { RadioButton, useTheme } from 'react-native-paper'
 import DropDownPicker from 'react-native-dropdown-picker';
 
 const Register = ({ navigation }) => {
+
+    const { colors } = useTheme()
+    const theme = useTheme()
 
     const [userName, setUserName] = useState('');
     const [userEmail, setUserEmail] = useState('');
@@ -81,7 +84,9 @@ const Register = ({ navigation }) => {
 
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container,{backgroundColor:colors.card}]}>            
+      <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
+
             <View style={styles.inputcontainer}>
                 <View style={styles.registercontainer}>
                     <Text style={styles.text}>REGISTRATION</Text>
@@ -230,11 +235,11 @@ export default Register
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "white",
+        // backgroundColor: "white",
         height: '100%',
         paddingLeft: 20,
         paddingRight: 20,
-        paddingTop: 60
+        paddingTop: 30
 
     },
     inputcontainer: {
@@ -254,6 +259,7 @@ const styles = StyleSheet.create({
         fontFamily: 'OpenSansBold',
         alignSelf: 'center',
         fontSize: 20,
+        color:'black'
     },
 
     textinput: {

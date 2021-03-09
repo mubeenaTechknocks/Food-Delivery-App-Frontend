@@ -5,7 +5,10 @@ import { useTheme, Avatar, Drawer } from 'react-native-paper';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import AntDesign from 'react-native-vector-icons/AntDesign'
 
+
 export function DrawerContent(props) {
+
+  const { colors} = useTheme()
   return (
     <DrawerContentScrollView {...props}>
       <View
@@ -29,10 +32,10 @@ export function DrawerContent(props) {
 
           </View>
           <View style={styles.text}>
-          <Text style={styles.title}>Lionel Messi</Text>
-          <Text style={styles.title1}>Active</Text>
+          <Text style={[styles.title,{color:colors.text}]}>Lionel Messi</Text>
+          <Text style={[styles.title1,{color:colors.text}]}>Active</Text>
           </View>
-          <Text style={styles.caption}>ID</Text>
+          <Text style={[styles.caption,,{color:colors.text}]}>ID</Text>
         </View>
 
         <Drawer.Section style={styles.drawerSection}>
@@ -54,7 +57,7 @@ export function DrawerContent(props) {
           <DrawerItem
             label="Settings"
             labelStyle={styles.drawer}
-            onPress={() => { }}
+            onPress={() => props.navigation.navigate("Mode") }
           />
         </Drawer.Section>
 
@@ -77,7 +80,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontFamily:'OpenSansSemiBold',
     marginBottom:10,
-    fontSize:16
+    fontSize:16,
+  
   },
   title1: {
     marginTop: 20,

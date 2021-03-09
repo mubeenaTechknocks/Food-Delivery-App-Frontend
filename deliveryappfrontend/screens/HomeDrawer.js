@@ -18,7 +18,7 @@ const HomeDrawer = () => {
     <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}
       drawerContentOptions={{
         style: {
-          backgroundColor: colors.background,
+          backgroundColor: colors.card,
         },
         activeTintColor: '#FDC913',
         itemStyle: { marginVertical: 5, paddingLeft: 30 },

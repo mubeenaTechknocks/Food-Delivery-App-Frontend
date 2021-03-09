@@ -1,8 +1,12 @@
 import React, { useState, createRef } from 'react'
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, StatusBar } from 'react-native'
 import OTPTextView from 'react-native-otp-textinput';
+import { DrawerActions, useTheme } from '@react-navigation/native';
+const Verify = ({navigation}) => {
 
-const Verify = () => {
+    
+    const { colors } = useTheme()
+    const theme = useTheme()
 
     const [inputOtp, setInputOtp] = useState('');
 
@@ -47,9 +51,11 @@ const Verify = () => {
         //         console.log(error);
         //     });
 
+        navigation.navigate('HomeDrawer')
     }
     return (
         <View style={styles.container}>
+             <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
             <Text style={styles.text} >Enter OTP</Text>
             <View style={styles.containerinput}>
                 <OTPTextView
@@ -87,7 +93,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
         height: '100%',
-        paddingTop: 480,
+        paddingTop: 450,
         paddingLeft: 20,
         paddingRight: 20
         // alignItems: 'center',
@@ -128,7 +134,7 @@ const styles = StyleSheet.create({
     },
     register: {
         flexDirection: 'row',
-        justifyContent:"space-between",
+        justifyContent: "space-between",
         paddingTop: 20
     },
     registertext: {

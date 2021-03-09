@@ -5,15 +5,15 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import Icon1 from 'react-native-vector-icons/EvilIcons'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const ActiveOrder = () => {
+const ActiveOrder = ({navigation}) => {
 
     const { colors } = useTheme()
     const theme = useTheme()
 
     return (
-        <View style={styles.container}>
-            <StatusBar backgroundColor={colors.background} barStyle={theme.dark ? "light-content" : "dark-content"} />
-            <Text style={styles.text}>Active Delivery</Text>
+        <View style={[styles.container,{backgroundColor:colors.card}]}>
+             <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
+            <Text style={[styles.text,{color:colors.text}]}>Active Delivery</Text>
             <View style={styles.input}>
                 <View style={styles.heading}>
                     <Text style={styles.txt}>2.3 km</Text>
@@ -72,11 +72,11 @@ const ActiveOrder = () => {
                 </View>
             </View>
             <View style={styles.buttoncontainer}>
-                <TouchableOpacity style={styles.buttonconfirm}>
+                <TouchableOpacity style={styles.buttonconfirm} onPress={()=>navigation.navigate("ConfirmOrder")}>
                     <Text style={styles.buttontext}>Confirm order</Text>
                     <Icon1 style={styles.buttonicon} name="check" size={20} color="white" />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.buttonreject}>
+                <TouchableOpacity style={styles.buttonreject} onPress={()=>navigation.navigate("SearchOrder")}>
                     <Text style={styles.buttontext}>Reject</Text>
                 </TouchableOpacity>
             </View>
@@ -88,7 +88,7 @@ export default ActiveOrder
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         height: '100%',
         paddingLeft: 20,
         paddingRight: 20,
@@ -96,8 +96,8 @@ const styles = StyleSheet.create({
     },
     input: {
         borderRadius: 10,
-        borderWidth: 1,
-        borderColor: "black",
+        elevation:20,
+        backgroundColor: 'white',
         paddingTop: 20,
         paddingRight: 20,
         paddingBottom: 10,

@@ -1,9 +1,13 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, StatusBar } from 'react-native'
+import { RadioButton, useTheme } from 'react-native-paper'
 
 const RegisterMessage = () => {
+    const { colors } = useTheme()
+    const theme = useTheme()
     return (
         <View style={styles.container}>
+             <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
             <View style={styles.containertext}>
                 <Text style={styles.text}>
                     Thank you for registering with us. One of our executive will call you back.
@@ -18,7 +22,7 @@ export default RegisterMessage
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         height: '100%',
         // alignItems: 'center',
         justifyContent: 'center',
@@ -34,7 +38,7 @@ const styles = StyleSheet.create({
     text:{
         fontSize:18,
         fontFamily:'OpenSansRegular',
-        paddingTop:70,
+        paddingTop:50,
         paddingBottom:70
     }
 })

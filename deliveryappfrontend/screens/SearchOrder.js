@@ -5,13 +5,13 @@ import Icon1 from 'react-native-vector-icons/Ionicons'
 import Icon2 from 'react-native-vector-icons/EvilIcons'
 import { DrawerActions, useTheme } from '@react-navigation/native';
 
-const HomeScreen = ({ navigation }) => {
+const SearchOrder = ({ navigation }) => {
 
     const { colors } = useTheme()
     const theme = useTheme()
     return (
         <View style={styles.container}>
-            <StatusBar backgroundColor={colors.background} barStyle={theme.dark ? "light-content" : "dark-content"} />
+             <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
             <View >
                 <View style={styles.iconcontainer}>
                     <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
@@ -31,7 +31,7 @@ const HomeScreen = ({ navigation }) => {
                 <View style={styles.homecontainer}>
 
                     <View style={styles.start}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>navigation.navigate("ActiveOrder")}>
                             <Icon2 name="spinner" size={60} color="black" style={styles.spinner} />
                             <Text style={styles.startcontainer}>Searching for Orders...</Text>
                         </TouchableOpacity>
@@ -83,11 +83,11 @@ const HomeScreen = ({ navigation }) => {
     )
 }
 
-export default HomeScreen
+export default SearchOrder
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#FDC913',
+        // backgroundColor: '#FDC913',
         height:'100%'
     },
     homecontainer: {
