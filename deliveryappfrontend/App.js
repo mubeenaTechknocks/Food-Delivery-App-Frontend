@@ -22,6 +22,14 @@ import Map from './screens/Map';
 import Mode from './screens/Mode';
 import RestaurantMap from './screens/RestaurantMap';
 import Pickup from './screens/Pickup';
+import ConfirmItem from './screens/ConfirmItem';
+import ItemMissing from './screens/ItemMissing';
+import PickupCompleted from './screens/PickupCompleted';
+import DeliveryMap from './screens/DeliveryMap';
+import Deliver from './screens/Deliver';
+import DeliveryCompleted from './screens/DeliveryCompleted';
+import DeliveryCOD from './screens/DeliveryCOD';
+import CashonDelivery from './screens/CashonDelivery';
 
 const Stack = createStackNavigator();
 
@@ -59,8 +67,8 @@ export default function App() {
       ...DefaultTheme.colors,
       background: '#FDC913',
       text: 'black',
-      card:"white"
-      
+      card: "white"
+
     }
   }
 
@@ -71,8 +79,8 @@ export default function App() {
       ...DarkTheme.colors,
       background: 'black',
       text: "white",
-      card:'black'
-     
+      card: 'black'
+
 
     }
   }
@@ -82,9 +90,9 @@ export default function App() {
   return (
     <PaperProvider theme={theme}>
       <AuthContext.Provider value={authContext}>
-      <NavigationContainer theme={theme}>
-        <Stack.Navigator>
-          {/* <Stack.Screen name="SplashScreen" component={SplashScreen}
+        <NavigationContainer theme={theme}>
+          <Stack.Navigator>
+            {/* <Stack.Screen name="SplashScreen" component={SplashScreen}
               options={{
                 headerShown: false
               }} />
@@ -141,23 +149,61 @@ export default function App() {
             options={{
               headerShown: false
             }}
-          />
-          <Stack.Screen name="RestaurantMap" component={RestaurantMap}
+          />*/}
+          {/* <Stack.Screen name="RestaurantMap" component={RestaurantMap}
             options={{
               headerShown: false
             }}
-          /> */}
-           <Stack.Screen name="Pickup" component={Pickup}
+          />  */}
+            {/* <Stack.Screen name="Pickup" component={Pickup}
             options={{
               headerShown: false
             }}
           /> 
+            <Stack.Screen name="ConfirmItem" component={ConfirmItem}
+            options={{
+              headerShown: false
+            }}
+          /> 
+            <Stack.Screen name="ItemMissing" component={ItemMissing}
+            options={{
+              headerShown: false
+            }}
+          /> 
+            <Stack.Screen name="PickupCompleted" component={PickupCompleted}
+              options={{
+                headerShown: false
+              }}
+            />
+          <Stack.Screen name="DeliveryMap" component={DeliveryMap}
+              options={{
+                headerShown: false
+              }}
+            />
+            <Stack.Screen name="Deliver" component={Deliver}
+              options={{
+                headerShown: false
+              }}
+            /> */}
+             {/* <Stack.Screen name="DeliverCompleted" component={DeliveryCompleted}
+              options={{
+                headerShown: false
+              }}
+            /> */}
+             {/* <Stack.Screen name="DeliverCOD" component={DeliveryCOD}
+              options={{
+                headerShown: false
+              }}
+            /> */}
+             <Stack.Screen name="CashonDelivery" component={CashonDelivery}
+              options={{
+                headerShown: false
+              }}
+            />
 
 
-  
-        </Stack.Navigator>
-
-      </NavigationContainer>
+          </Stack.Navigator>
+        </NavigationContainer>
       </AuthContext.Provider>
     </PaperProvider>
   );

@@ -1,51 +1,50 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, StatusBar } from 'react-native'
+import { View, Text, TouchableOpacity, Alert, StyleSheet, StatusBar } from 'react-native'
 import { RadioButton, useTheme } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-const Pickup = ({ navigation }) => {
+const ConfirmItem = ({ navigation }) => {
+
     const { colors } = useTheme()
     const theme = useTheme()
+
     return (
         <View style={styles.container}>
             <StatusBar style={{ backgroundColor: colors.background }} barStyle={theme.dark ? "light-content" : "default"} />
             <View style={styles.textcontainer}>
-            <Text style={styles.text}>Pickup</Text>
+                <Text style={styles.text}>Confirm Item</Text>
             </View>
             <View style={styles.inputcontainer}>
                 <View style={styles.iconcontainer}>
-                    <Icon style={styles.icon} name="restaurant" size={25} color="black" />
-                    <Text style={styles.res}>Restaurant Name</Text>
+                    <Text style={styles.res}>Pickup 2 items</Text>
                 </View>
-                <Text style={styles.add}>Address</Text>
-                <View style={styles.iconcontainer1}>
-                        <TouchableOpacity style={styles.icontouch}>
-                            <Icon style={styles.icon1} name="call" size={25} color="black" />
-                            <Text style={styles.icontext}>call</Text>
-                        </TouchableOpacity>
-                </View>
-                <View style={styles.detail}>
-                    <View style={styles.detailcontainer}>
-                        <Text style={styles.order}>Order Details</Text>
-                        <View>
-                            <Text style={styles.item}>Food Items</Text>
-                            <Text style={styles.item}>Food Items</Text>
-                        </View>
-                    </View>
-                </View>
+                <Text style={styles.add}>1 * Milkshake</Text>
+                <Text style={styles.add}>1 * Burger</Text>
             </View>
+            <View style={styles.pad}></View>
+            <TouchableOpacity style={styles.detailcontainer}>
+                <Text style={styles.order}>Pay Rs. 300 to Restaurant</Text>
+            </TouchableOpacity>
             <View style={styles.padbutton}>
-                <TouchableOpacity style={styles.inputButton} onPress={()=>navigation.navigate("ConfirmItem")}>
+                <TouchableOpacity style={styles.inputButton} onPress={() => Alert.alert(
+                    "Confirm Items",
+                    "Are you sure all items are available ?",
+                    [
+                        { text: "ITEM MISSING", onPress: () => { navigation.navigate("ItemMissing") } },
+                        { text: "CONFIRM", onPress: () => { navigation.navigate("PickupCompleted") } }
+                    ],
+                    { cancelable: false }
+                )}>
                     <Text
                         style={styles.button}
-                    >Reached Pickup Location</Text>
+                    >Confirm</Text>
                 </TouchableOpacity>
             </View>
         </View>
     )
 }
 
-export default Pickup
+export default ConfirmItem
 
 
 const styles = StyleSheet.create({
@@ -64,8 +63,8 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         // width: 140,
         alignSelf: "center",
-        paddingLeft:20,
-        paddingRight:20
+        paddingLeft: 20,
+        paddingRight: 20
     },
 
     button: {
@@ -89,6 +88,7 @@ const styles = StyleSheet.create({
     },
     iconcontainer: {
         flexDirection: 'row',
+
     },
     icon: {
         paddingRight: 13
@@ -96,56 +96,44 @@ const styles = StyleSheet.create({
     add: {
         paddingLeft: 40,
         fontFamily: 'OpenSansSemiBold',
-        fontSize: 18,
-        paddingTop:10 
+        fontSize: 15,
+        paddingTop: 10
     },
     detailcontainer: {
         backgroundColor: 'white',
         elevation: 20,
         borderRadius: 10,
-        padding:20
+        padding: 20
     },
-    detail:{
-        paddingTop:20,
-        paddingBottom:10,
-        paddingLeft:40,
-        paddingRight:40
+    detail: {
+        paddingTop: 20,
+        paddingBottom: 10,
+        paddingLeft: 40,
+        paddingRight: 40
     },
-    res:{
+    res: {
         fontFamily: 'OpenSansBold',
         fontSize: 20,
     },
-    order:{
+    order: {
         fontFamily: 'OpenSansSemiBold',
         fontSize: 18,
-        paddingBottom:20
+        // paddingBottom:20
     },
-    item:{
+    item: {
         fontFamily: 'OpenSansRegular',
         fontSize: 15,
-        paddingLeft:20
+        paddingLeft: 20
     },
-    text:{
-        fontSize:25,
-        fontFamily:'OpenSansBold',
-        
+    text: {
+        fontSize: 25,
+        fontFamily: 'OpenSansBold',
+
     },
-    textcontainer:{
-        paddingBottom:50
+    textcontainer: {
+        paddingBottom: 50
     },
-    iconcontainer1: {
-        paddingTop:20,
-        paddingLeft:40,
-        paddingRight:20
-    },
-    icontouch: {
-        flexDirection: 'row'
-    },
-    icontext: {
-        fontFamily: 'OpenSansRegular',
-        fontSize: 20,
-    },
-    icon1:{
-        paddingRight:20
+    pad: {
+        paddingTop: 10
     }
 })

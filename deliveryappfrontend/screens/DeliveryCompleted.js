@@ -3,49 +3,44 @@ import { View, Text, TouchableOpacity, StyleSheet, StatusBar } from 'react-nativ
 import { RadioButton, useTheme } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-const Pickup = ({ navigation }) => {
+const DeliveryCompleted = ({ navigation }) => {
     const { colors } = useTheme()
     const theme = useTheme()
     return (
         <View style={styles.container}>
             <StatusBar style={{ backgroundColor: colors.background }} barStyle={theme.dark ? "light-content" : "default"} />
             <View style={styles.textcontainer}>
-            <Text style={styles.text}>Pickup</Text>
+            <Text style={styles.text}>Deliver</Text>
             </View>
             <View style={styles.inputcontainer}>
                 <View style={styles.iconcontainer}>
-                    <Icon style={styles.icon} name="restaurant" size={25} color="black" />
-                    <Text style={styles.res}>Restaurant Name</Text>
+                    <Icon style={styles.icon} name="delivery-dining" size={25} color="black" />
+                    <Text style={styles.res}>Customer Name</Text>
                 </View>
                 <Text style={styles.add}>Address</Text>
-                <View style={styles.iconcontainer1}>
-                        <TouchableOpacity style={styles.icontouch}>
-                            <Icon style={styles.icon1} name="call" size={25} color="black" />
-                            <Text style={styles.icontext}>call</Text>
-                        </TouchableOpacity>
-                </View>
+        
                 <View style={styles.detail}>
                     <View style={styles.detailcontainer}>
                         <Text style={styles.order}>Order Details</Text>
                         <View>
-                            <Text style={styles.item}>Food Items</Text>
-                            <Text style={styles.item}>Food Items</Text>
+                            <Text style={styles.item}>1 * Milkshake</Text>
+                            <Text style={styles.item}>1 * Burger</Text>
                         </View>
                     </View>
                 </View>
             </View>
             <View style={styles.padbutton}>
-                <TouchableOpacity style={styles.inputButton} onPress={()=>navigation.navigate("ConfirmItem")}>
+                <TouchableOpacity style={styles.inputButton} onPress={()=>navigation.navigate("SearchOrder")}>
                     <Text
                         style={styles.button}
-                    >Reached Pickup Location</Text>
+                    >Delivery Completed</Text>
                 </TouchableOpacity>
             </View>
         </View>
     )
 }
 
-export default Pickup
+export default DeliveryCompleted
 
 
 const styles = StyleSheet.create({
@@ -96,8 +91,8 @@ const styles = StyleSheet.create({
     add: {
         paddingLeft: 40,
         fontFamily: 'OpenSansSemiBold',
-        fontSize: 18,
-        paddingTop:10 
+        fontSize: 18, 
+        paddingTop:10
     },
     detailcontainer: {
         backgroundColor: 'white',
@@ -133,19 +128,5 @@ const styles = StyleSheet.create({
     textcontainer:{
         paddingBottom:50
     },
-    iconcontainer1: {
-        paddingTop:20,
-        paddingLeft:40,
-        paddingRight:20
-    },
-    icontouch: {
-        flexDirection: 'row'
-    },
-    icontext: {
-        fontFamily: 'OpenSansRegular',
-        fontSize: 20,
-    },
-    icon1:{
-        paddingRight:20
-    }
+   
 })

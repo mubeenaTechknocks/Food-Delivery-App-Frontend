@@ -6,38 +6,41 @@ import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { DrawerActions, useTheme } from '@react-navigation/native';
 
-const RestaurantMap = ({navigation}) => {
+const DeliveryMap = ({ navigation }) => {
+
     const { colors } = useTheme()
     const theme = useTheme()
+
     return (
         <View style={styles.container}>
-                <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
+            <StatusBar style={{ backgroundColor: colors.background }} barStyle={theme.dark ? "light-content" : "default"} />
             <View style={styles.mapcontainer}>
                 <Map />
             </View>
             <View>
                 <View style={styles.inputcontainer}>
-                    <Icon name="restaurant" size={30} color="black" />
-                    <Text style={styles.text} >Restaurant Name</Text>
-                    <TouchableOpacity style={styles.iconcontainer} onPress={()=>navigation.navigate("Pickup")}>
+                    <Icon style={styles.icon} name="delivery-dining" size={35} color="black" />
+                    <Text style={styles.text}>Delivery Location</Text>
+                    <TouchableOpacity style={styles.iconcontainer} onPress={()=>navigation.navigate("Deliver")}>
                         <Icon1 name="directions" size={30} color="black" />
                     </TouchableOpacity>
                 </View>
-                <View style={styles.add}>
-                    <Text style={styles.addtext} >Address</Text>
-                </View>
-                <View style={styles.iconcontainer1}>
+                <View style={styles.addcontainer}>
+                    <Text style={styles.addtext}>Customer Name</Text>
+                    <Text style={styles.add}>Address</Text>
+                    <View style={styles.iconcontainer1}>
                         <TouchableOpacity style={styles.icontouch}>
                             <Icon style={styles.icon} name="call" size={30} color="black" />
                             <Text style={styles.icontext}>call</Text>
                         </TouchableOpacity>
                     </View>
+                </View>
             </View>
         </View>
     )
 }
 
-export default RestaurantMap
+export default DeliveryMap
 
 const styles = StyleSheet.create({
     container: {
@@ -57,28 +60,33 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20
     },
-    iconcontainer:{
-        backgroundColor:'white',
-        elevation:20,
-       padding:2
+    iconcontainer: {
+        backgroundColor: 'white',
+        elevation: 20,
+        padding: 2
     },
-    add:{
-        paddingTop:30,
-        paddingLeft:20,
-        paddingRight:20,
-        paddingBottom:20
+    addcontainer: {
+        paddingTop: 30,
+        paddingLeft: 20,
+        paddingRight: 20,
+        paddingBottom: 20
     },
-    text:{
-        fontFamily:'OpenSansBold',
-        fontSize:20,
+    text: {
+        fontFamily: 'OpenSansBold',
+        fontSize: 25,
     },
-    addtext:{
-        fontFamily:'OpenSansSemiBold',
-        fontSize:20,
+    addtext: {
+        fontFamily: 'OpenSansSemiBold',
+        fontSize: 20,
+    },
+    add: {
+        fontFamily: 'OpenSansRegular',
+        fontSize: 20,
+        paddingTop: 10
     },
     iconcontainer1: {
-        paddingTop:10,
-        paddingLeft:40,
+        paddingTop:20,
+        paddingLeft:20,
         paddingRight:20
     },
     icontouch: {
