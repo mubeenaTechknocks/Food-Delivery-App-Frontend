@@ -36,30 +36,7 @@ const HomeDrawer = () => {
          <Drawer.Screen
         name="SearchOrder" 
         component={SearchOrder} />
-      {/* <Drawer.Screen
-      name="Menu"
-      options={{ drawerLabel: 'Menu' }}
-      component={Menu} />
-    <Drawer.Screen
-      name="Restaurant"
-      options={{ drawerLabel: 'Restaurant' }}
-      component={Restaurant} />
-    <Drawer.Screen
-      name="Delivery_Boy"
-      options={{ drawerLabel: 'Delivery_Boy' }}
-      component={Delivery_Boy} />
-    <Drawer.Screen
-      name="Offers"
-      options={{ drawerLabel: 'Offers' }}
-      component={Offer} />
-    <Drawer.Screen
-      name="Accounts"
-      options={{ drawerLabel: 'Accounts' }}
-      component={Accounts} />
-    <Drawer.Screen
-      name="Settings"
-      options={{ drawerLabel: 'Settings' }}
-      component={Settings} /> */}
+    
     </Drawer.Navigator>
   )
 }

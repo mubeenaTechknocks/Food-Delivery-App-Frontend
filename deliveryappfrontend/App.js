@@ -30,6 +30,9 @@ import Deliver from './screens/Deliver';
 import DeliveryCompleted from './screens/DeliveryCompleted';
 import DeliveryCOD from './screens/DeliveryCOD';
 import CashonDelivery from './screens/CashonDelivery';
+import Profile from './screens/Profile';
+import SavingsAccount from './screens/SavingsAccount';
+import PersonalDetails from './screens/PersonalDetails';
 
 const Stack = createStackNavigator();
 
@@ -115,7 +118,7 @@ export default function App() {
               headerShown: false
             }}
           /> */}
-            {/* <Stack.Screen name="HomeDrawer" component={HomeDrawer}
+           <Stack.Screen name="HomeDrawer" component={HomeDrawer}
             options={{
               headerShown: false
             }}
@@ -149,13 +152,13 @@ export default function App() {
             options={{
               headerShown: false
             }}
-          />*/}
-          {/* <Stack.Screen name="RestaurantMap" component={RestaurantMap}
+          />
+          <Stack.Screen name="RestaurantMap" component={RestaurantMap}
             options={{
               headerShown: false
             }}
-          />  */}
-            {/* <Stack.Screen name="Pickup" component={Pickup}
+          /> 
+            <Stack.Screen name="Pickup" component={Pickup}
             options={{
               headerShown: false
             }}
@@ -184,18 +187,33 @@ export default function App() {
               options={{
                 headerShown: false
               }}
-            /> */}
-             {/* <Stack.Screen name="DeliverCompleted" component={DeliveryCompleted}
+            />
+             <Stack.Screen name="DeliverCompleted" component={DeliveryCompleted}
               options={{
                 headerShown: false
               }}
-            /> */}
-             {/* <Stack.Screen name="DeliverCOD" component={DeliveryCOD}
+            />
+             <Stack.Screen name="DeliverCOD" component={DeliveryCOD}
               options={{
                 headerShown: false
               }}
-            /> */}
+            />
              <Stack.Screen name="CashonDelivery" component={CashonDelivery}
+              options={{
+                headerShown: false
+              }}
+            />
+             <Stack.Screen name="Profile" component={Profile}
+              options={{
+                headerShown: false
+              }}
+            />
+            <Stack.Screen name="PersonalDetails" component={PersonalDetails}
+              options={{
+                headerShown: false
+              }}
+            />
+            <Stack.Screen name="SavingsAccount" component={SavingsAccount}
               options={{
                 headerShown: false
               }}

@@ -26,7 +26,7 @@ export function DrawerContent(props) {
               size={50}
             />
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>props.navigation.navigate("Profile")}>
               <AntDesign name="arrowright" size={20} color="grey" />
             </TouchableOpacity>
 
@@ -66,11 +66,10 @@ export function DrawerContent(props) {
   );
 }
 
-
-
 const styles = StyleSheet.create({
   drawerContent: {
     flex: 1,
+    paddingTop:10
   },
   userInfoSection: {
     paddingLeft: 20,
