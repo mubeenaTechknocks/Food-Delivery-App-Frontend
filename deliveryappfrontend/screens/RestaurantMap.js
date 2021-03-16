@@ -11,16 +11,16 @@ const RestaurantMap = ({navigation}) => {
     const theme = useTheme()
     return (
         <View style={styles.container}>
-                <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
+                
             <View style={styles.mapcontainer}>
                 <Map />
             </View>
             <View>
                 <View style={styles.inputcontainer}>
-                    <Icon name="restaurant" size={30} color="black" />
+                    <Icon name="restaurant" size={30} color="#696969" />
                     <Text style={styles.text} >Restaurant Name</Text>
                     <TouchableOpacity style={styles.iconcontainer} onPress={()=>navigation.navigate("Pickup")}>
-                        <Icon1 name="directions" size={30} color="black" />
+                        <Icon1 name="directions" size={30} color="#696969" />
                     </TouchableOpacity>
                 </View>
                 <View style={styles.add}>
@@ -28,7 +28,7 @@ const RestaurantMap = ({navigation}) => {
                 </View>
                 <View style={styles.iconcontainer1}>
                         <TouchableOpacity style={styles.icontouch}>
-                            <Icon style={styles.icon} name="call" size={30} color="black" />
+                            <Icon style={styles.icon} name="call" size={30} color="#696969" />
                             <Text style={styles.icontext}>call</Text>
                         </TouchableOpacity>
                     </View>
@@ -41,7 +41,7 @@ export default RestaurantMap
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         height: '100%'
     },
     mapcontainer: {
@@ -71,10 +71,12 @@ const styles = StyleSheet.create({
     text:{
         fontFamily:'OpenSansBold',
         fontSize:20,
+        color:'#696969'
     },
     addtext:{
         fontFamily:'OpenSansSemiBold',
         fontSize:20,
+        color:'#696969'
     },
     iconcontainer1: {
         paddingTop:10,
@@ -87,6 +89,7 @@ const styles = StyleSheet.create({
     icontext: {
         fontFamily: 'OpenSansRegular',
         fontSize: 20,
+        color:'#696969'
     },
     icon:{
         paddingRight:20

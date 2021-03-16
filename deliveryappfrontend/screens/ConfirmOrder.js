@@ -10,16 +10,16 @@ const ConfirmOrder = ({navigation}) => {
     const theme = useTheme()
     
     return (
-        <View style={[styles.container,{backgroundColor:colors.card}]}>
-          <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
+        <View style={styles.container}>
+           
 
             <View >
-                <Text style={[styles.text,{color:colors.text}]}>Active Delivery</Text>
+                <Text style={styles.text}>Active Delivery</Text>
             </View>
             <View style={styles.inputcontainer}>
                 <TouchableOpacity style={styles.iconcontainer} onPress={()=>{navigation.navigate("RestaurantMap")}}>
                     <Text style={styles.title}>Pick Up</Text>
-                    <Icon name="caretright" size={25} color="#FDC913" />
+                    <Icon name="caretright" size={25} color="white" />
                 </TouchableOpacity>
                 <Text style={styles.caption}>Restaurant Name</Text>
                 <Text style={styles.captionadd}>Address</Text>
@@ -28,7 +28,7 @@ const ConfirmOrder = ({navigation}) => {
             <View style={styles.inputcontainer}>
                 <TouchableOpacity style={styles.iconcontainer} onPress={()=>{navigation.navigate("DeliverMap")}}>
                     <Text style={styles.title}>Deliver</Text>
-                    <Icon name="caretright" size={25} color="#FDC913" />
+                    <Icon name="caretright" size={25} color="white" />
                 </TouchableOpacity>
                 <Text style={styles.caption}>Customer Name</Text>
                 <Text style={styles.captionadd}>Address</Text>
@@ -50,13 +50,13 @@ const styles = StyleSheet.create({
     text: {
         fontFamily: 'OpenSansBold',
         fontSize: 25,
-        paddingBottom: 20
+        paddingBottom: 50,
+        color:'#696969'
 
     },
     inputcontainer: {
         elevation:20,
         borderRadius: 10,
-      
         paddingLeft: 20,
         paddingRight: 20,
         paddingTop: 20,
@@ -69,25 +69,27 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         fontFamily: 'OpenSansBold',
-        color: '#FDC913',
+        color: 'white',
     },
     caption: {
         paddingLeft: 10,
         paddingTop: 10,
         paddingBottom: 10,
         fontFamily: "OpenSansBold",
-        fontSize:18
+        fontSize:18,
+        color:'#696969'
     },
     captionadd: {
         paddingLeft: 10,
         paddingBottom: 10,
         fontFamily: "OpenSansSemiBold",
-        fontSize:16
+        fontSize:16,
+        color:'#696969'
     },
     iconcontainer: {
         flexDirection: "row",
         justifyContent: 'space-between',
-        backgroundColor: 'black',
+        backgroundColor: '#696969',
         paddingTop: 5,
         paddingBottom: 5,
         paddingLeft: 10,

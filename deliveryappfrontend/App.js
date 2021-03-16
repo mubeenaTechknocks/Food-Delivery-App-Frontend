@@ -68,10 +68,9 @@ export default function App() {
     ...PaperDefaultTheme,
     colors: {
       ...DefaultTheme.colors,
-      background: '#FDC913',
-      text: 'black',
-      card: "white"
-
+      background: '#f5fffa',
+      text: '#696969',
+      card: 'white',
     }
   }
 
@@ -81,10 +80,8 @@ export default function App() {
     colors: {
       ...DarkTheme.colors,
       background: 'black',
-      text: "white",
-      card: 'black'
-
-
+      text: "#696969",
+      card: "black"
     }
   }
 
@@ -95,7 +92,7 @@ export default function App() {
       <AuthContext.Provider value={authContext}>
         <NavigationContainer theme={theme}>
           <Stack.Navigator>
-            {/* <Stack.Screen name="SplashScreen" component={SplashScreen}
+            <Stack.Screen name="SplashScreen" component={SplashScreen}
               options={{
                 headerShown: false
               }} />
@@ -117,7 +114,7 @@ export default function App() {
             options={{
               headerShown: false
             }}
-          /> */}
+          />
            <Stack.Screen name="HomeDrawer" component={HomeDrawer}
             options={{
               headerShown: false
@@ -148,11 +145,7 @@ export default function App() {
               headerShown: false
             }}
           />
-           <Stack.Screen name="Mode" component={Mode}
-            options={{
-              headerShown: false
-            }}
-          />
+         
           <Stack.Screen name="RestaurantMap" component={RestaurantMap}
             options={{
               headerShown: false
@@ -188,7 +181,7 @@ export default function App() {
                 headerShown: false
               }}
             />
-             <Stack.Screen name="DeliverCompleted" component={DeliveryCompleted}
+             <Stack.Screen name="DeliveryCompleted" component={DeliveryCompleted}
               options={{
                 headerShown: false
               }}
@@ -203,6 +196,11 @@ export default function App() {
                 headerShown: false
               }}
             />
+              <Stack.Screen name="Mode" component={Mode}
+            options={{
+              headerShown: false
+            }}
+          />
              <Stack.Screen name="Profile" component={Profile}
               options={{
                 headerShown: false

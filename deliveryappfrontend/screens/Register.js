@@ -84,13 +84,13 @@ const Register = ({ navigation }) => {
 
 
     return (
-        <View style={[styles.container,{backgroundColor:colors.card}]}>            
-      <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
-
+        <View style={styles.container}>
+            
+            <View style={styles.registercontainer}>
+                <Text style={styles.text}>REGISTRATION</Text>
+            </View>
             <View style={styles.inputcontainer}>
-                <View style={styles.registercontainer}>
-                    <Text style={styles.text}>REGISTRATION</Text>
-                </View>
+
                 <View style={styles.padcontainer}>
                     <View style={styles.textinput}>
                         <Text style={styles.textstyle}>Name</Text>
@@ -141,7 +141,7 @@ const Register = ({ navigation }) => {
                     <View style={styles.textinput}>
                         <Text style={styles.textstyle}>City</Text>
                         <TextInput
-                            keyboardType="phone-pad"
+                            keyboardType="default"
                             onChangeText={(city) => setCity(city)}
                             maxLength={10}
                             returnKeyType="next"
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
         height: '100%',
         paddingLeft: 20,
         paddingRight: 20,
-        paddingTop: 30
+        paddingTop: 10,
 
     },
     inputcontainer: {
@@ -251,7 +251,7 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         paddingLeft: 20,
         paddingRight: 20,
-        paddingBottom:10
+        paddingBottom: 10
 
 
     },
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
         fontFamily: 'OpenSansBold',
         alignSelf: 'center',
         fontSize: 20,
-        color:'black'
+        color: 'black'
     },
 
     textinput: {
@@ -270,10 +270,11 @@ const styles = StyleSheet.create({
         fontFamily: 'OpenSansSemiBold',
         fontSize: 16,
         paddingBottom: 10,
+        color: '#696969'
     },
     line: {
         borderBottomWidth: 1,
-        borderBottomColor: 'black'
+        borderBottomColor: '#696969'
     },
     textinputdelivery: {
         flexDirection: 'row',
@@ -282,35 +283,37 @@ const styles = StyleSheet.create({
         fontFamily: 'OpenSansSemiBold',
         fontSize: 16,
         paddingTop: 6,
+        color: '#696969'
 
     },
     textstyledelivery1: {
         fontFamily: 'OpenSansSemiBold',
         fontSize: 16,
         paddingTop: 6,
-        paddingRight:35
+        paddingRight: 35,
+        color: '#696969'
 
     },
     textstyledelivery2: {
         fontFamily: 'OpenSansSemiBold',
         fontSize: 16,
         paddingTop: 6,
-        paddingRight:50
-
+        paddingRight: 50,
+        color: '#696969'
     },
     inputButton: {
         paddingTop: 10,
-        backgroundColor: 'black',
+        backgroundColor: '#FDC913',
         paddingBottom: 10,
         borderRadius: 100,
         width: 140,
-        alignSelf: "center"
+        alignSelf: "center",
 
     },
 
     button: {
         fontFamily: 'OpenSansBold',
-        color: '#FDC913',
+        color: 'white',
         fontSize: 18,
         alignSelf: 'center'
     },
@@ -319,9 +322,9 @@ const styles = StyleSheet.create({
         paddingBottom: 20
     },
     registercontainer: {
-        backgroundColor: '#FDC913',
-        paddingBottom: 5,
-        paddingTop: 5,
+        // backgroundColor: '#FDC913',
+        paddingBottom: 10,
+        // paddingTop: 5,
         // marginLeft:10
 
     }

@@ -35,7 +35,7 @@ export default PickupCompleted
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         height: '100%',
         paddingTop: 10,
         paddingLeft: 20,
@@ -44,13 +44,14 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 25,
         fontFamily: 'OpenSansBold',
+        color:'#696969'
     },
     textcontainer: {
         paddingBottom: 50
     },
     inputButton: {
         paddingTop: 10,
-        backgroundColor: 'black',
+        backgroundColor: '#FDC913',
         paddingBottom: 10,
         borderRadius: 100,
         alignSelf: "center",
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
 
     button: {
         fontFamily: 'OpenSansBold',
-        color: '#FDC913',
+        color: 'white',
         fontSize: 18,
         alignSelf: 'center'
     },
@@ -84,6 +85,7 @@ const styles = StyleSheet.create({
     textinput:{
         fontFamily:'OpenSansSemiBold',
         fontSize:20,
-        alignSelf:'center'
+        alignSelf:'center',
+        color:'#696969'
     }
 })

@@ -5,15 +5,15 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import Icon1 from 'react-native-vector-icons/EvilIcons'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const ActiveOrder = ({navigation}) => {
+const ActiveOrder = ({ navigation }) => {
 
     const { colors } = useTheme()
     const theme = useTheme()
 
     return (
-        <View style={[styles.container,{backgroundColor:colors.card}]}>
-             <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
-            <Text style={[styles.text,{color:colors.text}]}>Active Delivery</Text>
+        <View style={styles.container}>
+            
+            <Text style={styles.text}>Active Delivery</Text>
             <View style={styles.input}>
                 <View style={styles.heading}>
                     <Text style={styles.txt}>2.3 km</Text>
@@ -48,14 +48,14 @@ const ActiveOrder = ({navigation}) => {
                 <View style={styles.space}>
                     <View style={styles.pad}>
                         <View style={styles.row}>
-                            <Icon  style={styles.icon} name="restaurant" size={25} color="black" />
+                            <Icon style={styles.icon} name="restaurant" size={25} color="#696969" />
                             <Text style={styles.semi}>Restaurant Name</Text>
                         </View>
                         <Text style={styles.add}>Address</Text>
                     </View>
                     <View>
                         <View style={styles.row}>
-                            <Icon style={styles.icon} name="delivery-dining" size={25} color="black"/>
+                            <Icon style={styles.icon} name="delivery-dining" size={25} color="#696969" />
                             <Text style={styles.semi}>Customer Name</Text>
                         </View>
                         <Text style={styles.add}>Address</Text>
@@ -63,23 +63,24 @@ const ActiveOrder = ({navigation}) => {
                 </View>
                 <View style={styles.line}></View>
                 <View style={styles.space}>
-                   <Text style={styles.bold1}>Order Details</Text>
-                   <View style={styles.order}>
-                       <Text style={styles.regular}>1 *    Milk Shake</Text>
-                       <Text style={styles.regular}>1 *    Burger</Text>
-                   </View>
+                    <Text style={styles.bold1}>Order Details</Text>
+                    <View style={styles.order}>
+                        <Text style={styles.regular}>1 *    Milk Shake</Text>
+                        <Text style={styles.regular}>1 *    Burger</Text>
+                    </View>
 
                 </View>
+                <View style={styles.buttoncontainer}>
+                    <TouchableOpacity style={styles.buttonconfirm} onPress={() => navigation.navigate("ConfirmOrder")}>
+                        <Text style={styles.buttontext}>Confirm</Text>
+                        {/* <Icon1 style={styles.buttonicon} name="check" size={20} color="white" /> */}
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.buttonreject} onPress={() => navigation.navigate("SearchOrder")}>
+                        <Text style={styles.buttontext}>Reject</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-            <View style={styles.buttoncontainer}>
-                <TouchableOpacity style={styles.buttonconfirm} onPress={()=>navigation.navigate("ConfirmOrder")}>
-                    <Text style={styles.buttontext}>Confirm order</Text>
-                    <Icon1 style={styles.buttonicon} name="check" size={20} color="white" />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.buttonreject} onPress={()=>navigation.navigate("SearchOrder")}>
-                    <Text style={styles.buttontext}>Reject</Text>
-                </TouchableOpacity>
-            </View>
+
         </View>
     )
 }
@@ -96,11 +97,11 @@ const styles = StyleSheet.create({
     },
     input: {
         borderRadius: 10,
-        elevation:20,
+        elevation: 20,
         backgroundColor: 'white',
         paddingTop: 20,
         paddingRight: 20,
-        paddingBottom: 10,
+        paddingBottom: 20,
         paddingLeft: 20
     },
     heading: {
@@ -110,13 +111,11 @@ const styles = StyleSheet.create({
     heading1: {
         flexDirection: 'row',
         justifyContent: 'space-between'
-
     },
-
     line: {
-        borderBottomColor: 'black',
-        borderBottomWidth: 1
-
+        borderBottomColor: '#696969',
+        borderBottomWidth: 1,
+        // color:'#696969'
     },
     space: {
         paddingTop: 20,
@@ -136,87 +135,96 @@ const styles = StyleSheet.create({
     row: {
         flexDirection: 'row'
     },
-    txt:{
-        paddingBottom:5,
-        fontFamily:'OpenSansBold',
-        fontSize:20,
+    txt: {
+        paddingBottom: 5,
+        fontFamily: 'OpenSansBold',
+        fontSize: 20,
+        color: '#696969'
 
     },
-    txtline:{
-        fontWeight:'bold',
-        fontSize:25,
-        paddingLeft:20,
-        paddingRight:20
+    txtline: {
+        fontWeight: 'bold',
+        fontSize: 25,
+        paddingLeft: 20,
+        paddingRight: 20,
+        color: '#696969'
     },
-    txt1:{
-        fontSize:20,
-        fontFamily:'OpenSansBold',
-        paddingLeft:70
+    txt1: {
+        fontSize: 20,
+        fontFamily: 'OpenSansBold',
+        paddingLeft: 70,
+        color: '#696969'
     },
-    bold:{
-        fontFamily:'OpenSansBold',
-        fontSize:15
+    bold: {
+        fontFamily: 'OpenSansBold',
+        fontSize: 15,
+        color: '#696969'
     },
-    bold1:{
-        fontFamily:'OpenSansBold',
-        fontSize:20
+    bold1: {
+        fontFamily: 'OpenSansBold',
+        fontSize: 20,
+        color: '#696969'
     },
-    regular:{
-        fontFamily:'OpenSansRegular',
-        fontSize:15
+    regular: {
+        fontFamily: 'OpenSansRegular',
+        fontSize: 15,
+        color: '#696969'
     },
-    semi:{
-        fontFamily:'OpenSansSemiBold',
-        fontSize:18 
+    semi: {
+        fontFamily: 'OpenSansSemiBold',
+        fontSize: 18,
+        color: '#696969'
     },
-    order:{
-        paddingLeft:20,
-        paddingRight:20,
-        paddingTop:20
+    order: {
+        paddingLeft: 20,
+        paddingRight: 20,
+        paddingTop: 20
     },
-    icon:{
-        paddingRight:10
+    icon: {
+        paddingRight: 10
     },
-    add:{
-        fontFamily:'OpenSansRegular',
-        fontSize:15 ,
-        paddingLeft:37
+    add: {
+        fontFamily: 'OpenSansRegular',
+        fontSize: 15,
+        paddingLeft: 37,
+        color: '#696969'
     },
-    text:{
+    text: {
         fontFamily: 'OpenSansBold',
         fontSize: 25,
-        paddingBottom: 30
+        paddingBottom: 30,
+        color: '#696969'
     },
-    buttoncontainer:{
-        paddingTop:20,
-        flexDirection:'row',
-        justifyContent:'space-between'
+    buttoncontainer: {
+        paddingTop: 20,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
-    buttonconfirm:{
-        backgroundColor:'green',
-        padding:10,
-        borderRadius:30,
-        width:170,
-        flexDirection:'row'
+    buttonconfirm: {
+        backgroundColor: 'green',
+        padding: 10,
+        borderRadius: 30,
+        width: 100,
+        flexDirection: 'row'
     },
-    buttonreject:{
-        backgroundColor:'red',
-        padding:10,
-        borderRadius:30,
-        width:170,
-       
+    buttonreject: {
+        backgroundColor: 'red',
+        padding: 10,
+        borderRadius: 30,
+        width: 100,
+
     },
-    buttontext:{
+    buttontext: {
         fontFamily: 'OpenSansBold',
         fontSize: 18,
-        color:'white',
-        alignSelf:'center'
-        
+        color: 'white',
+        alignSelf: 'center'
+
     },
-    buttonicon:{
-        paddingLeft:3,
-        paddingTop:6
+    buttonicon: {
+        paddingLeft: 3,
+        paddingTop: 6
     }
 
-    
+
 })

@@ -12,9 +12,7 @@ export function DrawerContent(props) {
   return (
     <DrawerContentScrollView {...props}>
       <View
-        style={
-          styles.drawerContent
-        }
+        style={styles.drawerContent}
       >
         <View style={styles.userInfoSection}>
           <View style={styles.arrow}>
@@ -69,11 +67,12 @@ export function DrawerContent(props) {
 const styles = StyleSheet.create({
   drawerContent: {
     flex: 1,
-    paddingTop:10
+    paddingTop:10,
+  
   },
   userInfoSection: {
     paddingLeft: 20,
-    paddingRight: 20
+    paddingRight: 20,
   },
   title: {
     marginTop: 20,

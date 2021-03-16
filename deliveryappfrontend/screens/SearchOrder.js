@@ -11,8 +11,8 @@ const SearchOrder = ({ navigation }) => {
     const theme = useTheme()
     return (
         <View style={styles.container}>
-             <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
-            <View >
+          
+            <View>
                 <View style={styles.iconcontainer}>
                     <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
                         <Icon name="dots-three-vertical" size={25} color="black" />
@@ -28,54 +28,56 @@ const SearchOrder = ({ navigation }) => {
                     </TouchableOpacity>
 
                 </View>
-                <View style={styles.homecontainer}>
+                <View style={styles.menucontainer}>
+                    <View style={styles.homecontainer}>
 
-                    <View style={styles.start}>
-                        <TouchableOpacity onPress={()=>navigation.navigate("ActiveOrder")}>
-                            <Icon2 name="spinner" size={60} color="black" style={styles.spinner} />
-                            <Text style={styles.startcontainer}>Searching for Orders...</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.pad}></View>
-                    <View style={styles.menucontainer}>
-                        <View style={styles.option}>
-                            <TouchableOpacity style={styles.touch1} >
-                                <Text style={styles.text}>Rs.50</Text>
-                                <Text style={styles.text}>Today's Earning</Text>
-
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.touch1} >
-                                <Text style={styles.text}>Rs.100</Text>
-                                <Text style={styles.text}>Week's Earning</Text>
+                        <View style={styles.start}>
+                            <TouchableOpacity onPress={() => navigation.navigate("ActiveOrder")}>
+                                <Icon2 name="spinner" size={60} color="#696969" style={styles.spinner} />
+                                <Text style={styles.startcontainer}>Searching for Orders...</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={styles.option}>
-                            <TouchableOpacity style={styles.touch1}>
-                                <Text style={styles.text}>Rs.10 </Text>
-                                <Text style={styles.text}>COD</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.touch1}>
-                                <Text style={styles.text}>Rs.20</Text>
-                                <Text style={styles.text}>Delivery Tip</Text>
+                        <View style={styles.pad}></View>
+                        <View >
+                            <View style={styles.option}>
+                                <TouchableOpacity style={styles.touch1} >
+                                    <Text style={styles.text}>Rs.50</Text>
+                                    <Text style={styles.text}>Today's Earning</Text>
+
+                                </TouchableOpacity>
+                                <TouchableOpacity style={styles.touch1} >
+                                    <Text style={styles.text}>Rs.100</Text>
+                                    <Text style={styles.text}>Week's Earning</Text>
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.option}>
+                                <TouchableOpacity style={styles.touch1}>
+                                    <Text style={styles.text}>Rs.10 </Text>
+                                    <Text style={styles.text}>COD</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity style={styles.touch1}>
+                                    <Text style={styles.text}>Rs.20</Text>
+                                    <Text style={styles.text}>Delivery Tip</Text>
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.option}>
+                                <TouchableOpacity style={styles.shift} >
+                                    <Text style={styles.shifttext}>Shift Details</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={styles.login} >
+                                    <Text style={styles.logintext}>Login History</Text>
+
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                        <View style={styles.pad1}></View>
+                        <View style={styles.card}>
+                            <Text style={styles.cardtext}>See your ID card</Text>
+                            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+                                <Text style={styles.cardcontainer}>GO TO PROFILE</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={styles.option}>
-                            <TouchableOpacity style={styles.shift} >
-                                <Text style={styles.shifttext}>Shift Details</Text>
-                            </TouchableOpacity>
-
-                            <TouchableOpacity style={styles.login} >
-                                <Text style={styles.logintext}>Login History</Text>
-
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                    <View style={styles.pad}></View>
-                    <View style={styles.card}>
-                        <Text style={styles.cardtext}>See your ID card</Text>
-                        <TouchableOpacity>
-                            <Text style={styles.cardcontainer}>GO TO PROFILE</Text>
-                        </TouchableOpacity>
                     </View>
                 </View>
             </View>
@@ -88,12 +90,18 @@ export default SearchOrder
 const styles = StyleSheet.create({
     container: {
         // backgroundColor: '#FDC913',
-        height:'100%'
+        height: '100%',
+        // paddingLeft:20,
+        // paddingRight:20
     },
     homecontainer: {
         paddingLeft: 20,
         paddingRight: 20,
-        paddingTop: 30
+        paddingTop: 30,
+        backgroundColor: 'white',
+        elevation: 20,
+        borderRadius: 10,
+        paddingBottom: 30
     },
     iconcontainer: {
         flexDirection: 'row',
@@ -128,11 +136,10 @@ const styles = StyleSheet.create({
     },
     text: {
         textAlign: 'center',
-
         fontSize: 15,
         fontFamily: 'OpenSansSemiBold',
         flexDirection: 'column',
-        color: 'black'
+        color: '#696969'
     },
     icon1: {
         paddingLeft: 200,
@@ -148,38 +155,45 @@ const styles = StyleSheet.create({
     },
     start: {
         backgroundColor: 'white',
-        padding: 50,
+        paddingTop: 30,
+        paddingLeft: 20,
+        paddingBottom: 30,
+        paddingRight:20,
         borderRadius: 20,
-        elevation:20
+        elevation: 20,
     },
     startcontainer: {
-        // backgroundColor: 'b',
-        borderRadius: 10,
-        padding: 10,
-        color: 'black',
-        // elevation: 5,
+        color: '#696969',
+        paddingTop:10,
         alignSelf: "center",
         fontFamily: 'OpenSansSemiBold',
         fontSize: 20
+    },
+    spinner: {
+        paddingLeft: 110
     },
     pad: {
         paddingBottom: 30,
 
     },
+    pad1: {
+        paddingBottom: 50,
+
+    },
     card: {
         backgroundColor: 'white',
-        paddingTop: 20,
+        paddingTop: 30,
         paddingLeft: 20,
-        paddingBottom: 50,
+        paddingBottom: 30,
         borderRadius: 20,
-        elevation:20
+        elevation: 20
 
     },
     cardcontainer: {
-        backgroundColor: 'black',
+        backgroundColor: '#FDC913',
         borderRadius: 10,
         padding: 10,
-        color: '#FDC913',
+        color: 'white',
         elevation: 5,
         alignSelf: "center",
         fontFamily: 'OpenSansBold'
@@ -189,18 +203,18 @@ const styles = StyleSheet.create({
         paddingBottom: 20,
         fontSize: 18,
         alignSelf: 'center',
-        color: 'black'
+        color: '#696969'
     },
     menucontainer: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         paddingBottom: 20,
         borderRadius: 20,
         paddingLeft: 20,
         paddingRight: 20,
-        elevation:20
+        paddingTop: 40
     },
     shift: {
-        backgroundColor: "black",
+        backgroundColor: "#FDC913",
         justifyContent: 'center',
         borderRadius: 20,
         height: 40,
@@ -210,23 +224,23 @@ const styles = StyleSheet.create({
 
     },
     shifttext: {
-        color: '#FDC913',
+        color: 'white',
         fontFamily: 'OpenSansSemiBold',
         fontSize: 15,
-        borderBottomWidth: 1,
-        borderBottomColor: '#FDC913'
+        // borderBottomWidth:1,
+        // borderBottomColor:'white'
     },
     logintext: {
         fontFamily: 'OpenSansSemiBold',
         fontSize: 15,
-        borderBottomWidth: 1
+        // borderBottomWidth:1,
+        color: "#FDC913",
+        // borderBottomColor:"#FDC913"
     },
     login: {
         paddingLeft: 50,
         paddingTop: 10
-    },
-    spinner: {
-        paddingLeft: 100
     }
 
 })
+

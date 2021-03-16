@@ -8,7 +8,7 @@ const DeliveryCOD = ({ navigation }) => {
     const theme = useTheme()
     return (
         <View style={styles.container}>
-            <StatusBar style={{ backgroundColor: colors.background }} barStyle={theme.dark ? "light-content" : "default"} />
+            
             <View style={styles.textcontainer}>
                 <Text style={styles.text}>Deliver</Text>
             </View>
@@ -22,7 +22,7 @@ const DeliveryCOD = ({ navigation }) => {
                 <View style={styles.pad}></View>
                 <View style={styles.inputcontainer}>
                     <View style={styles.iconcontainer}>
-                        <Icon style={styles.icon} name="delivery-dining" size={25} color="black" />
+                        <Icon style={styles.icon} name="delivery-dining" size={25} color="#696969" />
                         <Text style={styles.res}>Customer Name</Text>
                     </View>
                     <Text style={styles.add}>Address</Text>
@@ -54,7 +54,7 @@ export default DeliveryCOD
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         height: '100%',
         paddingTop: 10,
         paddingLeft: 20,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     },
     inputButton: {
         paddingTop: 10,
-        backgroundColor: 'black',
+        backgroundColor: '#FDC913',
         paddingBottom: 10,
         borderRadius: 100,
         // width: 140,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
 
     button: {
         fontFamily: 'OpenSansBold',
-        color: '#FDC913',
+        color: 'white',
         fontSize: 18,
         alignSelf: 'center'
     },
@@ -101,7 +101,8 @@ const styles = StyleSheet.create({
         paddingLeft: 40,
         fontFamily: 'OpenSansSemiBold',
         fontSize: 18,
-        paddingTop: 10
+        paddingTop: 10,
+        color:'#696969'
     },
     detailcontainer: {
         backgroundColor: 'white',
@@ -118,21 +119,24 @@ const styles = StyleSheet.create({
     res: {
         fontFamily: 'OpenSansBold',
         fontSize: 20,
+        color:'#696969'
     },
     order: {
         fontFamily: 'OpenSansSemiBold',
         fontSize: 18,
-        paddingBottom: 20
+        paddingBottom: 20,
+        color:'#696969'
     },
     item: {
         fontFamily: 'OpenSansRegular',
         fontSize: 15,
-        paddingLeft: 20
+        paddingLeft: 20,
+        color:'#696969'
     },
     text: {
         fontSize: 25,
         fontFamily: 'OpenSansBold',
-
+        color:'#696969'
     },
     textcontainer: {
         paddingBottom: 50
@@ -168,12 +172,14 @@ const styles = StyleSheet.create({
         elevation:20,
         padding:10,
         borderRadius:10,
-        fontSize:15
+        fontSize:15,
+        color:'white'
         
     },
     text1:{
         fontFamily:'OpenSansBold',
-        fontSize:18
+        fontSize:18,
+        color:'#696969'
     }
 
 })

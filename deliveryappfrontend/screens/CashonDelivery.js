@@ -66,8 +66,8 @@ const CashonDelivery = ({ navigation }) => {
     }
 
     return (
-        <View style={[styles.container,{backgroundColor:colors.card}]}>            
-      <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
+        <View style={styles.container}>            
+     
             <View style={styles.inputcontainer}>
                 <View style={styles.registercontainer}>
                     <Text style={styles.text}>Collect Cash on Delivery</Text>
@@ -103,7 +103,7 @@ const CashonDelivery = ({ navigation }) => {
                     </View>
                 </View>
                 <View style={styles.padbutton}>
-                        <TouchableOpacity style={styles.inputButton}>
+                        <TouchableOpacity style={styles.inputButton} onPress={()=>navigation.navigate("DeliveryCompleted")}>
                             <Text
                                 style={styles.button}
                                 onPress={handleSubmitPress}>Cash Collected</Text>
@@ -119,7 +119,7 @@ export default CashonDelivery
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "white",
+        // backgroundColor: "white",
         height: '100%',
         paddingLeft: 20,
         paddingRight: 20,
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
         fontFamily: 'OpenSansBold',
         alignSelf: 'center',
         fontSize: 20,
-        color:'black'
+        color:'#696969'
     },
 
     textinput: {
@@ -154,10 +154,12 @@ const styles = StyleSheet.create({
         fontFamily: 'OpenSansSemiBold',
         fontSize: 16,
         paddingBottom: 10,
+        color:'#696969'
+
     },
     line: {
         borderBottomWidth: 1,
-        borderBottomColor: 'black'
+        borderBottomColor: '#696969'
     },
     textinputdelivery: {
         flexDirection: 'row',
@@ -184,7 +186,7 @@ const styles = StyleSheet.create({
     },
     inputButton: {
         paddingTop: 10,
-        backgroundColor: 'black',
+        backgroundColor: '#FDC913',
         paddingBottom: 10,
         borderRadius: 100,
         // width: 140,
@@ -196,7 +198,7 @@ const styles = StyleSheet.create({
 
     button: {
         fontFamily: 'OpenSansBold',
-        color: '#FDC913',
+        color: 'white',
         fontSize: 18,
         alignSelf: 'center'
     },

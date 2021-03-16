@@ -55,7 +55,7 @@ const Verify = ({navigation}) => {
     }
     return (
         <View style={styles.container}>
-             <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
+            
             <Text style={styles.text} >Enter OTP</Text>
             <View style={styles.containerinput}>
                 <OTPTextView
@@ -91,34 +91,33 @@ const Verify = ({navigation}) => {
 const styles = StyleSheet.create({
 
     container: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         height: '100%',
-        paddingTop: 450,
-        paddingLeft: 20,
-        paddingRight: 20
-        // alignItems: 'center',
-        // justifyContent: 'center'
+        // paddingTop: 250,
+        // paddingLeft: 20,
+        // paddingRight: 20
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     containerinput: {
-        backgroundColor: '#FDC913',
+        backgroundColor: 'white',
         borderRadius: 20,
         paddingLeft: 20,
-        paddingRight: 20
+        paddingRight: 20,
+        width:300,
+        elevation:20
     },
-
     inputButton: {
         paddingTop: 10,
-        backgroundColor: 'black',
+        backgroundColor: '#FDC913',
         paddingBottom: 10,
         borderRadius: 100,
         width: 150,
         alignSelf: "center"
-
     },
-
     button: {
         fontFamily: 'OpenSansBold',
-        color: '#FDC913',
+        color: 'white',
         fontSize: 18,
         alignSelf: 'center'
     },
@@ -130,7 +129,8 @@ const styles = StyleSheet.create({
         paddingBottom: 50,
         fontFamily: 'OpenSansBold',
         alignSelf: 'center',
-        fontSize: 25
+        fontSize: 25,
+        color:'#696969'
     },
     register: {
         flexDirection: 'row',
@@ -139,12 +139,13 @@ const styles = StyleSheet.create({
     },
     registertext: {
         fontFamily: 'OpenSansSemiBold',
-        fontSize: 15
+        fontSize: 15,
+        color:'#696969'
     },
     textInput: {
         paddingTop: 50,
         borderBottomWidth: 1,
-        borderBottomColor: "white"
+        borderBottomColor: "#FDC913"
     }
 
 })

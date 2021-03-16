@@ -9,7 +9,7 @@ const PersonalDetails = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <StatusBar style={{ backgroundColor: colors.background }} barStyle={theme.dark ? "light-content" : "default"} />
+            
             <Text style={styles.text}>Personal Details</Text>
             <View style={styles.inputcontainer}>
                 <View style={styles.row}>
@@ -57,7 +57,7 @@ export default PersonalDetails
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         height: '100%',
         paddingTop: 20,
         paddingLeft: 20,
@@ -80,17 +80,20 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontFamily: 'OpenSansBold',
         fontSize: 30,
-        paddingBottom: 50
+        paddingBottom: 50,
+        color:'#696969'
     },
     text1:{
         fontFamily: 'OpenSansSemiBold',
         fontSize: 18,
+        color:'#696969'
     },
     texth: {
         paddingTop:20,
         fontFamily: 'OpenSansBold',
         fontSize: 23,
-        paddingBottom: 20
+        paddingBottom: 20,
+        color:'#696969'
     },
     iconname:{
         paddingTop:5,

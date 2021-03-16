@@ -74,8 +74,8 @@ const SavingsAccount = ({ navigation }) => {
     }
 
     return (
-        <View style={[styles.container, { backgroundColor: colors.card }]}>
-            <StatusBar style={{ backgroundColor: colors.background }} barStyle={theme.dark ? "light-content" : "default"} />
+        <View style={styles.container}>
+           
             <View style={styles.inputcontainer}>
                 <View style={styles.registercontainer}>
                     <Text style={styles.text}>Savings Account</Text>
@@ -144,7 +144,7 @@ export default SavingsAccount
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "white",
+        // backgroundColor: "white",
         height: '100%',
         paddingLeft: 20,
         paddingRight: 20,
@@ -167,8 +167,8 @@ const styles = StyleSheet.create({
     text: {
         fontFamily: 'OpenSansBold',
         alignSelf: 'center',
-        fontSize: 20,
-        color: 'black'
+        fontSize: 25,
+        color:'#696969'
     },
 
     textinput: {
@@ -179,37 +179,16 @@ const styles = StyleSheet.create({
         fontFamily: 'OpenSansSemiBold',
         fontSize: 16,
         paddingBottom: 10,
+        color:'#696969'
     },
     line: {
         borderBottomWidth: 1,
-        borderBottomColor: 'black'
+        borderBottomColor: '#696969'
     },
-    textinputdelivery: {
-        flexDirection: 'row',
-    },
-    textstyledelivery: {
-        fontFamily: 'OpenSansSemiBold',
-        fontSize: 16,
-        paddingTop: 6,
-
-    },
-    textstyledelivery1: {
-        fontFamily: 'OpenSansSemiBold',
-        fontSize: 16,
-        paddingTop: 6,
-        paddingRight: 35
-
-    },
-    textstyledelivery2: {
-        fontFamily: 'OpenSansSemiBold',
-        fontSize: 16,
-        paddingTop: 6,
-        paddingRight: 50
-
-    },
+   
     inputButton: {
         paddingTop: 10,
-        backgroundColor: 'black',
+        backgroundColor: '#FDC913',
         paddingBottom: 10,
         borderRadius: 100,
         // width: 140,
@@ -221,7 +200,7 @@ const styles = StyleSheet.create({
 
     button: {
         fontFamily: 'OpenSansBold',
-        color: '#FDC913',
+        color: 'white',
         fontSize: 18,
         alignSelf: 'center'
     },

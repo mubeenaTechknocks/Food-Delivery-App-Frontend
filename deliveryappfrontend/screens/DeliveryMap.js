@@ -13,16 +13,16 @@ const DeliveryMap = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <StatusBar style={{ backgroundColor: colors.background }} barStyle={theme.dark ? "light-content" : "default"} />
+            
             <View style={styles.mapcontainer}>
                 <Map />
             </View>
             <View>
                 <View style={styles.inputcontainer}>
-                    <Icon style={styles.icon} name="delivery-dining" size={35} color="black" />
+                    <Icon style={styles.icon} name="delivery-dining" size={35} color="#696969" />
                     <Text style={styles.text}>Delivery Location</Text>
                     <TouchableOpacity style={styles.iconcontainer} onPress={()=>navigation.navigate("Deliver")}>
-                        <Icon1 name="directions" size={30} color="black" />
+                        <Icon1 name="directions" size={30} color="#696969" />
                     </TouchableOpacity>
                 </View>
                 <View style={styles.addcontainer}>
@@ -30,7 +30,7 @@ const DeliveryMap = ({ navigation }) => {
                     <Text style={styles.add}>Address</Text>
                     <View style={styles.iconcontainer1}>
                         <TouchableOpacity style={styles.icontouch}>
-                            <Icon style={styles.icon} name="call" size={30} color="black" />
+                            <Icon style={styles.icon} name="call" size={30} color="#696969" />
                             <Text style={styles.icontext}>call</Text>
                         </TouchableOpacity>
                     </View>
@@ -44,7 +44,7 @@ export default DeliveryMap
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         height: '100%'
     },
     mapcontainer: {
@@ -74,15 +74,18 @@ const styles = StyleSheet.create({
     text: {
         fontFamily: 'OpenSansBold',
         fontSize: 25,
+        color:"#696969"
     },
     addtext: {
         fontFamily: 'OpenSansSemiBold',
         fontSize: 20,
+        color:"#696969"
     },
     add: {
         fontFamily: 'OpenSansRegular',
         fontSize: 20,
-        paddingTop: 10
+        paddingTop: 10,
+        color:"#696969"
     },
     iconcontainer1: {
         paddingTop:20,
@@ -95,6 +98,7 @@ const styles = StyleSheet.create({
     icontext: {
         fontFamily: 'OpenSansRegular',
         fontSize: 20,
+        color:"#696969"
     },
     icon:{
         paddingRight:20

@@ -13,7 +13,7 @@ const ItemMissing = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <StatusBar style={{ backgroundColor: colors.background }} barStyle={theme.dark ? "light-content" : "default"} />
+            
             <View style={styles.textcontainer}>
                 <Text style={styles.text}>Item Missing</Text>
             </View>
@@ -63,7 +63,7 @@ export default ItemMissing
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         height: '100%',
         paddingTop: 10,
         paddingLeft: 20,
@@ -89,7 +89,8 @@ const styles = StyleSheet.create({
     add: {
         fontFamily: 'OpenSansSemiBold',
         fontSize: 18,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        color:"#696969"
     },
     detailcontainer: {
         backgroundColor: 'white',
@@ -106,22 +107,25 @@ const styles = StyleSheet.create({
     res: {
         fontFamily: 'OpenSansBold',
         fontSize: 20,
+        color:"#696969"
     },
     order: {
         fontFamily: 'OpenSansSemiBold',
         fontSize: 18,
+        color:"#696969"
         // alignSelf:'center'
     },
     item: {
         fontFamily: 'OpenSansRegular',
         fontSize: 15,
         paddingLeft: 20,
-        paddingTop: 10
+        paddingTop: 10,
+        color:"#696969"
     },
     text: {
         fontSize: 25,
         fontFamily: 'OpenSansBold',
-
+        color:"#696969"
     },
     textcontainer: {
         paddingBottom: 50

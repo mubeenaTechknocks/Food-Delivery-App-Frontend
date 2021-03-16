@@ -7,7 +7,7 @@ const RegisterMessage = () => {
     const theme = useTheme()
     return (
         <View style={styles.container}>
-             <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
+            
             <View style={styles.containertext}>
                 <Text style={styles.text}>
                     Thank you for registering with us. One of our executive will call you back.
@@ -30,15 +30,17 @@ const styles = StyleSheet.create({
         paddingLeft:20
     },
     containertext: {
-        backgroundColor: '#FDC913',
+        backgroundColor: 'white',
         borderRadius: 20,
         paddingLeft: 50,
-        paddingRight: 50
+        paddingRight: 50,
+        elevation:30
     },
     text:{
         fontSize:18,
-        fontFamily:'OpenSansRegular',
+        fontFamily:'OpenSansSemiBold',
         paddingTop:50,
-        paddingBottom:70
+        paddingBottom:70,
+        color:'#696969'
     }
 })

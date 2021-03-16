@@ -1,5 +1,5 @@
 import React, { useState, createRef } from 'react';
-import { TextInput, Text, Image, Button, View, StyleSheet, Keyboard, TouchableOpacity,StatusBar } from 'react-native';
+import { TextInput, Text, Image, Button, View, StyleSheet, Keyboard, TouchableOpacity, StatusBar } from 'react-native';
 // import { values } from './global'
 import Icon from 'react-native-vector-icons/Feather'
 import { RadioButton, useTheme } from 'react-native-paper'
@@ -69,21 +69,19 @@ const Login = ({ navigation }) => {
 
     return (
         <View style={styles.inputContainer}>
-                    <StatusBar style={{backgroundColor:colors.background}} barStyle={theme.dark ? "light-content" :"default"} />
+            <StatusBar backgroundColor={colors.background} barStyle={theme.dark ? "light-content" : "dark-content"} />
 
             <View style={styles.container}>
                 <View >
                     <Text style={styles.texthead}>Login</Text>
                 </View>
-
-                <Text style={styles.text}>Enter ID</Text>
                 <View style={styles.input}>
+                    <Text style={styles.text}>Enter ID</Text>
                     {/* <Icon style={styles.icon} name="phone" size={20} color="#FDC913" /> */}
-
                     <TextInput
                         style={styles.place}
                         keyboardType="phone-pad"
-                        placeholder="ID"
+                        // placeholder="ID"
                         onChangeText={
                             (userId) => setUserId(userId)
                         }
@@ -92,6 +90,7 @@ const Login = ({ navigation }) => {
                         onSubmitEditing={Keyboard.dismiss}
                         blurOnSubmit={false}
                     />
+                    <View style={styles.line}></View>
                 </View>
                 {errortext != '' ? (
                     <Text style={styles.errorTextStyle}>
@@ -109,7 +108,7 @@ const Login = ({ navigation }) => {
             <View style={styles.register}>
                 <Text style={styles.registertext}>Don't have an Account ? </Text>
                 <TouchableOpacity>
-                    <Text style={styles.registertext} onPress={()=> navigation.navigate("Register")}>Register Now</Text>
+                    <Text style={styles.registertext1} onPress={() => navigation.navigate("Register")}>Register Now</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -118,30 +117,33 @@ const Login = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     inputContainer: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         height: '100%',
         alignItems: 'center',
         justifyContent: 'center'
     },
     container: {
-        backgroundColor: '#FDC913',
+        backgroundColor: 'white',
         borderRadius: 20,
-        paddingLeft: 20,
-        paddingRight: 20
+        elevation: 20
     },
 
     input: {
         paddingTop: 10,
         paddingBottom: 10,
-        backgroundColor: 'white',
-        elevation: 2,
+        paddingLeft:25,
+        paddingRight:25,
         borderRadius: 10,
-        flexDirection: 'row'
+       
+    },
+    line: {
+        borderBottomWidth: 1,
+        borderBottomColor: '#696969'
     },
     place: {
-        paddingLeft: 20,
+        // paddingLeft: 20,
         width: 250,
-        fontFamily: 'OpenSansRegular',
+        // fontFamily: 'OpenSansRegular',
 
     },
     inputText: {
@@ -150,17 +152,15 @@ const styles = StyleSheet.create({
     },
     inputButton: {
         paddingTop: 10,
-        backgroundColor: 'black',
+        backgroundColor: '#FDC913',
         paddingBottom: 10,
         borderRadius: 100,
         width: 150,
         alignSelf: "center"
-
     },
-
     button: {
         fontFamily: 'OpenSansBold',
-        color: '#FDC913',
+        color: 'white',
         fontSize: 18,
         alignSelf: 'center'
     },
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
         paddingTop: 50,
         alignSelf: 'center',
         fontSize: 30,
-        color: 'black'
+        color: '#696969'
 
     },
     icon: {
@@ -185,7 +185,8 @@ const styles = StyleSheet.create({
     },
     text: {
         paddingBottom: 10,
-        fontFamily: 'OpenSansSemiBold'
+        fontFamily: 'OpenSansSemiBold',
+        color: '#696969',
     },
     register: {
         flexDirection: 'row',
@@ -193,7 +194,13 @@ const styles = StyleSheet.create({
     },
     registertext: {
         fontFamily: 'OpenSansSemiBold',
-        fontSize: 15
+        fontSize: 15,
+        color: '#696969'
+    },
+    registertext1: {
+        fontFamily: 'OpenSansSemiBold',
+        fontSize: 15,
+        color: '#FDC913'
     }
 
 });

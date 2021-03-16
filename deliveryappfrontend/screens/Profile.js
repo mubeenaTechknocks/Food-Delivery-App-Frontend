@@ -9,7 +9,7 @@ const Profile = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <StatusBar style={{ backgroundColor: colors.background }} barStyle={theme.dark ? "light-content" : "default"} />
+            
             <Text style={styles.text}>Profile</Text>
             <View style={styles.inputcontainer}>
                 <Avatar.Image
@@ -61,7 +61,7 @@ export default Profile
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         height: '100%',
         paddingTop: 20,
         paddingLeft: 20,
@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontFamily: 'OpenSansBold',
         fontSize: 30,
-        paddingBottom: 50
+        paddingBottom: 50,
+        color:'#696969'
     },
     image: {
         alignSelf: 'center'
@@ -90,17 +91,20 @@ const styles = StyleSheet.create({
         fontFamily: 'OpenSansBold',
         fontSize: 23,
         alignSelf: 'center',
-        paddingTop:10
+        paddingTop:10,
+        color:'#696969'
     },
     id: {
         fontFamily: 'OpenSansSemiBold',
         fontSize: 17,
         paddingLeft: 150,
-        paddingRight: 70
+        paddingRight: 70,
+        color:'#696969'
     },
     rate: {
         fontFamily: 'OpenSansSemiBold',
         fontSize: 17,
+        color:'#696969'
     },
     row: {
         flexDirection: 'row',
@@ -123,7 +127,8 @@ const styles = StyleSheet.create({
         fontSize: 18,
         alignSelf: 'center',
         paddingTop:10,
-        paddingBottom:10
+        paddingBottom:10,
+        color:'#696969'
     }
 
 })
