@@ -8,21 +8,21 @@ const Deliver = ({ navigation }) => {
     const theme = useTheme()
     return (
         <View style={styles.container}>
-            
+
             <View style={styles.textcontainer}>
-            <Text style={styles.text}>Deliver</Text>
+                <Text style={styles.text}>Deliver</Text>
             </View>
             <View style={styles.inputcontainer}>
                 <View style={styles.iconcontainer}>
-                    <Icon style={styles.icon} name="delivery-dining" size={25}  color="#696969"/>
+                    <Icon style={styles.icon} name="delivery-dining" size={25} color="#696969" />
                     <Text style={styles.res}>Customer Name</Text>
                 </View>
                 <Text style={styles.add}>Address</Text>
                 <View style={styles.iconcontainer1}>
-                        <TouchableOpacity style={styles.icontouch}>
-                            <Icon style={styles.icon1} name="call" size={25}  color="#696969" />
-                            <Text style={styles.icontext}>call</Text>
-                        </TouchableOpacity>
+                    <TouchableOpacity style={styles.icontouch}>
+                        <Icon style={styles.icon1} name="call" size={25} color="#696969" />
+                        <Text style={styles.icontext}>call</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.detail}>
                     <View style={styles.detailcontainer}>
@@ -33,14 +33,15 @@ const Deliver = ({ navigation }) => {
                         </View>
                     </View>
                 </View>
+                <View style={styles.padbutton}>
+                    <TouchableOpacity style={styles.inputButton} onPress={() => navigation.navigate("DeliveryCompleted")}>
+                        <Text
+                            style={styles.button}
+                        >Reached Location</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-            <View style={styles.padbutton}>
-                <TouchableOpacity style={styles.inputButton} onPress={()=>navigation.navigate("DeliveryCompleted")}>
-                    <Text
-                        style={styles.button}
-                    >Reached Location</Text>
-                </TouchableOpacity>
-            </View>
+
         </View>
     )
 }
@@ -64,8 +65,8 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         // width: 140,
         alignSelf: "center",
-        paddingLeft:20,
-        paddingRight:20
+        paddingLeft: 20,
+        paddingRight: 20
     },
 
     button: {
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     padbutton: {
-        paddingTop: 50,
+        paddingTop: 30,
         paddingBottom: 20
     },
     inputcontainer: {
@@ -96,51 +97,51 @@ const styles = StyleSheet.create({
     add: {
         paddingLeft: 40,
         fontFamily: 'OpenSansSemiBold',
-        fontSize: 18, 
-        paddingTop:10,
-        color:"#696969"
+        fontSize: 18,
+        paddingTop: 10,
+        color: "#696969"
     },
     detailcontainer: {
         backgroundColor: 'white',
-        elevation: 20,
+        elevation: 2,
         borderRadius: 10,
-        padding:20
+        padding: 20
     },
-    detail:{
-        paddingTop:20,
-        paddingBottom:10,
-        paddingLeft:40,
-        paddingRight:40
+    detail: {
+        paddingTop: 20,
+        paddingBottom: 10,
+        paddingLeft: 40,
+        paddingRight: 40
     },
-    res:{
+    res: {
         fontFamily: 'OpenSansBold',
         fontSize: 20,
-        color:"#696969"
+        color: "#696969"
     },
-    order:{
+    order: {
         fontFamily: 'OpenSansSemiBold',
         fontSize: 18,
-        paddingBottom:20,
-        color:"#696969"
+        paddingBottom: 20,
+        color: "#696969"
     },
-    item:{
+    item: {
         fontFamily: 'OpenSansRegular',
         fontSize: 15,
-        paddingLeft:20,
-        color:"#696969"
+        paddingLeft: 20,
+        color: "#696969"
     },
-    text:{
-        fontSize:25,
-        fontFamily:'OpenSansBold',
-        color:"#696969"
+    text: {
+        fontSize: 25,
+        fontFamily: 'OpenSansBold',
+        color: "#696969"
     },
-    textcontainer:{
-        paddingBottom:50
+    textcontainer: {
+        paddingBottom: 50
     },
     iconcontainer1: {
-        paddingTop:20,
-        paddingLeft:40,
-        paddingRight:20
+        paddingTop: 20,
+        paddingLeft: 40,
+        paddingRight: 20
     },
     icontouch: {
         flexDirection: 'row'
@@ -148,9 +149,9 @@ const styles = StyleSheet.create({
     icontext: {
         fontFamily: 'OpenSansRegular',
         fontSize: 20,
-        color:"#696969"
+        color: "#696969"
     },
-    icon1:{
-        paddingRight:20
+    icon1: {
+        paddingRight: 20
     }
 })

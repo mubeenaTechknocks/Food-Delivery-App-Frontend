@@ -37,14 +37,15 @@ const DeliveryCOD = ({ navigation }) => {
                         </View>
                     </View>
                 </View>
-            </View>
-            <View style={styles.padbutton}>
+                <View style={styles.padbutton}>
                 <TouchableOpacity style={styles.inputButton} onPress={() => navigation.navigate("SearchOrder")}>
                     <Text
                         style={styles.button}
                     >Delivery Completed</Text>
                 </TouchableOpacity>
             </View>
+            </View>
+           
         </View>
     )
 }
@@ -79,12 +80,12 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     padbutton: {
-        paddingTop: 50,
+        paddingTop: 30,
         paddingBottom: 20
     },
     inputcontainer: {
-        backgroundColor: 'white',
-        elevation: 20,
+        // backgroundColor: 'white',
+        // elevation: 2,
         paddingLeft: 20,
         paddingRight: 20,
         paddingTop: 20,
@@ -106,7 +107,7 @@ const styles = StyleSheet.create({
     },
     detailcontainer: {
         backgroundColor: 'white',
-        elevation: 20,
+        elevation: 2,
         borderRadius: 10,
         padding: 20
     },
@@ -152,7 +153,7 @@ const styles = StyleSheet.create({
     },
     cod:{
         backgroundColor:'white',
-        elevation:20,
+        elevation:1,
         borderRadius:20,
         paddingLeft: 20,
         paddingRight: 20,
@@ -169,7 +170,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#FDC913',
         fontFamily:'OpenSansBold',
         alignSelf:'center',
-        elevation:20,
+        // elevation:20,
         padding:10,
         borderRadius:10,
         fontSize:15,

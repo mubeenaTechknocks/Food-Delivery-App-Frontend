@@ -8,7 +8,7 @@ const Profile = ({ navigation }) => {
     const theme = useTheme()
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container,{backgroundColor:colors.card}]}>
             
             <Text style={styles.text}>Profile</Text>
             <View style={styles.inputcontainer}>
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
         paddingRight: 20,
         paddingLeft: 20,
         paddingTop: 30,
-        backgroundColor: 'white',
+        backgroundColor: '#f5fffa',
         elevation: 20,
         borderRadius: 20,
         paddingBottom: 50

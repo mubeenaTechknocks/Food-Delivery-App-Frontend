@@ -33,14 +33,15 @@ const Pickup = ({ navigation }) => {
                         </View>
                     </View>
                 </View>
-            </View>
-            <View style={styles.padbutton}>
+                <View style={styles.padbutton}>
                 <TouchableOpacity style={styles.inputButton} onPress={()=>navigation.navigate("ConfirmItem")}>
                     <Text
                         style={styles.button}
                     >Reached Pickup Location</Text>
                 </TouchableOpacity>
             </View>
+            </View>
+           
         </View>
     )
 }
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
     },
     detailcontainer: {
         backgroundColor: 'white',
-        elevation: 20,
+        elevation: 1,
         borderRadius: 10,
         padding:20
     },

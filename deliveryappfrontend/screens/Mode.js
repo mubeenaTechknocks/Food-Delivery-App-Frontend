@@ -16,9 +16,8 @@ const Mode = ({ navigation }) => {
     const { toggleTheme } = React.useContext(AuthContext);
 
     return (
-
-        <View style={{ paddingBottom: 500 }}>
-            <View style={styles.view4}>
+        <View style={styles.container}>
+            <View style={styles.mode}>
                 <Text style={styles.font}>Choose Mode</Text>
                 <View style={styles.switch}>
                     <Text style={styles.font1}>Dark Mode</Text>
@@ -45,40 +44,35 @@ export default Mode;
 
 const styles = StyleSheet.create({
 
-    view4: {
-        marginBottom: 30,
-        marginLeft: 45,
-        height: 220,
-        width: "75%",
-        backgroundColor: "white",
-        borderRadius: 10,
+    container: {
+        // backgroundColor: 'white',
+        height: '100%',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    mode: {
+        backgroundColor: 'white',
         elevation: 20,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 3 },
-        shadowOpacity: 0.5,
-        shadowRadius: 5,
+        borderRadius: 20,
         paddingLeft: 50,
-        paddingTop: 15,
-        marginTop: 150
+        paddingRight: 50,
+        paddingBottom: 50,
+        paddingTop: 30
     },
     font: {
         fontFamily: "OpenSansBold",
         color: "#696969",
         fontSize: 20,
-        marginTop: 10,
-        marginRight: 80,
-        marginBottom: 10
+        paddingBottom: 40
     },
     font1: {
         fontFamily: "OpenSansSemiBold",
         color: "#696969",
         fontSize: 18,
-        marginTop: 10,
-        marginRight: 80,
-        marginBottom: 10
+        paddingRight: 50
     },
-    switch:{
-        flexDirection:'row',
-        justifyContent:'space-between'
+    switch: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     }
 })

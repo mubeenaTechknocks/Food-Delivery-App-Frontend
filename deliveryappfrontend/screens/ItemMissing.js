@@ -13,7 +13,7 @@ const ItemMissing = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            
+
             <View style={styles.textcontainer}>
                 <Text style={styles.text}>Item Missing</Text>
             </View>
@@ -36,7 +36,7 @@ const ItemMissing = ({ navigation }) => {
                                 color="#FDC913"
                             />
                         </View>
-                        <View  style={styles.ordercontainer}>
+                        <View style={styles.ordercontainer}>
                             <Text style={styles.item}>1 * Milkshake</Text>
                             <Checkbox
                                 status={item2 ? 'checked' : 'unchecked'}
@@ -48,12 +48,13 @@ const ItemMissing = ({ navigation }) => {
                         </View>
                     </View>
                 </View>
+                <View style={styles.pad}>
+                    <TouchableOpacity style={styles.detailcontainer}>
+                        <Text style={styles.add}>Send Notification to Restaurant</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-            <View style={styles.pad}>
-                <TouchableOpacity style={styles.detailcontainer}>
-                    <Text style={styles.add}>Send Notification to Restaurant</Text>
-                </TouchableOpacity>
-            </View>
+
         </View>
     )
 }
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
         paddingRight: 20,
 
     },
-  
+
     inputcontainer: {
         backgroundColor: 'white',
         elevation: 20,
@@ -90,11 +91,11 @@ const styles = StyleSheet.create({
         fontFamily: 'OpenSansSemiBold',
         fontSize: 18,
         alignSelf: 'center',
-        color:"#696969"
+        color: "#696969"
     },
     detailcontainer: {
         backgroundColor: 'white',
-        elevation: 20,
+        elevation: 2,
         borderRadius: 10,
         padding: 20
     },
@@ -107,12 +108,12 @@ const styles = StyleSheet.create({
     res: {
         fontFamily: 'OpenSansBold',
         fontSize: 20,
-        color:"#696969"
+        color: "#696969"
     },
     order: {
         fontFamily: 'OpenSansSemiBold',
         fontSize: 18,
-        color:"#696969"
+        color: "#696969"
         // alignSelf:'center'
     },
     item: {
@@ -120,12 +121,12 @@ const styles = StyleSheet.create({
         fontSize: 15,
         paddingLeft: 20,
         paddingTop: 10,
-        color:"#696969"
+        color: "#696969"
     },
     text: {
         fontSize: 25,
         fontFamily: 'OpenSansBold',
-        color:"#696969"
+        color: "#696969"
     },
     textcontainer: {
         paddingBottom: 50
@@ -133,8 +134,8 @@ const styles = StyleSheet.create({
     pad: {
         paddingTop: 30
     },
-    ordercontainer:{
-        flexDirection:'row',
-        justifyContent:'space-between'
+    ordercontainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     }
 })

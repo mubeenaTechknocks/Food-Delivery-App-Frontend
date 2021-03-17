@@ -28,14 +28,15 @@ const DeliveryCompleted = ({ navigation }) => {
                         </View>
                     </View>
                 </View>
-            </View>
-            <View style={styles.padbutton}>
+                <View style={styles.padbutton}>
                 <TouchableOpacity style={styles.inputButton} onPress={()=>navigation.navigate("SearchOrder")}>
                     <Text
                         style={styles.button}
                     >Delivery Completed</Text>
                 </TouchableOpacity>
             </View>
+            </View>
+           
         </View>
     )
 }
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     padbutton: {
-        paddingTop: 50,
+        paddingTop: 30,
         paddingBottom: 20
     },
     inputcontainer: {
@@ -97,7 +98,7 @@ const styles = StyleSheet.create({
     },
     detailcontainer: {
         backgroundColor: 'white',
-        elevation: 20,
+        elevation: 2,
         borderRadius: 10,
         padding:20
     },

@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         padding: 50,
         borderRadius: 20,
-        elevation:20
+        elevation:5
     },
     startcontainer: {
         backgroundColor: '#FDC913',
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         paddingBottom: 30,
         borderRadius: 20,
-        elevation:20
+        elevation:5
 
     },
     cardcontainer: {

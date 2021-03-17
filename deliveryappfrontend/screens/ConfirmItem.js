@@ -20,7 +20,7 @@ const ConfirmItem = ({ navigation }) => {
                 </View>
                 <Text style={styles.add}>1 * Milkshake</Text>
                 <Text style={styles.add}>1 * Burger</Text>
-            </View>
+          
             <View style={styles.pad}></View>
             <TouchableOpacity style={styles.detailcontainer}>
                 <Text style={styles.order}>Pay Rs. 300 to Restaurant</Text>
@@ -39,6 +39,7 @@ const ConfirmItem = ({ navigation }) => {
                         style={styles.button}
                     >Confirm</Text>
                 </TouchableOpacity>
+                </View>
             </View>
         </View>
     )
@@ -74,7 +75,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     padbutton: {
-        paddingTop: 50,
+        paddingTop: 30,
         paddingBottom: 20
     },
     inputcontainer: {
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
     },
     detailcontainer: {
         backgroundColor: 'white',
-        elevation: 20,
+        elevation: 2,
         borderRadius: 10,
         padding: 20
     },
@@ -138,6 +139,6 @@ const styles = StyleSheet.create({
         paddingBottom: 50
     },
     pad: {
-        paddingTop: 10
+        paddingTop: 30
     }
 })
