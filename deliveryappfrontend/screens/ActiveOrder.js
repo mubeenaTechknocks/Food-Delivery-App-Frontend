@@ -198,7 +198,9 @@ const styles = StyleSheet.create({
     buttoncontainer: {
         paddingTop: 20,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        paddingRight:30,
+        paddingLeft:30
     },
     buttonconfirm: {
         backgroundColor: 'green',

@@ -1,9 +1,8 @@
 import React, { useEffect, useContext, useState } from 'react';
-import { StyleSheet, Text, View, Switch, ScrollView, TextInput, ImageBackground, Image } from 'react-native';
-
+import { StyleSheet, Text, View, Switch, TouchableOpacity } from 'react-native';
 import { RadioButton, useTheme } from 'react-native-paper';
 import { AuthContext } from '../Components/Context'
-// import { useTheme} from '@react-navigation/native';
+import Icon1 from 'react-native-vector-icons/Ionicons'
 
 const Mode = ({ navigation }) => {
 
@@ -17,20 +16,28 @@ const Mode = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.mode}>
-                <Text style={styles.font}>Choose Mode</Text>
-                <View style={styles.switch}>
-                    <Text style={styles.font1}>Dark Mode</Text>
-                    <Switch
-                        trackColor={{ false: "#767577", true: "#81b0ff" }}
-                        thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
-                        // ios_backgroundColor="#3e3e3e"
-                        onValueChange={toggleTheme}
-                        value={paperTheme.dark}
-                    />
+            <View style={styles.textcontainer}>
+                <TouchableOpacity>
+                    <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={() => navigation.navigate("Settings")} style={styles.menu} />
+                </TouchableOpacity>
+                <Text style={styles.text}>Mode</Text>
+            </View>
+           <View style={styles.modecontainer}>
+                <View style={styles.mode}>
+                    <Text style={styles.font}>Choose Mode</Text>
+                    <View style={styles.switch}>
+                        <Text style={styles.font1}>Dark Mode</Text>
+                        <Switch
+                            trackColor={{ false: "#767577", true: "#81b0ff" }}
+                            thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+                            // ios_backgroundColor="#3e3e3e"
+                            onValueChange={toggleTheme}
+                            value={paperTheme.dark}
+                        />
+                    </View>
+                    </View>
                 </View>
             </View>
-        </View>
     )
 
 
@@ -47,8 +54,9 @@ const styles = StyleSheet.create({
     container: {
         // backgroundColor: 'white',
         height: '100%',
-        alignItems: 'center',
-        justifyContent: 'center'
+        paddingTop: 10,
+        paddingLeft: 20,
+        paddingRight: 20
     },
     mode: {
         backgroundColor: 'white',
@@ -74,5 +82,22 @@ const styles = StyleSheet.create({
     switch: {
         flexDirection: 'row',
         justifyContent: 'space-between'
+    },
+    menu: {
+        paddingRight: 110,
+        paddingTop: 5
+    },
+    textcontainer:{
+        paddingBottom:200,
+        flexDirection:'row',
+    },
+    text: {
+        alignSelf: 'center',
+        fontFamily: 'OpenSansBold',
+        fontSize: 25,
+        color: '#696969'
+    },
+    modecontainer:{
+        alignItems: 'center',
     }
 })

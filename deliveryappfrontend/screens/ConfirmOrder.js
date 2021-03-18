@@ -26,7 +26,7 @@ const ConfirmOrder = ({navigation}) => {
             </View>
             <View style={styles.pad}></View>
             <View style={styles.inputcontainer}>
-                <TouchableOpacity style={styles.iconcontainer} onPress={()=>{navigation.navigate("DeliverMap")}}>
+                <TouchableOpacity style={styles.iconcontainer} onPress={()=>{navigation.navigate("DeliveryMap")}}>
                     <Text style={styles.title}>Deliver</Text>
                     <Icon name="caretright" size={25} color="white" />
                 </TouchableOpacity>

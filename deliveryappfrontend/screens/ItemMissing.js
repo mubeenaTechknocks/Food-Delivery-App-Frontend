@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, StatusBar } from 'react-native'
 import { RadioButton, Checkbox, useTheme } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-
+import Icon1 from 'react-native-vector-icons/Ionicons'
 
 const ItemMissing = ({ navigation }) => {
 
@@ -15,6 +15,9 @@ const ItemMissing = ({ navigation }) => {
         <View style={styles.container}>
 
             <View style={styles.textcontainer}>
+            <TouchableOpacity>
+                    <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={() => navigation.navigate("ConfirmItem")} style={styles.menu} />
+                </TouchableOpacity>
                 <Text style={styles.text}>Item Missing</Text>
             </View>
             <View style={styles.inputcontainer}>
@@ -129,7 +132,8 @@ const styles = StyleSheet.create({
         color: "#696969"
     },
     textcontainer: {
-        paddingBottom: 50
+        paddingBottom: 50,
+        flexDirection:'row'
     },
     pad: {
         paddingTop: 30
@@ -137,5 +141,8 @@ const styles = StyleSheet.create({
     ordercontainer: {
         flexDirection: 'row',
         justifyContent: 'space-between'
+    },
+    menu:{
+        paddingRight:80
     }
 })

@@ -11,19 +11,19 @@ const SearchOrder = ({ navigation }) => {
     const theme = useTheme()
     return (
         <View style={styles.container}>
-          
+
             <View>
                 <View style={styles.iconcontainer}>
                     <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
                         <Icon name="dots-three-vertical" size={25} color="black" />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.icon1}>
+                    <TouchableOpacity style={styles.icon1} onPress={() => navigation.navigate("Notification")}>
                         <Icon1 name="notifications" size={25} color="black" />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.icon2}>
+                    <TouchableOpacity style={styles.icon2} onPress={() => navigation.navigate("Map")}>
                         <Icon1 name="location-sharp" size={25} color="black" />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.icon3}>
+                    <TouchableOpacity style={styles.icon3} onPress={() => navigation.navigate("Help")}>
                         <Icon1 name="help-circle" size={25} color="black" />
                     </TouchableOpacity>
 
@@ -40,32 +40,32 @@ const SearchOrder = ({ navigation }) => {
                         <View style={styles.pad}></View>
                         <View >
                             <View style={styles.option}>
-                                <TouchableOpacity style={styles.touch1} >
+                                <TouchableOpacity style={styles.touch1} onPress={() => navigation.navigate("Earnings")} >
                                     <Text style={styles.text}>Rs.50</Text>
                                     <Text style={styles.text}>Today's Earning</Text>
 
                                 </TouchableOpacity>
-                                <TouchableOpacity style={styles.touch1} >
+                                <TouchableOpacity style={styles.touch1} onPress={() => navigation.navigate("EarningDetail")} >
                                     <Text style={styles.text}>Rs.100</Text>
                                     <Text style={styles.text}>Week's Earning</Text>
                                 </TouchableOpacity>
                             </View>
                             <View style={styles.option}>
-                                <TouchableOpacity style={styles.touch1}>
+                                <TouchableOpacity style={styles.touch1} onPress={() => navigation.navigate("COD")} >
                                     <Text style={styles.text}>Rs.10 </Text>
                                     <Text style={styles.text}>COD</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={styles.touch1}>
+                                <TouchableOpacity style={styles.touch1} onPress={() => navigation.navigate("DeliveryTip")} >
                                     <Text style={styles.text}>Rs.20</Text>
                                     <Text style={styles.text}>Delivery Tip</Text>
                                 </TouchableOpacity>
                             </View>
                             <View style={styles.option}>
-                                <TouchableOpacity style={styles.shift} >
+                                <TouchableOpacity style={styles.shift} onPress={() => navigation.navigate("Shift")} >
                                     <Text style={styles.shifttext}>Shift Details</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={styles.login} >
+                                <TouchableOpacity style={styles.login} onPress={() => navigation.navigate("LoginHistory")} >
                                     <Text style={styles.logintext}>Login History</Text>
 
                                 </TouchableOpacity>
@@ -158,13 +158,13 @@ const styles = StyleSheet.create({
         paddingTop: 30,
         paddingLeft: 20,
         paddingBottom: 30,
-        paddingRight:20,
+        paddingRight: 20,
         borderRadius: 20,
         elevation: 5,
     },
     startcontainer: {
         color: '#696969',
-        paddingTop:10,
+        paddingTop: 10,
         alignSelf: "center",
         fontFamily: 'OpenSansSemiBold',
         fontSize: 20

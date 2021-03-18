@@ -1,10 +1,14 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import Icon1 from 'react-native-vector-icons/Ionicons'
 
 const PickupCompleted = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.textcontainer}>
+            <TouchableOpacity>
+                    <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={() => navigation.navigate("ConfirmItem")} style={styles.menu} />
+                </TouchableOpacity>
                 <Text style={styles.text}>Pickup</Text>
             </View>
             <View style={styles.input}>
@@ -47,7 +51,8 @@ const styles = StyleSheet.create({
         color:'#696969'
     },
     textcontainer: {
-        paddingBottom: 50
+        paddingBottom: 50,
+        flexDirection:'row'
     },
     inputButton: {
         paddingTop: 10,
@@ -87,5 +92,8 @@ const styles = StyleSheet.create({
         fontSize:20,
         alignSelf:'center',
         color:'#696969'
+    },
+    menu:{
+        paddingRight:100
     }
 })

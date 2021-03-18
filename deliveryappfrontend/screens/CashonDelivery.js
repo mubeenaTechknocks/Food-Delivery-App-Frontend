@@ -1,6 +1,7 @@
 import React, { useState, createRef } from 'react'
 import { View, Text, TextInput, StyleSheet, Keyboard, TouchableOpacity, StatusBar } from 'react-native'
 import { RadioButton, useTheme } from 'react-native-paper'
+import Icon1 from 'react-native-vector-icons/Ionicons'
 
 const CashonDelivery = ({ navigation }) => {
 
@@ -70,6 +71,9 @@ const CashonDelivery = ({ navigation }) => {
      
             <View style={styles.inputcontainer}>
                 <View style={styles.registercontainer}>
+                <TouchableOpacity>
+                    <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={() => navigation.navigate("DeliveryCOD")} style={styles.menu} />
+                </TouchableOpacity>
                     <Text style={styles.text}>Collect Cash on Delivery</Text>
                 </View>
                 <View style={styles.padcontainer}>
@@ -209,9 +213,11 @@ const styles = StyleSheet.create({
     registercontainer: {
         // backgroundColor: '#FDC913',
         paddingBottom: 50,
-        paddingTop: 5,
-        // marginLeft:10
+       flexDirection:'row'
 
+    },
+    menu:{
+        paddingRight:30
     }
 
 })

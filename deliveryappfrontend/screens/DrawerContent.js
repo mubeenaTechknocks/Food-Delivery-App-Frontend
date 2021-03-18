@@ -78,17 +78,18 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontFamily:'OpenSansSemiBold',
     marginBottom:10,
-    fontSize:16,
+    fontSize:18,
   
   },
   title1: {
     marginTop: 20,
     fontFamily:'OpenSansRegular',
-    fontSize:16
+    fontSize:18
   },
   caption: {
     fontSize: 12,
-    fontFamily:'OpenSansRegular'
+    fontFamily:'OpenSansRegular',
+    fontSize:15
   },
   drawerSection: {
     marginTop: 15,
@@ -103,6 +104,7 @@ const styles = StyleSheet.create({
   },
   drawer:{
     fontFamily:'OpenSansSemiBold',
-    color:'grey'
+    color:'grey',
+    fontSize:15
   }
 });

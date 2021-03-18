@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, StatusBar } from 'react-native'
 import { RadioButton, useTheme } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import Icon1 from 'react-native-vector-icons/Ionicons'
 
 const DeliveryCOD = ({ navigation }) => {
     const { colors } = useTheme()
@@ -10,6 +11,9 @@ const DeliveryCOD = ({ navigation }) => {
         <View style={styles.container}>
             
             <View style={styles.textcontainer}>
+            <TouchableOpacity>
+                    <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={() => navigation.navigate("Deliver")} style={styles.menu} />
+                </TouchableOpacity>
                 <Text style={styles.text}>Deliver</Text>
             </View>
             <View style={styles.input}>
@@ -140,7 +144,8 @@ const styles = StyleSheet.create({
         color:'#696969'
     },
     textcontainer: {
-        paddingBottom: 50
+        paddingBottom: 50,
+        flexDirection:'row'
     },
     input:{
         backgroundColor:'white',
@@ -181,6 +186,9 @@ const styles = StyleSheet.create({
         fontFamily:'OpenSansBold',
         fontSize:18,
         color:'#696969'
+    },
+    menu:{
+        paddingRight:100
     }
 
 })

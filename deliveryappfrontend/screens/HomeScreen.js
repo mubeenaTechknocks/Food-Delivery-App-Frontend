@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, StatusBar, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StatusBar, StyleSheet,PushNotificationIOS, } from 'react-native'
 import Icon from 'react-native-vector-icons/Entypo'
 import Icon1 from 'react-native-vector-icons/Ionicons'
 
@@ -11,72 +11,72 @@ const HomeScreen = ({ navigation }) => {
     const theme = useTheme()
     return (
         <View style={styles.container}>
-            <StatusBar backgroundColor={colors.background} barStyle={theme.dark ? "light-content" :"dark-content"} />
+            <StatusBar backgroundColor={colors.background} barStyle={theme.dark ? "light-content" : "dark-content"} />
             <View>
                 <View style={styles.iconcontainer}>
                     <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
                         <Icon name="dots-three-vertical" size={25} color="black" />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.icon1}>
+                    <TouchableOpacity style={styles.icon1} onPress={() => navigation.navigate("Notification")}>
                         <Icon1 name="notifications" size={25} color="black" />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.icon2}>
+                    <TouchableOpacity style={styles.icon2} onPress={() => navigation.navigate("Map")}>
                         <Icon1 name="location-sharp" size={25} color="black" />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.icon3}>
+                    <TouchableOpacity style={styles.icon3} onPress={() => navigation.navigate("Help")}>
                         <Icon1 name="help-circle" size={25} color="black" />
                     </TouchableOpacity>
 
                 </View>
                 <View style={styles.menucontainer}>
-                <View style={styles.homecontainer}>
+                    <View style={styles.homecontainer}>
 
-                    <View style={styles.start}>
-                        <TouchableOpacity onPress={() => navigation.navigate("SearchOrder")} >
-                            <Text style={styles.startcontainer}>START DUTY</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.pad}></View>
-                    <View >
-                        <View style={styles.option}>
-                            <TouchableOpacity style={styles.touch1} >
-                                <Text style={styles.text}>Rs.50</Text>
-                                <Text style={styles.text}>Today's Earning</Text>
-
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.touch1} >
-                                <Text style={styles.text}>Rs.100</Text>
-                                <Text style={styles.text}>Week's Earning</Text>
+                        <View style={styles.start}>
+                            <TouchableOpacity onPress={() => navigation.navigate("SearchOrder")} >
+                                <Text style={styles.startcontainer}>START DUTY</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={styles.option}>
-                            <TouchableOpacity style={styles.touch1}>
-                                <Text style={styles.text}>Rs.10 </Text>
-                                <Text style={styles.text}>COD</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.touch1}>
-                                <Text style={styles.text}>Rs.20</Text>
-                                <Text style={styles.text}>Delivery Tip</Text>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.option}>
-                            <TouchableOpacity style={styles.shift} >
-                                <Text style={styles.shifttext}>Shift Details</Text>
-                            </TouchableOpacity>
-                            
-                            <TouchableOpacity style={styles.login} >
-                                <Text style={styles.logintext}>Login History</Text>
+                        <View style={styles.pad}></View>
+                        <View >
+                            <View style={styles.option}>
+                                <TouchableOpacity style={styles.touch1} onPress={() => navigation.navigate("Earnings")} >
+                                    <Text style={styles.text}>Rs.50</Text>
+                                    <Text style={styles.text}>Today's Earning</Text>
 
+                                </TouchableOpacity>
+                                <TouchableOpacity style={styles.touch1} onPress={() => navigation.navigate("EarningDetail")} >
+                                    <Text style={styles.text}>Rs.100</Text>
+                                    <Text style={styles.text}>Week's Earning</Text>
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.option}>
+                                <TouchableOpacity style={styles.touch1} onPress={() => navigation.navigate("COD")} >
+                                    <Text style={styles.text}>Rs.10 </Text>
+                                    <Text style={styles.text}>COD</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity style={styles.touch1} onPress={() => navigation.navigate("DeliveryTip")} >
+                                    <Text style={styles.text}>Rs.20</Text>
+                                    <Text style={styles.text}>Delivery Tip</Text>
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.option}>
+                                <TouchableOpacity style={styles.shift} onPress={() => navigation.navigate("Shift")} >
+                                    <Text style={styles.shifttext}>Shift Details</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={styles.login} onPress={() => navigation.navigate("LoginHistory")} >
+                                    <Text style={styles.logintext}>Login History</Text>
+
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                        <View style={styles.pad1}></View>
+                        <View style={styles.card}>
+                            <Text style={styles.cardtext}>See your ID card</Text>
+                            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+                                <Text style={styles.cardcontainer}>GO TO PROFILE</Text>
                             </TouchableOpacity>
                         </View>
-                    </View>
-                    <View style={styles.pad1}></View>
-                    <View style={styles.card}>
-                        <Text style={styles.cardtext}>See your ID card</Text>
-                        <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-                            <Text style={styles.cardcontainer}>GO TO PROFILE</Text>
-                        </TouchableOpacity>
-                    </View>
                     </View>
                 </View>
             </View>
@@ -89,7 +89,7 @@ export default HomeScreen
 const styles = StyleSheet.create({
     container: {
         // backgroundColor: '#FDC913',
-        height:'100%',
+        height: '100%',
         // paddingLeft:20,
         // paddingRight:20
     },
@@ -97,10 +97,10 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20,
         paddingTop: 30,
-        backgroundColor:'white',
-        elevation:20,
-        borderRadius:10,
-        paddingBottom:30
+        backgroundColor: 'white',
+        elevation: 20,
+        borderRadius: 10,
+        paddingBottom: 30
     },
     iconcontainer: {
         flexDirection: 'row',
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         padding: 50,
         borderRadius: 20,
-        elevation:5
+        elevation: 5
     },
     startcontainer: {
         backgroundColor: '#FDC913',
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         paddingBottom: 30,
         borderRadius: 20,
-        elevation:5
+        elevation: 5
 
     },
     cardcontainer: {
@@ -206,35 +206,35 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         paddingLeft: 20,
         paddingRight: 20,
-        paddingTop:40
+        paddingTop: 40
     },
     shift: {
         backgroundColor: "#FDC913",
         justifyContent: 'center',
         borderRadius: 20,
-        height:40,
-        paddingLeft:20,
-        paddingRight:20,
-        width:130
+        height: 40,
+        paddingLeft: 20,
+        paddingRight: 20,
+        width: 130
 
     },
-    shifttext:{
-        color:'white',
-        fontFamily:'OpenSansSemiBold',
-        fontSize:15,
+    shifttext: {
+        color: 'white',
+        fontFamily: 'OpenSansSemiBold',
+        fontSize: 15,
         // borderBottomWidth:1,
         // borderBottomColor:'white'
     },
-    logintext:{
-        fontFamily:'OpenSansSemiBold',
-        fontSize:15,
+    logintext: {
+        fontFamily: 'OpenSansSemiBold',
+        fontSize: 15,
         // borderBottomWidth:1,
-        color:"#FDC913",
+        color: "#FDC913",
         // borderBottomColor:"#FDC913"
     },
-    login:{
-        paddingLeft:50,
-        paddingTop:10
+    login: {
+        paddingLeft: 50,
+        paddingTop: 10
     }
 
 })

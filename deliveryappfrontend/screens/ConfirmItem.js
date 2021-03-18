@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity, Alert, StyleSheet, StatusBar } from 'react-native'
 import { RadioButton, useTheme } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import Icon1 from 'react-native-vector-icons/Ionicons'
 
 const ConfirmItem = ({ navigation }) => {
 
@@ -12,6 +13,9 @@ const ConfirmItem = ({ navigation }) => {
         <View style={styles.container}>
         
             <View style={styles.textcontainer}>
+            <TouchableOpacity>
+                    <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={() => navigation.navigate("Pickup")} style={styles.menu} />
+                </TouchableOpacity>
                 <Text style={styles.text}>Confirm Item</Text>
             </View>
             <View style={styles.inputcontainer}>
@@ -136,9 +140,13 @@ const styles = StyleSheet.create({
         color:'#696969'
     },
     textcontainer: {
-        paddingBottom: 50
+        paddingBottom: 50,
+        flexDirection:'row'
     },
     pad: {
         paddingTop: 30
+    },
+    menu:{
+        paddingRight:50
     }
 })

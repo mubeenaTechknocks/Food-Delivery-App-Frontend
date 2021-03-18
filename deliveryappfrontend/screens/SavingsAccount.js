@@ -1,6 +1,7 @@
 import React, { useState, createRef } from 'react'
 import { View, Text, TextInput, StyleSheet, Keyboard, TouchableOpacity, StatusBar } from 'react-native'
 import { RadioButton, useTheme } from 'react-native-paper'
+import Icon1 from 'react-native-vector-icons/Ionicons'
 
 const SavingsAccount = ({ navigation }) => {
 
@@ -75,18 +76,21 @@ const SavingsAccount = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-           
+            <View style={styles.registercontainer}>
+                <TouchableOpacity>
+                    <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={() => navigation.navigate("Profile")} style={styles.menu} />
+                </TouchableOpacity>
+                <Text style={styles.text}>Savings Account</Text>
+            </View>
             <View style={styles.inputcontainer}>
-                <View style={styles.registercontainer}>
-                    <Text style={styles.text}>Savings Account</Text>
-                </View>
+
                 <View style={styles.padcontainer}>
                     <View style={styles.textinput}>
                         <Text style={styles.textstyle}>Account Number</Text>
                         <TextInput
                             keyboardType="phone-pad"
                             onChangeText={(accountNumber) => setAccountNumber(accountNumber)}
-                           
+
                             returnKeyType="next"
                             ref={accountnumberInputRef}
                             onSubmitEditing={() =>
@@ -110,7 +114,7 @@ const SavingsAccount = ({ navigation }) => {
                                 accountnameInputRef.current &&
                                 accountnameInputRef.current.focus()
                             }
-                            
+
                             blurOnSubmit={false} />
                         <View style={styles.line}></View>
                     </View>
@@ -148,27 +152,15 @@ const styles = StyleSheet.create({
         height: '100%',
         paddingLeft: 20,
         paddingRight: 20,
-        paddingTop: 30
+        paddingTop: 10
 
     },
-    // inputcontainer: {
-    //     backgroundColor: 'white',
-    //     borderRadius: 10,
-    //     elevation: 5
-    // },
-    // padcontainer: {
-    //     paddingTop: 20,
-    //     paddingLeft: 20,
-    //     paddingRight: 20,
-    //     paddingBottom:10
-
-
-    // },
+   
     text: {
         fontFamily: 'OpenSansBold',
         alignSelf: 'center',
         fontSize: 25,
-        color:'#696969'
+        color: '#696969'
     },
 
     textinput: {
@@ -179,13 +171,13 @@ const styles = StyleSheet.create({
         fontFamily: 'OpenSansSemiBold',
         fontSize: 16,
         paddingBottom: 10,
-        color:'#696969'
+        color: '#696969'
     },
     line: {
         borderBottomWidth: 1,
         borderBottomColor: '#696969'
     },
-   
+
     inputButton: {
         paddingTop: 10,
         backgroundColor: '#FDC913',
@@ -209,11 +201,12 @@ const styles = StyleSheet.create({
         paddingBottom: 20
     },
     registercontainer: {
-        // backgroundColor: '#FDC913',
-        paddingBottom: 50,
-        paddingTop: 5,
-        // marginLeft:10
-
-    }
+        paddingBottom:50,
+        flexDirection:'row'
+    },
+    menu: {
+        paddingRight: 50,
+        paddingTop: 5
+    },
 
 })
