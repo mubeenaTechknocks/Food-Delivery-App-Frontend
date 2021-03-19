@@ -1,34 +1,43 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icons from 'react-native-vector-icons/Ionicons';
 
-const IdPermits = ({navigation}) =>{
-    return(
-        
-        <View style={{paddingTop:50,backgroundColor:"#f5fffa",paddingBottom:300}}>
-            <View style={{flexDirection:'row'}}>
-            <Icons name="arrow-back" size={30} style={{marginLeft:20,marginRight:12,color:"#FDC913"}}></Icons>
-            <Text style={{fontSize:24,fontFamily:"OpenSansBold",
-                marginBottom:20,color:"#696969"}}>Id & Permit documents</Text>
+const IdPermits = ({ navigation }) => {
+    return (
+
+        <View style={{ paddingTop: 10, paddingBottom: 300 }}>
+            <View style={{ flexDirection: 'row' }}>
+                <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+                    <Icons name="arrow-back" size={30} style={{ marginLeft: 20, marginRight: 20, color: "#FDC913" }}></Icons>
+                </TouchableOpacity>
+                <Text style={{
+                    fontSize: 24, fontFamily: "OpenSansBold",
+                    marginBottom: 20, color: "#696969"
+                }}>Id & Permit documents</Text>
             </View>
 
             <View style={styles.view5}>
-            <Text  onPress={() => navigation.navigate("ReportProblem")}
-            style={{paddingLeft:105,fontFamily:"OpenSansSemiBold",
-            paddingTop:2,color:"#696969",fontSize:17}}>Id card</Text></View>
+                <Text onPress={() => navigation.navigate("Idcard")}
+                    style={{
+                        paddingLeft: 105, fontFamily: "OpenSansSemiBold",
+                        paddingTop: 2, color: "#696969", fontSize: 17
+                    }}>Id card</Text></View>
 
             <View style={styles.view5}>
-            <Text   onPress={() => navigation.navigate("PushNotification")}
-            style={{paddingLeft:90,paddingTop:3,fontFamily:"OpenSansSemiBold",
-            color:"#696969",fontSize:17}}>Documents</Text></View>
+                <Text onPress={() => navigation.navigate("Document")}
+                    style={{
+                        paddingLeft: 90, paddingTop: 3, fontFamily: "OpenSansSemiBold",
+                        color: "#696969", fontSize: 17
+                    }}>Documents</Text></View>
         </View>
-        
+
     )
 }
 
 export default IdPermits;
 
-const styles= StyleSheet.create({
+const styles = StyleSheet.create({
     view5: {
         marginBottom: 30,
         marginLeft: 35,
@@ -42,11 +51,11 @@ const styles= StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 5,
         // paddingLeft: 120,
-        padding:10,
-        marginTop:25,
-        marginRight:30,
-        color:"#696969"
+        padding: 10,
+        marginTop: 25,
+        marginRight: 30,
+        color: "#696969"
 
     },
-    
+
 })

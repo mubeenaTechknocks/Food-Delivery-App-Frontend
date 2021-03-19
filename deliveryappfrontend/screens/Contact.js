@@ -9,9 +9,11 @@ import Icons from 'react-native-vector-icons/Ionicons';
 const Contact = ({navigation}) =>{
   
     return(
-        <View style={{paddingTop:50,backgroundColor:"#f5fffa",paddingBottom:300}}>
+        <View style={{paddingTop:10,paddingBottom:300}}>
             <View style={{flexDirection:'row'}}>
-             <Icons name="arrow-back"  color="#FDC913" size={35} style={{marginTop:10,marginLeft:15}}></Icons>
+                <TouchableOpacity onPress={()=>navigation.navigate("Settings")}>
+             <Icons name="arrow-back"  color="#FDC913" size={35} style={{marginLeft:15,marginRight:80}}></Icons>
+             </TouchableOpacity>
             <Text style={styles.contact}>Contact</Text>
             {/* <Text style={styles.back}>Back</Text> */}
              </View>
@@ -44,11 +46,10 @@ export default Contact;
 const styles = StyleSheet.create({
     contact:{
         marginLeft:20,
-        marginTop:10,
-      
         fontSize:24,
         fontFamily:"OpenSansBold",
-        color:"#696969"
+        color:"#696969",
+        paddingBottom:100
     },
     back:{
         fontSize:15,
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 5,
         paddingLeft:20,
-        //paddingTop:15,
+        // paddingTop:15,
         marginTop:45
     },
     contact1:{

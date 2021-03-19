@@ -1,60 +1,81 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Icons from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/AntDesign';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const Performance= ({navigation})=>{
-    return(
+const Performance = ({ navigation }) => {
+    return (
         <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{paddingTop:50,backgroundColor:"#f5fffa"}}>
-                 <View style={{flexDirection:'row'}}>
-            <Icons name="arrow-back" size={30} onPress={() => navigation.navigate("Contact")}
-             style={{marginLeft:20,marginRight:20,color:"#FDC913"}}></Icons>
-            <Text style={{fontSize:24,marginBottom:2,color:"#696969",fontFamily:"OpenSansBold",}}>Performance</Text>
-            
-            </View>
-            <Text style={{fontSize:15,marginLeft:70,marginBottom:15,fontFamily:"OpenSansSemiBold",
-                    color:"#696969"}}>22 Feb - 28 Feb</Text>
+            <View style={{ paddingTop: 10 }}>
+                <View style={{ flexDirection: 'row' }}>
+                    <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+                        <Icons name="arrow-back" size={30}
+                            style={{ marginLeft: 20, marginRight: 70, color: "#FDC913" }}></Icons>
+                    </TouchableOpacity>
+                    <Text style={{ fontSize: 24, marginBottom: 2, color: "#696969", fontFamily: "OpenSansBold", }}>Performance</Text>
 
-            <View style={styles.View1}>
-                <Icon name="like1" size={30} style={{marginLeft:130,marginTop:15,color:"#FDC913"}}></Icon>
-                <Text style={{marginTop:10,marginLeft:53,fontSize:20,fontFamily:"OpenSansSemiBold",
-                    color:"#696969"}}>No Reports, All Good</Text>
-
-            </View>
-            <Text style={{marginLeft:35,marginTop:20,fontSize:20,fontFamily:"OpenSansSemiBold",
-                    color:"#696969"}}>Details</Text>
-
-            <View style={styles.view6}>
-                <View style={styles.view4}>
-                    <Text style={{marginTop:20,marginLeft:20,fontSize:15,fontFamily:"OpenSansRegular",
-            color:"#696969"}}>Order Not Delivered</Text>
-                    <Text style={{marginTop:5,marginLeft:20,fontSize:15,fontFamily:"OpenSansRegular",
-            color:"#696969"}}>None</Text>
                 </View>
+                <Text style={{
+                    fontSize: 15, marginLeft: 140, marginBottom: 15, fontFamily: "OpenSansSemiBold",
+                    color: "#696969"
+                }}>22 Feb - 28 Feb</Text>
 
-                <View style={styles.view4}>
-                    <Text style={{marginTop:20,marginLeft:20,fontSize:15,fontFamily:"OpenSansRegular",
-            color:"#696969"}}>Order Rejected</Text>
-                    <Text style={{marginTop:5,marginLeft:20,fontSize:15,fontFamily:"OpenSansRegular",
-            color:"#696969"}}>None</Text>
+                <View style={styles.View1}>
+                    <Icon name="like1" size={30} style={{ marginLeft: 130, marginTop: 15, color: "#FDC913" }}></Icon>
+                    <Text style={{
+                        marginTop: 10, marginLeft: 53, fontSize: 20, fontFamily: "OpenSansSemiBold",
+                        color: "#696969"
+                    }}>No Reports, All Good</Text>
+
                 </View>
+                <Text style={{
+                    marginLeft: 35, marginTop: 20, fontSize: 20, fontFamily: "OpenSansSemiBold",
+                    color: "#696969"
+                }}>Details</Text>
 
-                <View style={styles.view4}>
-                    <Text style={{marginTop:10,marginLeft:20,fontSize:15,fontFamily:"OpenSansRegular",
-            color:"#696969"}}>Unprofessional Behaviour</Text>
-                    <Text style={{marginTop:5,marginLeft:20,fontSize:15,fontFamily:"OpenSansRegular",
-            color:"#696969"}}>None</Text>
+                <View style={styles.view6}>
+                    <View style={styles.view4}>
+                        <Text style={{
+                            marginTop: 20, marginLeft: 20, fontSize: 15, fontFamily: "OpenSansRegular",
+                            color: "#696969"
+                        }}>Order Not Delivered</Text>
+                        <Text style={{
+                            marginTop: 5, marginLeft: 20, fontSize: 15, fontFamily: "OpenSansRegular",
+                            color: "#696969"
+                        }}>None</Text>
+                    </View>
+
+                    <View style={styles.view4}>
+                        <Text style={{
+                            marginTop: 20, marginLeft: 20, fontSize: 15, fontFamily: "OpenSansRegular",
+                            color: "#696969"
+                        }}>Order Rejected</Text>
+                        <Text style={{
+                            marginTop: 5, marginLeft: 20, fontSize: 15, fontFamily: "OpenSansRegular",
+                            color: "#696969"
+                        }}>None</Text>
+                    </View>
+
+                    <View style={styles.view4}>
+                        <Text style={{
+                            marginTop: 10, marginLeft: 20, fontSize: 15, fontFamily: "OpenSansRegular",
+                            color: "#696969"
+                        }}>Unprofessional Behaviour</Text>
+                        <Text style={{
+                            marginTop: 5, marginLeft: 20, fontSize: 15, fontFamily: "OpenSansRegular",
+                            color: "#696969"
+                        }}>None</Text>
+                    </View>
                 </View>
             </View>
-        </View>
         </ScrollView>
     )
 }
 
 export default Performance;
 
-const styles= StyleSheet.create({
+const styles = StyleSheet.create({
     view5: {
         marginBottom: 0,
         marginLeft: 30,
@@ -68,10 +89,10 @@ const styles= StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 5,
         // paddingLeft: 120,
-        padding:10,
-        marginTop:20,
-        marginRight:5,
-        
+        padding: 10,
+        marginTop: 20,
+        marginRight: 5,
+
         //flexDirection:'row'
 
     },
@@ -88,9 +109,9 @@ const styles= StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 5,
         // paddingLeft: 120,
-        padding:10,
-        marginTop:20,
-        marginRight:30,
+        padding: 10,
+        marginTop: 20,
+        marginRight: 30,
         //flexDirection:'row'
 
     },
@@ -107,9 +128,9 @@ const styles= StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 5,
         // paddingLeft: 120,
-        padding:10,
-        marginTop:20,
-        marginRight:30,
+        padding: 10,
+        marginTop: 20,
+        marginRight: 30,
         //flexDirection:'row'
 
     },
@@ -126,11 +147,11 @@ const styles= StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 5,
         // paddingLeft: 120,
-        padding:10,
-        marginTop:20,
-        marginRight:30,
+        padding: 10,
+        marginTop: 20,
+        marginRight: 30,
         //flexDirection:'row'
 
     },
-    
+
 })

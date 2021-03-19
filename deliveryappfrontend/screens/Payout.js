@@ -2,12 +2,15 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Icons from 'react-native-vector-icons/Ionicons';
 import Icon1 from 'react-native-vector-icons/AntDesign';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Payout= ({navigation}) =>{
     return(
-        <View style={{paddingTop:50,backgroundColor:"#f5fffa",paddingBottom:300}}>
+        <View style={{paddingTop:10,paddingBottom:300}}>
             <View style={{flexDirection:'row'}}>
-            <Icons name="arrow-back" size={30} style={{marginLeft:20,marginRight:20,color:"#FDC913"}}></Icons>
+                    <TouchableOpacity onPress={()=>navigation.navigate("Earnings")}>
+            <Icons name="arrow-back" size={30} style={{marginLeft:20,marginRight:60,color:"#FDC913"}}></Icons>
+            </TouchableOpacity>
             <Text style={{fontSize:24,marginBottom:40,fontFamily:"OpenSansBold",
                     color:"#696969",}}>Payout History</Text>
             </View>
@@ -35,7 +38,7 @@ const Payout= ({navigation}) =>{
             </View>
             </View>
 
-            <Text style={{marginLeft:35,marginTop:20,fontFamily:"OpenSansSemiBold",fontSize:18,
+            <Text style={{marginLeft:35,fontFamily:"OpenSansSemiBold",fontSize:18,
                     color:"#696969"}}>Payout History</Text>
 
 

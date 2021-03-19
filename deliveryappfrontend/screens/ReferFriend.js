@@ -9,10 +9,12 @@ const ReferFriend = ({navigation}) =>{
     var items
     const [item, setItem] = useState('Ernakulam');
     return(
-        <View style={{paddingTop:50,backgroundColor:"#f5fffa",paddingBottom:300}}>
+        <View style={{paddingTop:10,paddingBottom:300}}>
           
           <View style={{flexDirection:'row'}}>
-            <Icons name="arrow-back" size={30} style={{marginLeft:20,marginRight:20,color:"#FDC913"}}></Icons>
+            <TouchableOpacity onPress={() =>navigation.navigate("ReferFriend2")}>
+            <Icons name="arrow-back" size={30} style={{marginLeft:20,marginRight:50,color:"#FDC913"}}></Icons>
+            </TouchableOpacity>
             <Text style={{fontSize:30,marginBottom:30,color:"#696969",fontFamily:"OpenSansBold",}}>Refer a Friend</Text>
             </View>
 
@@ -22,35 +24,11 @@ const ReferFriend = ({navigation}) =>{
             <View style={styles.view5}>
             <Text style={{marginLeft:35,color:"#696969",fontFamily:"OpenSansRegular",}}>Full Name</Text>
             <TextInput style={styles.input}></TextInput>
-
             <Text style={{marginLeft:35,marginTop:20,color:"#696969",fontFamily:"OpenSansRegular",}}>Mobile Number</Text>
             <TextInput style={styles.input} keyboardType="number-pad"></TextInput>
-
             <Text style={{marginLeft:35,marginTop:20,marginBottom:10,color:"#696969",fontFamily:"OpenSansRegular",}}>City</Text>
-
-            <DropDownPicker
-            items={[
-              { label: 'Ernakulam', value: 'Ernakulam' },
-              { label: 'Vytila', value: 'Vytila' },
-
-
-            ]}
-            defaultValue={items}
-            containerStyle={{ height: 40, width: "80%", marginLeft: 42 }}
-            placeholder="Select City"
-            style={styles.drop}
-            globalTextStyle={{color:"#696969",fontFamily:"OpenSansRegular",}}
-            itemStyle={{
-              justifyContent: 'flex-start'
-            }}
-            dropDownStyle={{ backgroundColor: '#fafafa' }}
-            onChangeItem={(item) => setItem(item.value)}
-
-          />
-
-           
-
-            <TouchableOpacity style={{ paddingTop: 5 }} onPress={() =>navigation.navigate("Earnings")}>
+            <TextInput style={styles.input} keyboardType="number-pad"></TextInput>
+            <TouchableOpacity style={{ paddingTop: 5 }} onPress={() =>navigation.navigate("ReferFriend2")}>
                             <Text style={{
                                 backgroundColor: "#FDC913",fontSize:15,
                                 color: "white", height: 38, paddingTop: 8, fontFamily:"OpenSansSemiBold",

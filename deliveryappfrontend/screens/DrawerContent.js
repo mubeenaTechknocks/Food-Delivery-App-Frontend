@@ -40,22 +40,22 @@ export function DrawerContent(props) {
           <DrawerItem
             label="Earnings"
             labelStyle={styles.drawer}
-            onPress={() => { }}
+            onPress={() => { props.navigation.navigate("Earnings")}}
           />
           <DrawerItem
             label="Performance"
             labelStyle={styles.drawer}
-            onPress={() => { }}
+            onPress={() => {props.navigation.navigate("Performance") }}
           />
           <DrawerItem
             label="Refer a friend"
             labelStyle={styles.drawer}
-            onPress={() => { }}
+            onPress={() => {props.navigation.navigate("ReferFriend2") }}
           />
           <DrawerItem
             label="Settings"
             labelStyle={styles.drawer}
-            onPress={() => props.navigation.navigate("Mode") }
+            onPress={() => props.navigation.navigate("Settings") }
           />
         </Drawer.Section>
 

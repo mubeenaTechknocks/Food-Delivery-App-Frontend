@@ -7,10 +7,12 @@ const Document = ({navigation}) =>{
     var items
     const [item, setItem] = useState('Adhaar card');
     return(
-        <View style={{paddingTop:50,backgroundColor:"#f5fffa",paddingBottom:300}}>
+        <View style={{paddingTop:10,paddingBottom:300}}>
           
           <View style={{flexDirection:'row'}}>
-            <Icons name="arrow-back" size={30} style={{marginLeft:20,marginRight:20,color:"#FDC913"}}></Icons>
+            <TouchableOpacity onPress={() =>navigation.navigate("IdPermits")}>
+            <Icons name="arrow-back" size={30} style={{marginLeft:20,marginRight:60,color:"#FDC913"}}></Icons>
+            </TouchableOpacity>
             <Text style={{fontSize:25,marginBottom:40,fontFamily:"OpenSansBold",
               color:"#696969"}}>Documents</Text>
             </View>
@@ -45,7 +47,7 @@ const Document = ({navigation}) =>{
               fontFamily:"OpenSansRegular",color:"#696969"}}>ID Number</Text>
             <TextInput style={styles.input} keyboardType="number-pad"></TextInput>
 
-            <TouchableOpacity style={{ paddingTop: 5 }} onPress={() =>navigation.navigate("Earnings")}>
+            <TouchableOpacity style={{ paddingTop: 5 }} onPress={() =>navigation.navigate("IdPermits")}>
                             <Text style={{
                                 backgroundColor: "#FDC913",fontSize:15,fontFamily:"OpenSansSemiBold",
                                 color: "white", height: 38, paddingTop: 8, 

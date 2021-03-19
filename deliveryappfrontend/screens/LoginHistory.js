@@ -2,13 +2,16 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Icons from 'react-native-vector-icons/Ionicons';
 import Icon1 from 'react-native-vector-icons/AntDesign';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const LoginHistory= ({navigation})=>{
     return(
-        <View style={{paddingTop:50,backgroundColor:"#f5fffa",paddingBottom:400}}>
+        <View style={{paddingTop:10,paddingBottom:400}}>
                  <View style={{flexDirection:'row'}}>
-            <Icons name="arrow-back" size={30} onPress={() => navigation.navigate("DeliveryTip")}
-            style={{marginLeft:20,marginRight:20,color:"#FDC913"}}></Icons>
+                     <TouchableOpacity>
+            <Icons name="arrow-back" size={30} onPress={() => navigation.navigate("HomeScreen")}
+            style={{marginLeft:20,marginRight:70,color:"#FDC913"}}></Icons>
+            </TouchableOpacity>
             <Text style={{fontSize:24,marginBottom:40,color:"#696969",fontFamily:"OpenSansBold",}}>Login History</Text>
             </View>
 
@@ -33,7 +36,7 @@ const LoginHistory= ({navigation})=>{
                 <View style={{flexDirection:'row'}}>
                 <Text style={{fontSize:15,paddingTop:15,paddingLeft:40,fontFamily:"OpenSansRegular",
                     color:"#696969"}}>05 Feb - 08 Feb</Text>
-                <Icon1 name="arrowright" size={15} onPress={() =>navigation.navigate("Payout")}
+                <Icon1 name="arrowright" size={15} onPress={() =>navigation.navigate("WeekLogin")}
                 style={{paddingLeft:56,paddingTop:15,fontSize:25,color:"#FDC913",}}></Icon1>
                 </View>
             </View>
@@ -49,7 +52,7 @@ const LoginHistory= ({navigation})=>{
                 <View style={{flexDirection:'row'}}>
                 <Text style={{fontSize:15,paddingTop:15,paddingLeft:40,fontFamily:"OpenSansRegular",
                     color:"#696969"}}>Date</Text>
-                <Icon1 name="arrowright" size={15} onPress={() =>navigation.navigate("Payout")}
+                <Icon1 name="arrowright" size={15} onPress={() =>navigation.navigate("WeekLogin")}
                 style={{paddingLeft:120,paddingTop:15,fontSize:25,color:"#FDC913"}}></Icon1>
                 </View>
             </View>

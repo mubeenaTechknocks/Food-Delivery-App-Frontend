@@ -8,21 +8,23 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 const ReferFriend2 = ({navigation}) =>{
   
     return(
-        <View style={{paddingTop:50,backgroundColor:"#f5fffa",paddingBottom:300}}>
+        <View style={{paddingTop:10,paddingBottom:300}}>
           
           <View style={{flexDirection:'row'}}>
-            <Icons name="arrow-back" size={30} style={{marginLeft:20,marginRight:20,color:"#FDC913"}}></Icons>
+              <TouchableOpacity onPress={() =>navigation.navigate("HomeScreen")}>
+            <Icons name="arrow-back" size={30} style={{marginLeft:20,marginRight:50,color:"#FDC913"}}></Icons>
+            </TouchableOpacity>
             <Text style={{fontSize:30,marginBottom:30,color:"#696969",fontFamily:"OpenSansBold"}}>Refer a Friend</Text>
             </View>
             <View style={styles.view5}>
                 <Text style={{paddingLeft:30,fontSize:18,color:"#696969",
                 fontFamily:"OpenSansSemiBold",}}>Refer your friend to join</Text>
-                <TouchableOpacity style={{ paddingTop: 5 }} onPress={() =>navigation.navigate("Earnings")}>
+                <TouchableOpacity style={{ paddingTop: 5 }} onPress={() =>navigation.navigate("ReferFriend")}>
                             <Text style={{
-                                backgroundColor: "#FDC913",fontSize:15,fontWeight:'700',
-                                color: "white", height: 38, paddingTop: 8, 
+                                backgroundColor: "#FDC913",fontSize:15,
+                                color: "white", paddingTop: 8, 
                                 paddingLeft: 35, paddingRight: 20, paddingBottom: 10,
-                                 borderRadius: 20, width: "50%", marginLeft:85,marginTop:20
+                                 borderRadius: 20, width: "50%", marginLeft:85,marginTop:20,fontFamily:"OpenSansSemiBold",
                             }}>REFER NOW</Text>
                         </TouchableOpacity>
             </View>

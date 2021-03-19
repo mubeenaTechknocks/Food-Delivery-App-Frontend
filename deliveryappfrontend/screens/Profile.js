@@ -40,7 +40,7 @@ const Profile = ({ navigation }) => {
                         <Text style={styles.touchtext}>Savings Account</Text>
                     </TouchableOpacity>
                     <View style={styles.pad}></View>
-                    <TouchableOpacity style={styles.touch}>
+                    <TouchableOpacity style={styles.touch} onPress={() => navigation.navigate("IdPermits")}>
                         <Text style={styles.touchtext}>ID & Permit Documents</Text>
                     </TouchableOpacity>
                     <View style={styles.pad}></View>
