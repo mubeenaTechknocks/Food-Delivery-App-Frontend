@@ -58,7 +58,8 @@ import EarningDetail from './screens/EarningDetail';
 import Performance from './screens/Performance';
 import Contact from './screens/Contact';
 import ProblemDetails from './screens/ProblemDetails';
-import PushNotification from './screens/PushNotification';
+import PushNotification from './Components/PushNotification';
+
 
 
 const Stack = createStackNavigator();
@@ -177,7 +178,7 @@ export default function App() {
               options={{
                 headerShown: false
               }}
-            />
+            /> 
             <Stack.Screen name="Pickup" component={Pickup}
               options={{
                 headerShown: false
@@ -373,6 +374,7 @@ export default function App() {
               options={
                 { headerShown: false }
               } /> 
+              
 
 
           </Stack.Navigator>

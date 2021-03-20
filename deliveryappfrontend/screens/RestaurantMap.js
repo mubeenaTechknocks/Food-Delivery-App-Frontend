@@ -60,7 +60,7 @@ const RestaurantMap = ({navigation}) => {
             <View>
                 <View style={styles.inputcontainer}>
                     <Icon name="restaurant" size={30} color="#696969" />
-                    <Text style={styles.text} >Restaurant Name</Text>
+                    <Text style={styles.text} onPress={()=>navigation.navigate("Pickup")} >Restaurant Name</Text>
                     <TouchableOpacity style={styles.iconcontainer} onPress={handleGetDirections}>
                         <Icon1 name="directions" size={30} color="#696969" />
                     </TouchableOpacity>

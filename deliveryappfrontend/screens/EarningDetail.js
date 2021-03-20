@@ -7,6 +7,7 @@ import Icon3 from 'react-native-vector-icons/AntDesign';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const EarningDetail = ({ navigation }) => {
+
         return (
                 <ScrollView showsVerticalScrollIndicator={false}>
                         <View style={{ paddingTop: 10, height:'100%' }}>
@@ -115,8 +116,12 @@ const EarningDetail = ({ navigation }) => {
                                                                         marginTop: 20, marginLeft: 20, fontFamily: "OpenSansRegular",
                                                                         color: "#696969"
                                                                 }}>Rs. 0</Text>
-                                                                <Icon2 onPress={() => navigation.navigate("Summary")} name="arrowright" style={{ marginLeft: 20, marginTop: 20, color: "#FDC913" }} size={20}></Icon2>
+                                                                <TouchableOpacity onPress={() => navigation.navigate("Summary")} >
+                                                                
+                                                                <Icon2 name="arrowright" style={{ marginLeft: 20, marginTop: 20, color: "#FDC913" }} size={20}></Icon2>
+                                                                </TouchableOpacity>
                                                         </View>
+        
 
                                                         <View style={{ flexDirection: 'row' }}>
                                                                 <Text style={{
@@ -140,7 +145,9 @@ const EarningDetail = ({ navigation }) => {
                                                                         marginTop: 20, marginLeft: 20, fontFamily: "OpenSansRegular",
                                                                         color: "#696969"
                                                                 }}>Rs. 0</Text>
+                                                                <TouchableOpacity onPress={() => navigation.navigate("Summary")}>
                                                                 <Icon2 name="arrowright" style={{ marginLeft: 20, marginTop: 20, color: "#FDC913" }} size={20}></Icon2>
+                                                                </TouchableOpacity>
                                                         </View>
 
                                                         <View style={{ flexDirection: 'row' }}>
@@ -167,7 +174,9 @@ const EarningDetail = ({ navigation }) => {
                                                         paddingTop: 5, fontFamily: "OpenSansRegular",
                                                         color: "#696969"
                                                 }}>Rs.50</Text>
-                                                <Icon1 name="check" size={15} style={{ paddingLeft: 10, paddingTop: 6, color: "#FDC913" }}></Icon1>
+                                                <TouchableOpacity>
+                                                <Icon3 name="down" size={15} style={{ paddingLeft: 10, paddingTop: 6, color: "#FDC913" }}></Icon3>
+                                                </TouchableOpacity>
                                         </View>
 
                                         <View style={styles.view4}>
@@ -180,7 +189,9 @@ const EarningDetail = ({ navigation }) => {
                                                         paddingTop: 5, fontFamily: "OpenSansRegular",
                                                         color: "#696969"
                                                 }}>Rs.20</Text>
-                                                <Icon1 name="check" size={15} style={{ paddingLeft: 10, paddingTop: 6, color: "#FDC913" }}></Icon1>
+                                                <TouchableOpacity>
+                                                <Icon3 name="down" size={15} style={{ paddingLeft: 10, paddingTop: 6, color: "#FDC913" }}></Icon3>
+                                                </TouchableOpacity>
                                         </View>
                                 
                         </View>
