@@ -8,7 +8,7 @@ const Help = ({navigation}) => {
         <View style={{ paddingTop: 10, }}>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{ flexDirection: 'row' }}>
-                    <TouchableOpacity onPress={()=>navigation.navigate("HomeScreen")}>
+                    <TouchableOpacity onPress={()=>navigation.goBack()}>
                         <Icons name="arrow-back" size={30} style={{ marginLeft: 20, marginRight: 110, color: "#FDC913" }}></Icons>
                     </TouchableOpacity>
                     <Text style={{ fontSize: 28, marginBottom: 20, color: "#696969", fontFamily: "OpenSansBold", }}>Help</Text>

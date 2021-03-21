@@ -7,7 +7,7 @@ const Notification = ({navigation}) => {
     return (
         <View style={{ paddingTop: 10, paddingBottom: 400 }}>
             <View style={{ flexDirection: 'row' }}>
-                <TouchableOpacity onPress={()=>navigation.navigate("HomeScreen")}>
+                <TouchableOpacity onPress={()=>navigation.goBack()}>
                     <Icons name="arrow-back" size={30} style={{ marginLeft: 20, marginRight: 70, color: "#FDC913" }}></Icons>
                 </TouchableOpacity>
                 <Text style={{ fontSize: 24, marginBottom: 40, fontFamily: "OpenSansBold", color: "#696969" }}>Notification</Text>

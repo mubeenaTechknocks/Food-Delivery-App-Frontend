@@ -1,30 +1,65 @@
-import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, StatusBar, Alert } from 'react-native'
+import React, { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, Platform, Alert,Image } from 'react-native'
 import { useTheme, Avatar, Drawer } from 'react-native-paper';
 import Icon1 from 'react-native-vector-icons/Ionicons'
+
+import * as ImagePicker from 'expo-image-picker';
 
 const Profile = ({ navigation }) => {
 
     const { colors } = useTheme()
     const theme = useTheme()
+    const [image, setImage] = useState(null);
+    useEffect(() => {
+        (async () => {
+            if (Platform.OS !== 'web') {
+                const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+                if (status !== 'granted') {
+                    alert('Sorry, we need camera roll permissions to make this work!');
+                }
+            }
+        })();
+    }, []);
+
+    const pickImage = async () => {
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1,
+        });
+
+        console.log(result);
+
+        if (!result.cancelled) {
+            setImage(result.uri);
+        }
+    };
 
     return (
         <View style={[styles.container, { backgroundColor: colors.card }]}>
             <View style={styles.textcontainer}>
                 <TouchableOpacity>
-                    <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={() => navigation.navigate("HomeScreen")} style={styles.menu} />
+                    <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={() => navigation.goBack()} style={styles.menu} />
                 </TouchableOpacity>
                 <Text style={styles.text}>Profile</Text>
             </View>
             <View style={styles.inputcontainer}>
-                <Avatar.Image
+            <Avatar.Image
                     source={{
                         uri:
                             'https://images-na.ssl-images-amazon.com/images/I/91BDAgAQiXL.png',
                     }}
                     size={100}
                     style={styles.image}
-                />
+                /> 
+                {/* {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />} */}
+                <View>
+
+                    <TouchableOpacity onPress={pickImage}>
+                        <Icon1 name="camera" size={30} color="#FDC913" style={{ paddingTop: 20, paddingLeft: 145 }}></Icon1>
+                    </TouchableOpacity>
+                </View>
                 <Text style={styles.name}>Name</Text>
                 <View style={styles.row}>
                     <Text style={styles.id}>ID</Text>
@@ -86,7 +121,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontFamily: 'OpenSansBold',
         fontSize: 30,
-        
+
         color: '#696969'
     },
     image: {
@@ -135,13 +170,13 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         color: '#696969'
     },
-    textcontainer:{
-        paddingBottom:50,
-        flexDirection:'row'
+    textcontainer: {
+        paddingBottom: 50,
+        flexDirection: 'row'
     },
-    menu:{
-        paddingRight:100,
-        paddingTop:5
+    menu: {
+        paddingRight: 100,
+        paddingTop: 5
     }
 
 })

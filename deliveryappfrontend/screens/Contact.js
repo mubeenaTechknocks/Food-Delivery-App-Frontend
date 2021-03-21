@@ -11,7 +11,7 @@ const Contact = ({navigation}) =>{
     return(
         <View style={{paddingTop:10,paddingBottom:300}}>
             <View style={{flexDirection:'row'}}>
-                <TouchableOpacity onPress={()=>navigation.navigate("Settings")}>
+                <TouchableOpacity onPress={()=>navigation.goBack()}>
              <Icons name="arrow-back"  color="#FDC913" size={35} style={{marginLeft:15,marginRight:80}}></Icons>
              </TouchableOpacity>
             <Text style={styles.contact}>Contact</Text>

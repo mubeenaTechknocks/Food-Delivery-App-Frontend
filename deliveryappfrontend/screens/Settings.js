@@ -7,7 +7,7 @@ const Settings= ({navigation})=>{
     return(
         <View style={{paddingTop:10}}>
                  <View style={{flexDirection:'row'}}>
-         <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+         <TouchableOpacity onPress={()=>navigation.goBack()}>
             <Icons name="arrow-back" size={30} style={{marginLeft:20,marginRight:100,color:"#FDC913"}}></Icons>
             </TouchableOpacity>
             <Text style={{fontSize:24,color:"#696969",fontFamily:"OpenSansBold",marginBottom:40}}>Settings</Text>

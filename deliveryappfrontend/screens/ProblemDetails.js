@@ -10,7 +10,7 @@ const ProblemDetails = ({ navigation }) => {
             <View style={{ paddingTop: 10,height:'100%', justifyContent: 'center', alignContent: 'center',paddingRight:20,paddingLeft:20,paddingBottom:20 }}>
                 <View style={{ flexDirection: 'row' }}>
                     <TouchableOpacity>
-                    <Icons name="arrow-back" size={30} onPress={() => navigation.navigate("Help")}
+                    <Icons name="arrow-back" size={30} onPress={()=>navigation.goBack()}
                         style={{ marginRight: 40, color: "#FDC913" }}></Icons>
                         </TouchableOpacity>
                     <Text style={{

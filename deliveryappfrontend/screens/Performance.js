@@ -9,7 +9,7 @@ const Performance = ({ navigation }) => {
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={{ paddingTop: 10 }}>
                 <View style={{ flexDirection: 'row' }}>
-                    <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+                    <TouchableOpacity onPress={()=>navigation.goBack()}>
                         <Icons name="arrow-back" size={30}
                             style={{ marginLeft: 20, marginRight: 70, color: "#FDC913" }}></Icons>
                     </TouchableOpacity>

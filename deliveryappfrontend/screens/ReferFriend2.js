@@ -11,7 +11,7 @@ const ReferFriend2 = ({navigation}) =>{
         <View style={{paddingTop:10,paddingBottom:300}}>
           
           <View style={{flexDirection:'row'}}>
-              <TouchableOpacity onPress={() =>navigation.navigate("HomeScreen")}>
+              <TouchableOpacity onPress={()=>navigation.goBack()}>
             <Icons name="arrow-back" size={30} style={{marginLeft:20,marginRight:50,color:"#FDC913"}}></Icons>
             </TouchableOpacity>
             <Text style={{fontSize:30,marginBottom:30,color:"#696969",fontFamily:"OpenSansBold"}}>Refer a Friend</Text>

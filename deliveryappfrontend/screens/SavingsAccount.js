@@ -78,7 +78,7 @@ const SavingsAccount = ({ navigation }) => {
         <View style={styles.container}>
             <View style={styles.registercontainer}>
                 <TouchableOpacity>
-                    <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={() => navigation.navigate("Profile")} style={styles.menu} />
+                    <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={()=>navigation.goBack()} style={styles.menu} />
                 </TouchableOpacity>
                 <Text style={styles.text}>Savings Account</Text>
             </View>

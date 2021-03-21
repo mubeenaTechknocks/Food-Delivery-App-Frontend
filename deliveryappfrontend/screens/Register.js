@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
         fontFamily: 'OpenSansBold',
         alignSelf: 'center',
         fontSize: 20,
-        color: 'black'
+        color: '#696969'
     },
 
     textinput: {

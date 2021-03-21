@@ -12,7 +12,7 @@ const PersonalDetails = ({ navigation }) => {
         <View style={styles.container}>
             <View style={styles.textcontainer}>
                 <TouchableOpacity>
-                    <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={() => navigation.navigate("Profile")} style={styles.menu} />
+                    <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={()=>navigation.goBack()} style={styles.menu} />
                 </TouchableOpacity>
                 <Text style={styles.text}>Personal Details</Text>
             </View>

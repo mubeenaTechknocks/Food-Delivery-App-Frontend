@@ -8,7 +8,7 @@ const Summary = ({navigation}) => {
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={{ paddingTop: 10 }}>
                 <View style={{ flexDirection: 'row' }}>
-                    <TouchableOpacity onPress={()=>navigation.navigate("EarningDetail")}>
+                    <TouchableOpacity onPress={()=>navigation.goBack()}>
                         <Icons name="arrow-back" size={30} style={{ marginLeft: 20, marginRight: 40, color: "#FDC913" }}></Icons>
                     </TouchableOpacity>
                     <Text style={{ fontSize: 24, marginBottom: 40, color: "#696969", fontFamily: "OpenSansBold", }}>Delivery Summary</Text>

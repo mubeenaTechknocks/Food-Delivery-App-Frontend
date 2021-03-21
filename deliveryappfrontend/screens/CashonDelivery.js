@@ -72,7 +72,7 @@ const CashonDelivery = ({ navigation }) => {
             <View style={styles.inputcontainer}>
                 <View style={styles.registercontainer}>
                 <TouchableOpacity>
-                    <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={() => navigation.navigate("DeliveryCOD")} style={styles.menu} />
+                    <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={()=>navigation.goBack()} style={styles.menu} />
                 </TouchableOpacity>
                     <Text style={styles.text}>Collect Cash on Delivery</Text>
                 </View>

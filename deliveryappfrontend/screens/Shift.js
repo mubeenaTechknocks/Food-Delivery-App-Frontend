@@ -7,7 +7,7 @@ const Shift = ({ navigation }) => {
     return (
         <View style={{ paddingTop: 10, paddingBottom: 300 }}>
             <View style={{ flexDirection: 'row' }}>
-                <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+                <TouchableOpacity onPress={()=>navigation.goBack()}>
                     <Icons name="arrow-back" size={30} 
                             style={{ marginLeft: 20, marginRight: 80, color: "#FDC913" }}></Icons>
               </TouchableOpacity>

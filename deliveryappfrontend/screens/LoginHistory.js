@@ -9,7 +9,7 @@ const LoginHistory= ({navigation})=>{
         <View style={{paddingTop:10,paddingBottom:400}}>
                  <View style={{flexDirection:'row'}}>
                      <TouchableOpacity>
-            <Icons name="arrow-back" size={30} onPress={() => navigation.navigate("HomeScreen")}
+            <Icons name="arrow-back" size={30} onPress={()=>navigation.goBack()}
             style={{marginLeft:20,marginRight:70,color:"#FDC913"}}></Icons>
             </TouchableOpacity>
             <Text style={{fontSize:24,marginBottom:40,color:"#696969",fontFamily:"OpenSansBold",}}>Login History</Text>

@@ -12,7 +12,7 @@ const EarningDetail = ({ navigation }) => {
                 <ScrollView showsVerticalScrollIndicator={false}>
                         <View style={{ paddingTop: 10, height:'100%' }}>
                                 <View style={{ flexDirection: 'row' }}>
-                                        <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+                                        <TouchableOpacity onPress={()=>navigation.goBack()}>
                                                 <Icons name="arrow-back" size={30}
                                                         style={{ marginLeft: 20, marginRight: 20, color: "#FDC913" }}></Icons>
                                         </TouchableOpacity>

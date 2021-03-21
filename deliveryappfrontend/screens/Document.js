@@ -10,7 +10,7 @@ const Document = ({navigation}) =>{
         <View style={{paddingTop:10,paddingBottom:300}}>
           
           <View style={{flexDirection:'row'}}>
-            <TouchableOpacity onPress={() =>navigation.navigate("IdPermits")}>
+            <TouchableOpacity onPress={()=>navigation.goBack()}>
             <Icons name="arrow-back" size={30} style={{marginLeft:20,marginRight:60,color:"#FDC913"}}></Icons>
             </TouchableOpacity>
             <Text style={{fontSize:25,marginBottom:40,fontFamily:"OpenSansBold",
