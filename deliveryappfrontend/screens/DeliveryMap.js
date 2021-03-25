@@ -6,6 +6,7 @@ import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { DrawerActions, useTheme } from '@react-navigation/native';
 import getDirections from 'react-native-google-maps-directions'
+import * as Linking from 'expo-linking';
 
 const DeliveryMap = ({ navigation }) => {
 
@@ -60,7 +61,7 @@ const DeliveryMap = ({ navigation }) => {
             <View>
                 <View style={styles.inputcontainer}>
                     <Icon style={styles.icon} name="delivery-dining" size={35} color="#696969" />
-                    <Text style={styles.text}>Delivery Location</Text>
+                    <Text style={styles.text} onPress={()=>navigation.navigate("Deliver")}>Delivery Location</Text>
                     <TouchableOpacity style={styles.iconcontainer} onPress={handleGetDirections}>
                         <Icon1 name="directions" size={30} color="#696969" />
                     </TouchableOpacity>
@@ -69,7 +70,7 @@ const DeliveryMap = ({ navigation }) => {
                     <Text style={styles.addtext}>Customer Name</Text>
                     <Text style={styles.add}>Address</Text>
                     <View style={styles.iconcontainer1}>
-                        <TouchableOpacity style={styles.icontouch}>
+                        <TouchableOpacity style={styles.icontouch} onPress={() => Linking.openURL('tel:+1234567890')}>
                             <Icon style={styles.icon} name="call" size={30} color="#696969" />
                             <Text style={styles.icontext}>call</Text>
                         </TouchableOpacity>

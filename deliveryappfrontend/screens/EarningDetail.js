@@ -1,209 +1,338 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { Collapse, CollapseHeader, CollapseBody } from "accordion-collapse-react-native";
 import Icons from 'react-native-vector-icons/Ionicons';
 import Icon1 from 'react-native-vector-icons/AntDesign';
 import Icon2 from 'react-native-vector-icons/AntDesign';
 import Icon3 from 'react-native-vector-icons/AntDesign';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useNavigation, useTheme } from '@react-navigation/native';
 
 const EarningDetail = ({ navigation }) => {
+        const { colors } = useTheme()
+        const theme = useTheme()
 
         return (
                 <ScrollView showsVerticalScrollIndicator={false}>
-                        <View style={{ paddingTop: 10, height:'100%' }}>
+                        <View style={{ paddingTop: 10, height: '100%' }}>
                                 <View style={{ flexDirection: 'row' }}>
-                                        <TouchableOpacity onPress={()=>navigation.goBack()}>
+                                        <TouchableOpacity onPress={() => navigation.goBack()}>
                                                 <Icons name="arrow-back" size={30}
                                                         style={{ marginLeft: 20, marginRight: 20, color: "#FDC913" }}></Icons>
                                         </TouchableOpacity>
-                                        <Text style={{ fontSize: 22, marginBottom: 1, color: "#696969", fontFamily: "OpenSansBold", }}>Weekly Earning Details</Text>
+                                        <Text style={{ fontSize: 22, marginBottom: 1, color: colors.text, fontFamily: "OpenSansBold", }}>Weekly Earning Details</Text>
 
                                 </View>
-                                <Text style={{ fontSize: 15, marginBottom: 20, marginLeft: 85, color: "#696969", fontFamily: "OpenSansSemiBold", }}>Last Week Earnings</Text>
+                                <Text style={{ fontSize: 15, marginBottom: 20, marginLeft: 85, color: colors.text, fontFamily: "OpenSansSemiBold", }}>Last Week Earnings</Text>
                                 <ScrollView
                                         horizontal={true}
                                         // style={styles.viewdir}
                                         showsHorizontalScrollIndicator={false}>
                                         <View style={{ flexDirection: 'row' }}>
-                                                <View style={styles.view5}>
+                                                <View style={[styles.view5, { backgroundColor: colors.card }]}>
                                                         <Text style={{
                                                                 fontFamily: "OpenSansRegular",
-                                                                color: "#696969",
-                                                                textAlign:'center'
+                                                                color: colors.text,
+                                                                textAlign: 'center'
                                                         }}>Rs.855</Text>
                                                         <Text style={{
                                                                 fontFamily: "OpenSansRegular",
-                                                                color: "#696969"
+                                                                color: colors.text,
                                                         }}>Total Earnings</Text>
                                                 </View>
-                                                <View style={styles.view5}>
+                                                <View style={[styles.view5, { backgroundColor: colors.card }]}>
                                                         <Text style={{
                                                                 fontFamily: "OpenSansRegular",
-                                                                color: "#696969",
-                                                                textAlign:'center'
+                                                                color: colors.text,
+                                                                textAlign: 'center'
                                                         }}>Rs.567</Text>
                                                         <Text style={{
                                                                 fontFamily: "OpenSansRegular",
-                                                                color: "#696969"
+                                                                color: colors.text,
                                                         }}>Order Earnings</Text>
                                                 </View>
                                         </View>
 
                                         <View style={{ flexDirection: 'row' }}>
-                                                <View style={styles.view5}>
+                                                <View style={[styles.view5, { backgroundColor: colors.card }]}>
                                                         <Text style={{
-                                                               fontFamily: "OpenSansRegular",
-                                                               color: "#696969",
-                                                               textAlign:'center'
+                                                                fontFamily: "OpenSansRegular",
+                                                                color: colors.text,
+                                                                textAlign: 'center'
                                                         }}>Rs.0</Text>
                                                         <Text style={{
-                                                                 fontFamily: "OpenSansRegular",
-                                                                color: "#696969"
+                                                                fontFamily: "OpenSansRegular",
+                                                                color: colors.text,
                                                         }}>Bonus</Text>
                                                 </View>
-                                                <View style={styles.view5}>
+                                                <View style={[styles.view5, { backgroundColor: colors.card }]}>
                                                         <Text style={{
                                                                 fontFamily: "OpenSansRegular",
-                                                                color: "#696969",
-                                                                textAlign:'center'
+                                                                color: colors.text,
+                                                                textAlign: 'center'
                                                         }}>Rs.0</Text>
                                                         <Text style={{
                                                                 fontFamily: "OpenSansRegular",
-                                                                color: "#696969"
+                                                                color: colors.text,
                                                         }}>Incentives</Text>
                                                 </View>
                                         </View>
 
 
                                         <View style={{ flexDirection: 'row' }}>
-                                                <View style={styles.view5}>
+                                                <View style={[styles.view5, { backgroundColor: colors.card }]}>
                                                         <Text style={{
-                                                             fontFamily: "OpenSansRegular",
-                                                             color: "#696969",
-                                                             textAlign:'center'
+                                                                fontFamily: "OpenSansRegular",
+                                                                color: colors.text,
+                                                                textAlign: 'center'
                                                         }}>Rs.0</Text>
                                                         <Text style={{
                                                                 fontFamily: "OpenSansRegular",
-                                                                color: "#696969"
+                                                                color: colors.text,
                                                         }}>Delivery Tip</Text>
                                                 </View>
-                                                <View style={styles.view5}>
+                                                <View style={[styles.view5, { backgroundColor: colors.card }]}>
                                                         <Text style={{
-                                                             fontFamily: "OpenSansRegular",
-                                                             color: "#696969",
-                                                             textAlign:'center'
+                                                                fontFamily: "OpenSansRegular",
+                                                                color: colors.text,
+                                                                textAlign: 'center'
                                                         }}>Rs.50</Text>
                                                         <Text style={{
                                                                 fontFamily: "OpenSansRegular",
-                                                                color: "#696969"
+                                                                color: colors.text,
                                                         }}>COD</Text>
                                                 </View>
                                         </View>
-                                        </ScrollView>
-                                        <View style={styles.view6}>
-                                                <View style={{ flexDirection: 'row' }}>
-                                                        <Text style={{ marginTop: 5, marginLeft: 20, fontSize: 18, color: "#696969", fontFamily: "OpenSansSemiBold", }}>Wed, 20 Feb  </Text>
-                                                        <Text style={{ marginTop: 5, marginLeft: 30, fontSize: 18, color: "#696969", fontFamily: "OpenSansSemiBold", }}>Rs. 317</Text>
-                                                        <Icon3 name="up" size={20} style={{ marginLeft: 20, marginTop: 5, color: "#FDC913" }}></Icon3>
+                                </ScrollView>
+                                <Collapse>
+
+                                        <CollapseHeader>
+
+                                                <View style={[styles.view4, { backgroundColor: colors.card }]} >
+                                                        <Text
+                                                                style={{
+                                                                        paddingLeft: 20, marginRight: 85, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }} >wed, 20 Feb</Text>
+                                                        <Text style={{
+                                                                fontFamily: "OpenSansRegular",
+                                                                color: colors.text,
+                                                        }}>Rs.20</Text>
+                                                        <Icon1 name="down" size={15} style={{ color: "#FDC913" }}></Icon1>
                                                 </View>
-                                                <View style={styles.View1}>
-                                                        <View style={{ flexDirection: 'row' }}>
+
+                                        </CollapseHeader>
+                                        <CollapseBody>
+
+                                                <View style={[styles.View1, { backgroundColor: colors.card }]}>
+                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                                                 <Text style={{
-                                                                        marginLeft: 15, marginTop: 20, fontFamily: "OpenSansRegular",
-                                                                        color: "#696969"
+                                                                        marginLeft: 20, marginTop: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
                                                                 }}>Restaurant Name</Text>
                                                                 <Text style={{
                                                                         marginTop: 20, marginLeft: 20, fontFamily: "OpenSansRegular",
-                                                                        color: "#696969"
+                                                                        color: colors.text,
                                                                 }}>Rs. 0</Text>
-                                                                <TouchableOpacity onPress={() => navigation.navigate("Summary")} >
-                                                                
-                                                                <Icon2 name="arrowright" style={{ marginLeft: 20, marginTop: 20, color: "#FDC913" }} size={20}></Icon2>
-                                                                </TouchableOpacity>
+                                                                <Icon2 name="arrowright" onPress={() => navigation.navigate("Summary")} style={{ marginLeft: 20, marginTop: 20, color: colors.border }} size={20}></Icon2>
                                                         </View>
-        
-
-                                                        <View style={{ flexDirection: 'row' }}>
+                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                                                 <Text style={{
-                                                                        marginTop: 10, marginLeft: 16, fontFamily: "OpenSansRegular",
-                                                                        color: "#696969"
+                                                                        marginTop: 10, marginLeft: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
                                                                 }}>Time</Text>
                                                                 <Text style={{
                                                                         marginTop: 10, marginLeft: 90, fontFamily: "OpenSansRegular",
-                                                                        color: "#696969"
+                                                                        color: colors.text,
                                                                 }}>Delivered</Text>
                                                         </View>
                                                 </View>
 
-                                                <View style={styles.View1}>
-                                                        <View style={{ flexDirection: 'row' }}>
+
+
+                                                <View style={[styles.View1, { backgroundColor: colors.card }]}>
+                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                                                 <Text style={{
-                                                                        marginLeft: 15, marginTop: 20, fontFamily: "OpenSansRegular",
-                                                                        color: "#696969"
+                                                                        marginLeft: 20, marginTop: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
                                                                 }}>Restaurant Name</Text>
                                                                 <Text style={{
                                                                         marginTop: 20, marginLeft: 20, fontFamily: "OpenSansRegular",
-                                                                        color: "#696969"
+                                                                        color: colors.text,
                                                                 }}>Rs. 0</Text>
-                                                                <TouchableOpacity onPress={() => navigation.navigate("Summary")}>
-                                                                <Icon2 name="arrowright" style={{ marginLeft: 20, marginTop: 20, color: "#FDC913" }} size={20}></Icon2>
-                                                                </TouchableOpacity>
+                                                                <Icon2 name="arrowright" onPress={() => navigation.navigate("Summary")} style={{ marginLeft: 20, marginTop: 20, color: colors.border }} size={20}></Icon2>
                                                         </View>
-
-                                                        <View style={{ flexDirection: 'row' }}>
+                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                                                 <Text style={{
-                                                                        marginTop: 10, marginLeft: 16, fontFamily: "OpenSansRegular",
-                                                                        color: "#696969"
+                                                                        marginTop: 10, marginLeft: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
                                                                 }}>Time</Text>
                                                                 <Text style={{
                                                                         marginTop: 10, marginLeft: 90, fontFamily: "OpenSansRegular",
-                                                                        color: "#696969"
+                                                                        color: colors.text,
                                                                 }}>Delivered</Text>
                                                         </View>
                                                 </View>
-                                        </View>
+
+                                        </CollapseBody>
+                                </Collapse>
 
 
-                                        <View style={styles.view4}>
-                                                <Text onPress={() => navigation.navigate("COD")}
-                                                        style={{
-                                                                paddingLeft: 20, paddingTop: 5, marginRight: 90, fontFamily: "OpenSansRegular",
-                                                                color: "#696969"
-                                                        }}>Tue, 19 Feb</Text>
-                                                <Text style={{
-                                                        paddingTop: 5, fontFamily: "OpenSansRegular",
-                                                        color: "#696969"
-                                                }}>Rs.50</Text>
-                                                <TouchableOpacity>
-                                                <Icon3 name="down" size={15} style={{ paddingLeft: 10, paddingTop: 6, color: "#FDC913" }}></Icon3>
-                                                </TouchableOpacity>
-                                        </View>
 
-                                        <View style={styles.view4}>
-                                                <Text onPress={() => navigation.navigate("COD")}
-                                                        style={{
-                                                                paddingLeft: 20, paddingTop: 5, marginRight: 85, fontFamily: "OpenSansRegular",
-                                                                color: "#696969"
-                                                        }}>Mon, 18 Feb</Text>
-                                                <Text style={{
-                                                        paddingTop: 5, fontFamily: "OpenSansRegular",
-                                                        color: "#696969"
-                                                }}>Rs.20</Text>
-                                                <TouchableOpacity>
-                                                <Icon3 name="down" size={15} style={{ paddingLeft: 10, paddingTop: 6, color: "#FDC913" }}></Icon3>
-                                                </TouchableOpacity>
-                                        </View>
-                                
+                                <Collapse>
+                                        <CollapseHeader>
+                                                <View style={[styles.view4, { backgroundColor: colors.card }]}>
+                                                        <Text
+                                                                style={{
+                                                                        paddingLeft: 20, marginRight: 85, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Tue, 19 Feb</Text>
+                                                        <Text style={{
+                                                                fontFamily: "OpenSansRegular",
+                                                                color: colors.text,
+                                                        }}>Rs.20</Text>
+                                                        <Icon1 name="down" size={15} style={{ color: "#FDC913" }}></Icon1>
+                                                </View>
+
+
+                                        </CollapseHeader>
+
+                                        <CollapseBody>
+
+                                                <View style={[styles.View1, { backgroundColor: colors.card }]}>
+                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                                                <Text style={{
+                                                                        marginLeft: 20, marginTop: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Restaurant Name</Text>
+                                                                <Text style={{
+                                                                        marginTop: 20, marginLeft: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Rs. 0</Text>
+                                                                <Icon2 name="arrowright" onPress={() => navigation.navigate("Summary")} style={{ marginLeft: 20, marginTop: 20, color: colors.border }} size={20}></Icon2>
+                                                        </View>
+                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                                                <Text style={{
+                                                                        marginTop: 10, marginLeft: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Time</Text>
+                                                                <Text style={{
+                                                                        marginTop: 10, marginLeft: 90, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Delivered</Text>
+                                                        </View>
+                                                </View>
+
+
+                                                <View style={[styles.View1, { backgroundColor: colors.card }]}>
+                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                                                <Text style={{
+                                                                        marginLeft: 20, marginTop: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Restaurant Name</Text>
+                                                                <Text style={{
+                                                                        marginTop: 20, marginLeft: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Rs. 0</Text>
+                                                                <Icon2 name="arrowright" onPress={() => navigation.navigate("Summary")} style={{ marginLeft: 20, marginTop: 20, color: colors.border }} size={20}></Icon2>
+                                                        </View>
+                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                                                <Text style={{
+                                                                        marginTop: 10, marginLeft: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Time</Text>
+                                                                <Text style={{
+                                                                        marginTop: 10, marginLeft: 90, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Delivered</Text>
+                                                        </View>
+                                                </View>
+
+
+                                        </CollapseBody>
+                                </Collapse>
+
+
+                                <Collapse>
+                                        <CollapseHeader>
+                                                <View style={[styles.view4, { backgroundColor: colors.card }]} >
+                                                        <Text
+                                                                style={{
+                                                                        paddingLeft: 20, marginRight: 85, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Mon, 18 Feb</Text>
+                                                        <Text style={{
+                                                                fontFamily: "OpenSansRegular",
+                                                                color: colors.text,
+                                                        }}>Rs.20</Text>
+                                                        <Icon1 name="down" size={15} style={{ color: "#FDC913" }}></Icon1>
+                                                </View>
+
+
+                                        </CollapseHeader>
+
+                                        <CollapseBody>
+
+                                                <View style={[styles.View1, { backgroundColor: colors.card }]}>
+                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                                                <Text style={{
+                                                                        marginLeft: 20, marginTop: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Restaurant Name</Text>
+                                                                <Text style={{
+                                                                        marginTop: 20, marginLeft: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Rs. 0</Text>
+                                                                <Icon2 name="arrowright" onPress={() => navigation.navigate("Summary")} style={{ marginLeft: 20, marginTop: 20, color: colors.border }} size={20}></Icon2>
+                                                        </View>
+                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                                                <Text style={{
+                                                                        marginTop: 10, marginLeft: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Time</Text>
+                                                                <Text style={{
+                                                                        marginTop: 10, marginLeft: 90, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Delivered</Text>
+                                                        </View>
+                                                </View>
+
+
+                                                <View style={[styles.View1, { backgroundColor: colors.card }]}>
+                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                                                <Text style={{
+                                                                        marginLeft: 20, marginTop: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Restaurant Name</Text>
+                                                                <Text style={{
+                                                                        marginTop: 20, marginLeft: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Rs. 0</Text>
+                                                                <Icon2 name="arrowright" onPress={() => navigation.navigate("Summary")} style={{ marginLeft: 20, marginTop: 20, color: colors.border }} size={20}></Icon2>
+                                                        </View>
+                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                                                <Text style={{
+                                                                        marginTop: 10, marginLeft: 20, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Time</Text>
+                                                                <Text style={{
+                                                                        marginTop: 10, marginLeft: 90, fontFamily: "OpenSansRegular",
+                                                                        color: colors.text,
+                                                                }}>Delivered</Text>
+                                                        </View>
+                                                </View>
+                                        </CollapseBody>
+                                </Collapse>
                         </View>
                 </ScrollView>
+
         )
 }
-
 export default EarningDetail;
 
 const styles = StyleSheet.create({
         view5: {
-                
+
                 backgroundColor: "white",
                 borderRadius: 10,
                 elevation: 2,
@@ -211,14 +340,14 @@ const styles = StyleSheet.create({
                 shadowOffset: { width: 0, height: 3 },
                 shadowOpacity: 0.5,
                 shadowRadius: 5,
-                padding:10,
-                marginRight:10,
-                marginBottom:10
+                padding: 10,
+                marginRight: 10,
+                marginBottom: 10
         },
         view4: {
-               
-                marginLeft: 35,
-                marginBottom:30,
+
+                marginLeft: 30,
+                marginBottom: 30,
                 backgroundColor: "white",
                 borderRadius: 10,
                 elevation: 20,
@@ -230,14 +359,15 @@ const styles = StyleSheet.create({
                 padding: 10,
                 marginTop: 20,
                 marginRight: 30,
-                flexDirection: 'row'
+                flexDirection: 'row',
+                justifyContent: 'space-between'
 
         },
         View1: {
+                paddingBottom: 30,
+                marginLeft: 30,
                 marginBottom: 10,
-                marginLeft: 13,
-                height: 120,
-                width: "90%",
+
                 backgroundColor: "white",
                 borderRadius: 10,
                 elevation: 20,
@@ -246,7 +376,8 @@ const styles = StyleSheet.create({
                 shadowOpacity: 0.5,
                 shadowRadius: 5,
                 // paddingLeft: 120,
-                padding: 10,
+                paddingTop: 10,
+                paddingRight: 20,
                 marginTop: 20,
                 marginRight: 30,
                 //flexDirection:'row'

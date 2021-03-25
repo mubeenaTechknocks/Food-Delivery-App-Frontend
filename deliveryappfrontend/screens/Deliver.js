@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, StatusBar } from 'react-nativ
 import { RadioButton, useTheme } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Icon1 from 'react-native-vector-icons/Ionicons'
+import * as Linking from 'expo-linking';
 
 const Deliver = ({ navigation }) => {
     const { colors } = useTheme()
@@ -23,7 +24,7 @@ const Deliver = ({ navigation }) => {
                 </View>
                 <Text style={styles.add}>Address</Text>
                 <View style={styles.iconcontainer1}>
-                    <TouchableOpacity style={styles.icontouch}>
+                    <TouchableOpacity style={styles.icontouch} onPress={() => Linking.openURL('tel:+1234567890')}>
                         <Icon style={styles.icon1} name="call" size={25} color="#696969" />
                         <Text style={styles.icontext}>call</Text>
                     </TouchableOpacity>

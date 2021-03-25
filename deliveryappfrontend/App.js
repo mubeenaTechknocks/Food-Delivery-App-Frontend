@@ -90,7 +90,7 @@ export default function App() {
   if (!loaded) {
     return null;
   }
-
+  
   const CustomDefaultTheme = {
     ...DefaultTheme,
     ...PaperDefaultTheme,
@@ -99,6 +99,9 @@ export default function App() {
       background: '#f5fffa',
       text: '#696969',
       card: 'white',
+      primary:'#FDC913',
+      border:'#FDC913',
+      notification:'white'
     }
   }
 
@@ -107,9 +110,13 @@ export default function App() {
     ...PaperDarkTheme,
     colors: {
       ...DarkTheme.colors,
-      background: 'black',
-      text: "#696969",
-      card: "black"
+      background: '#181914',
+      text: "white",
+      card: "#242526",
+      primary:'#3A3B3C',
+      border:'white',
+      notification:'#3A3B3C'
+     
     }
   }
 

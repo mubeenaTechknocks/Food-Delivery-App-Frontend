@@ -6,6 +6,7 @@ import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { DrawerActions, useTheme } from '@react-navigation/native';
 import getDirections from 'react-native-google-maps-directions'
+import * as Linking from 'expo-linking';
 
 const RestaurantMap = ({navigation}) => {
 
@@ -69,7 +70,7 @@ const RestaurantMap = ({navigation}) => {
                     <Text style={styles.addtext} >Address</Text>
                 </View>
                 <View style={styles.iconcontainer1}>
-                        <TouchableOpacity style={styles.icontouch}>
+                        <TouchableOpacity style={styles.icontouch} onPress={() => Linking.openURL('tel:+1234567890')}>
                             <Icon style={styles.icon} name="call" size={30} color="#696969" />
                             <Text style={styles.icontext}>call</Text>
                         </TouchableOpacity>
