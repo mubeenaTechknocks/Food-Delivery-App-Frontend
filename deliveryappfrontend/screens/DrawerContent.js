@@ -25,7 +25,7 @@ export function DrawerContent(props) {
             />
 
             <TouchableOpacity onPress={()=>props.navigation.navigate("Profile")}>
-              <AntDesign name="arrowright" size={20} color="grey" />
+              <AntDesign name="arrowright" size={20} style={{color:colors.border}}/>
             </TouchableOpacity>
 
           </View>

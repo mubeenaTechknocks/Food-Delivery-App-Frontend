@@ -56,10 +56,10 @@ const Verify = ({navigation}) => {
     return (
         <View style={styles.container}>
             
-            <Text style={styles.text} >Enter OTP</Text>
-            <View style={styles.containerinput}>
+            <Text style={[styles.text,{color:colors.text}]} >Enter OTP</Text>
+            <View style={[styles.containerinput,{backgroundColor:colors.card}]}>
                 <OTPTextView
-                    style={styles.textInput}
+                    style={[styles.textInput,{color:colors.text,borderBottomColor:colors.border}]}
                     keyboardType="number-pad"
                     inputCount={6}
                     handleTextChange={(inputOtp) => setInputOtp(inputOtp)}
@@ -68,15 +68,15 @@ const Verify = ({navigation}) => {
 
                 />
                 <View style={styles.padbutton}>
-                    <TouchableOpacity style={styles.inputButton}>
+                    <TouchableOpacity style={[styles.inputButton,{backgroundColor:colors.primary}]}>
                         <Text
                             style={styles.button}
                             onPress={handleInputOtp}>VERIFY</Text>
                     </TouchableOpacity>
                     <View style={styles.register}>
-                        <Text style={styles.registertext}>Don't Receive ? </Text>
+                        <Text style={[styles.registertext,{color:colors.text}]}>Don't Receive ? </Text>
                         <TouchableOpacity>
-                            <Text style={styles.registertext}>Resend Now</Text>
+                            <Text style={[styles.registertext,{color:colors.text}]}>Resend Now</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

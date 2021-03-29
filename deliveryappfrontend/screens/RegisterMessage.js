@@ -8,8 +8,8 @@ const RegisterMessage = () => {
     return (
         <View style={styles.container}>
             
-            <View style={styles.containertext}>
-                <Text style={styles.text}>
+            <View style={[styles.containertext,{backgroundColor:colors.card}]}>
+                <Text style={[styles.text,{color:colors.text}]}>
                     Thank you for registering with us. One of our executive will call you back.
                  </Text>
             </View>

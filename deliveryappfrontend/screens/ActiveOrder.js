@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, StatusBar } from 'react-native'
+import { View, Text, StyleSheet, StatusBar,ScrollView} from 'react-native'
 import { useTheme } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Icon1 from 'react-native-vector-icons/EvilIcons'
@@ -11,77 +11,80 @@ const ActiveOrder = ({ navigation }) => {
     const theme = useTheme()
 
     return (
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
             
-            <Text style={styles.text}>Active Delivery</Text>
-            <View style={styles.input}>
+            <Text style={[styles.text,{color:colors.text}]}>Active Delivery</Text>
+            <View style={[styles.input,{backgroundColor:colors.card}]}>
                 <View style={styles.heading}>
-                    <Text style={styles.txt}>2.3 km</Text>
-                    <Text style={styles.txtline}>|</Text>
-                    <Text style={styles.txt}>40 min</Text>
-                    <Text style={styles.txt1}>Rs. 60</Text>
+                    <Text style={[styles.txt,{color:colors.text}]}>2.3 km</Text>
+                    <Text style={[styles.txtline,{color:colors.text}]}>|</Text>
+                    <Text style={[styles.txt,{color:colors.text}]}>40 min</Text>
+                    <Text style={[styles.txt1,{color:colors.text}]}>Rs. 60</Text>
                 </View>
-                <View style={styles.line}></View>
+                <View style={[styles.line,{borderBottomColor:colors.text}]}></View>
                 <View style={styles.space}>
                     <View style={styles.heading1}>
-                        <Text style={styles.bold} >5.4 km</Text>
-                        <Text style={styles.bold}>5.0 km</Text>
+                        <Text style={[styles.bold,{color:colors.text}]} >5.4 km</Text>
+                        <Text style={[styles.bold,{color:colors.text}]}>5.0 km</Text>
                     </View>
                     <View style={styles.heading1}>
-                        <Text style={styles.regular}>Pick up</Text>
-                        <Text style={styles.regular}>Deliver</Text>
+                        <Text style={[styles.regular,{color:colors.text}]}>Pick up</Text>
+                        <Text style={[styles.regular,{color:colors.text}]}>Deliver</Text>
                     </View>
                 </View>
                 <View style={styles.name}>
                     <View style={styles.heading1}>
-                        <Text style={styles.regular}>To Restaurant</Text>
-                        <Text style={styles.bold}>Rs. 40</Text>
+                        <Text style={[styles.regular,{color:colors.text}]}>To Restaurant</Text>
+                        <Text style={[styles.bold,{color:colors.text}]}>Rs. 40</Text>
 
                     </View>
                     <View style={styles.heading1}>
-                        <Text style={styles.regular}>Long Distance</Text>
-                        <Text style={styles.bold}>Rs. 20</Text>
+                        <Text style={[styles.regular,{color:colors.text}]}>Long Distance</Text>
+                        <Text style={[styles.bold,{color:colors.text}]}>Rs. 20</Text>
 
                     </View>
                 </View>
-                <View style={styles.line}></View>
+                <View style={[styles.line,{borderBottomColor:colors.text}]}></View>
                 <View style={styles.space}>
                     <View style={styles.pad}>
                         <View style={styles.row}>
-                            <Icon style={styles.icon} name="restaurant" size={25} color="#696969" />
-                            <Text style={styles.semi}>Restaurant Name</Text>
+                            <Icon style={styles.icon} name="restaurant" size={25} style={{color:colors.text}} />
+                            <Text style={[styles.semi,{color:colors.text}]}>Restaurant Name</Text>
                         </View>
-                        <Text style={styles.add}>Address</Text>
+                        <Text style={[styles.add,{color:colors.text}]}>Address</Text>
                     </View>
                     <View>
                         <View style={styles.row}>
-                            <Icon style={styles.icon} name="delivery-dining" size={25} color="#696969" />
-                            <Text style={styles.semi}>Customer Name</Text>
+                            <Icon style={styles.icon} name="delivery-dining" size={25} style={{color:colors.text}} />
+                            <Text style={[styles.semi,{color:colors.text}]}>Customer Name</Text>
                         </View>
-                        <Text style={styles.add}>Address</Text>
+                        <Text style={[styles.add,{color:colors.text}]}>Address</Text>
                     </View>
                 </View>
-                <View style={styles.line}></View>
+                <View style={[styles.line,{borderBottomColor:colors.text}]}></View>
                 <View style={styles.space}>
-                    <Text style={styles.bold1}>Order Details</Text>
+                    <Text style={[styles.bold1,{color:colors.text}]}>Order Details</Text>
                     <View style={styles.order}>
-                        <Text style={styles.regular}>1 *    Milk Shake</Text>
-                        <Text style={styles.regular}>1 *    Burger</Text>
+                        <Text style={[styles.regular,{color:colors.text}]}>1 *    Milk Shake</Text>
+                        <Text style={[styles.regular,{color:colors.text}]}>1 *    Burger</Text>
                     </View>
 
                 </View>
                 <View style={styles.buttoncontainer}>
-                    <TouchableOpacity style={styles.buttonconfirm} onPress={() => navigation.navigate("ConfirmOrder")}>
+                    <TouchableOpacity style={[styles.buttonconfirm,{backgroundColor:colors.primary}]}
+                     onPress={() => navigation.navigate("ConfirmOrder")}>
                         <Text style={styles.buttontext}>Confirm</Text>
                         {/* <Icon1 style={styles.buttonicon} name="check" size={20} color="white" /> */}
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonreject} onPress={() => navigation.navigate("SearchOrder")}>
+                    <TouchableOpacity style={[styles.buttonreject,{backgroundColor:colors.primary}]} onPress={() => navigation.navigate("SearchOrder")}>
                         <Text style={styles.buttontext}>Reject</Text>
                     </TouchableOpacity>
                 </View>
             </View>
 
         </View>
+        </ScrollView>
     )
 }
 
@@ -173,7 +176,8 @@ const styles = StyleSheet.create({
     semi: {
         fontFamily: 'OpenSansSemiBold',
         fontSize: 18,
-        color: '#696969'
+        color: '#696969',
+        paddingLeft:10
     },
     order: {
         paddingLeft: 20,

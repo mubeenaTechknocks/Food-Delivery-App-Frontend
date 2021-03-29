@@ -3,8 +3,11 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Icons from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import {useTheme } from 'react-native-paper'
 
 const Performance = ({ navigation }) => {
+    const { colors } = useTheme()
+    const theme = useTheme()
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={{ paddingTop: 10 }}>
@@ -13,58 +16,58 @@ const Performance = ({ navigation }) => {
                         <Icons name="arrow-back" size={30}
                             style={{ marginLeft: 20, marginRight: 70, color: "#FDC913" }}></Icons>
                     </TouchableOpacity>
-                    <Text style={{ fontSize: 24, marginBottom: 2, color: "#696969", fontFamily: "OpenSansBold", }}>Performance</Text>
+                    <Text style={{ fontSize: 24, marginBottom: 2, color:colors.text, fontFamily: "OpenSansBold", }}>Performance</Text>
 
                 </View>
                 <Text style={{
                     fontSize: 15, marginLeft: 140, marginBottom: 15, fontFamily: "OpenSansSemiBold",
-                    color: "#696969"
+                    color: colors.text
                 }}>22 Feb - 28 Feb</Text>
 
-                <View style={styles.View1}>
-                    <Icon name="like1" size={30} style={{ marginLeft: 130, marginTop: 15, color: "#FDC913" }}></Icon>
+                <View style={[styles.View1,{backgroundColor:colors.card}]}>
+                    <Icon name="like1" size={30} style={{ marginLeft: 130, marginTop: 15, color: colors.border }}></Icon>
                     <Text style={{
                         marginTop: 10, marginLeft: 53, fontSize: 20, fontFamily: "OpenSansSemiBold",
-                        color: "#696969"
+                        color: colors.text
                     }}>No Reports, All Good</Text>
 
                 </View>
                 <Text style={{
                     marginLeft: 35, marginTop: 20, fontSize: 20, fontFamily: "OpenSansSemiBold",
-                    color: "#696969"
+                    color: colors.text
                 }}>Details</Text>
 
-                <View style={styles.view6}>
-                    <View style={styles.view4}>
+                <View style={[styles.view6,{backgroundColor:colors.card}]}>
+                    <View style={[styles.view4,{backgroundColor:colors.notification}]}>
                         <Text style={{
                             marginTop: 20, marginLeft: 20, fontSize: 15, fontFamily: "OpenSansRegular",
-                            color: "#696969"
+                            color: colors.text
                         }}>Order Not Delivered</Text>
                         <Text style={{
                             marginTop: 5, marginLeft: 20, fontSize: 15, fontFamily: "OpenSansRegular",
-                            color: "#696969"
+                            color: colors.text
                         }}>None</Text>
                     </View>
 
-                    <View style={styles.view4}>
+                    <View style={[styles.view4,{backgroundColor:colors.notification}]}>
                         <Text style={{
                             marginTop: 20, marginLeft: 20, fontSize: 15, fontFamily: "OpenSansRegular",
-                            color: "#696969"
+                            color: colors.text
                         }}>Order Rejected</Text>
                         <Text style={{
                             marginTop: 5, marginLeft: 20, fontSize: 15, fontFamily: "OpenSansRegular",
-                            color: "#696969"
+                            color: colors.text
                         }}>None</Text>
                     </View>
 
-                    <View style={styles.view4}>
+                    <View style={[styles.view4,{backgroundColor:colors.notification}]}>
                         <Text style={{
                             marginTop: 10, marginLeft: 20, fontSize: 15, fontFamily: "OpenSansRegular",
-                            color: "#696969"
+                            color: colors.text
                         }}>Unprofessional Behaviour</Text>
                         <Text style={{
                             marginTop: 5, marginLeft: 20, fontSize: 15, fontFamily: "OpenSansRegular",
-                            color: "#696969"
+                            color: colors.text
                         }}>None</Text>
                     </View>
                 </View>

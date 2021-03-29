@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, StatusBar } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, StatusBar,ScrollView } from 'react-native'
 import { RadioButton, useTheme } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Icon1 from 'react-native-vector-icons/Ionicons'
@@ -8,41 +8,42 @@ const DeliveryCOD = ({ navigation }) => {
     const { colors } = useTheme()
     const theme = useTheme()
     return (
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
             
             <View style={styles.textcontainer}>
             <TouchableOpacity>
                     <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={()=>navigation.goBack()} style={styles.menu} />
                 </TouchableOpacity>
-                <Text style={styles.text}>Deliver</Text>
+                <Text style={[styles.text,{color:colors.text}]}>Deliver</Text>
             </View>
-            <View style={styles.input}>
-                <View style={styles.cod}>
-                    <Text style={styles.text1}>Collect Rs. 300 from Customer</Text>
+            <View style={[styles.input,{backgroundColor:colors.card}]}>
+                <View style={[styles.cod,{backgroundColor:colors.card}]}>
+                    <Text style={[styles.text1,{color:colors.text}]}>Collect Rs. 300 from Customer</Text>
                     <TouchableOpacity style={styles.codtouch} onPress={()=>navigation.navigate("CashonDelivery")}>
-                        <Text style={styles.codtext}>Collect Cash</Text>
+                        <Text style={[styles.codtext,{backgroundColor:colors.primary}]}>Collect Cash</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.pad}></View>
                 <View style={styles.inputcontainer}>
                     <View style={styles.iconcontainer}>
-                        <Icon style={styles.icon} name="delivery-dining" size={25} color="#696969" />
-                        <Text style={styles.res}>Customer Name</Text>
+                        <Icon style={styles.icon} name="delivery-dining" size={25} style={{color:colors.text,paddingRight:10}} />
+                        <Text style={[styles.res,{color:colors.text}]}>Customer Name</Text>
                     </View>
-                    <Text style={styles.add}>Address</Text>
+                    <Text style={[styles.add,{color:colors.text}]}>Address</Text>
 
                     <View style={styles.detail}>
-                        <View style={styles.detailcontainer}>
-                            <Text style={styles.order}>Order Details</Text>
+                        <View style={[styles.detailcontainer,{backgroundColor:colors.card}]}>
+                            <Text style={[styles.order,{color:colors.text}]}>Order Details</Text>
                             <View>
-                                <Text style={styles.item}>1 * Milkshake</Text>
-                                <Text style={styles.item}>1 * Burger</Text>
+                                <Text style={[styles.item,{color:colors.text}]}>1 * Milkshake</Text>
+                                <Text style={[styles.item,{color:colors.text}]}>1 * Burger</Text>
                             </View>
                         </View>
                     </View>
                 </View>
                 <View style={styles.padbutton}>
-                <TouchableOpacity style={styles.inputButton} onPress={() => navigation.navigate("SearchOrder")}>
+                <TouchableOpacity style={[styles.inputButton,{backgroundColor:colors.primary}]} onPress={() => navigation.navigate("SearchOrder")}>
                     <Text
                         style={styles.button}
                     >Delivery Completed</Text>
@@ -51,6 +52,7 @@ const DeliveryCOD = ({ navigation }) => {
             </View>
            
         </View>
+        </ScrollView>
     )
 }
 

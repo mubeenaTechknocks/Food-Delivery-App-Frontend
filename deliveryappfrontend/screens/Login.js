@@ -71,15 +71,15 @@ const Login = ({ navigation }) => {
         <View style={styles.inputContainer}>
             <StatusBar backgroundColor={colors.background} barStyle={theme.dark ? "light-content" : "dark-content"} />
 
-            <View style={styles.container}>
+            <View style={[styles.container,{backgroundColor:colors.card}]}>
                 <View >
-                    <Text style={styles.texthead}>Login</Text>
+                    <Text style={[styles.texthead,{color:colors.text}]}>Login</Text>
                 </View>
                 <View style={styles.input}>
-                    <Text style={styles.text}>Enter ID</Text>
+                    <Text style={[styles.text,{color:colors.text}]}>Enter ID</Text>
                     {/* <Icon style={styles.icon} name="phone" size={20} color="#FDC913" /> */}
                     <TextInput
-                        style={styles.place}
+                        style={[styles.place,{color:colors.text}]}
                         keyboardType="phone-pad"
                         // placeholder="ID"
                         onChangeText={
@@ -98,7 +98,7 @@ const Login = ({ navigation }) => {
                     </Text>
                 ) : null}
                 <View style={styles.padbutton}>
-                    <TouchableOpacity style={styles.inputButton}>
+                    <TouchableOpacity style={[styles.inputButton,{backgroundColor:colors.primary}]}>
                         <Text
                             style={styles.button}
                             onPress={handleSubmitPress}>SIGN IN</Text>
@@ -106,7 +106,7 @@ const Login = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.register}>
-                <Text style={styles.registertext}>Don't have an Account ? </Text>
+                <Text style={[styles.registertext,{color:colors.text}]}>Don't have an Account ? </Text>
                 <TouchableOpacity>
                     <Text style={styles.registertext1} onPress={() => navigation.navigate("Register")}>Register Now</Text>
                 </TouchableOpacity>

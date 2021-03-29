@@ -74,16 +74,17 @@ const CashonDelivery = ({ navigation }) => {
                 <TouchableOpacity>
                     <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={()=>navigation.goBack()} style={styles.menu} />
                 </TouchableOpacity>
-                    <Text style={styles.text}>Collect Cash on Delivery</Text>
+                    <Text style={[styles.text,{color:colors.text}]}>Collect Cash on Delivery</Text>
                 </View>
                 <View style={styles.padcontainer}>
                     <View style={styles.textinput}>
-                        <Text style={styles.textstyle}>Enter Amount</Text>
+                        <Text style={[styles.textstyle,{color:colors.text}]}>Enter Amount</Text>
                         <TextInput
                             keyboardType="phone-pad"
                             onChangeText={(amount) => setAmount(amount)}
                             autoCapitalize="sentences"
                             returnKeyType="next"
+                            style={{color:colors.text}}
                             ref={amountInputRef}
                             onSubmitEditing={() =>
                                 reamountInputRef.current &&
@@ -94,11 +95,12 @@ const CashonDelivery = ({ navigation }) => {
                         <View style={styles.line}></View>
                     </View>
                     <View style={styles.textinput}>
-                        <Text style={styles.textstyle}>Re-enter Amount</Text>
+                        <Text style={[styles.textstyle,{color:colors.text}]}>Re-enter Amount</Text>
                         <TextInput
                             keyboardType="phone-pad"
                             onChangeText={(reamount) => setReamount(reamount)}
                             maxLength={10}
+                            style={{color:colors.text}}
                             returnKeyType="next"
                             ref={reamountInputRef}
                             onSubmitEditing={Keyboard.dismiss}
@@ -107,7 +109,7 @@ const CashonDelivery = ({ navigation }) => {
                     </View>
                 </View>
                 <View style={styles.padbutton}>
-                        <TouchableOpacity style={styles.inputButton} onPress={()=>navigation.navigate("DeliveryCompleted")}>
+                        <TouchableOpacity style={[styles.inputButton,{backgroundColor:colors.primary}]} onPress={()=>navigation.navigate("DeliveryCompleted")}>
                             <Text
                                 style={styles.button}
                                 onPress={handleSubmitPress}>Cash Collected</Text>

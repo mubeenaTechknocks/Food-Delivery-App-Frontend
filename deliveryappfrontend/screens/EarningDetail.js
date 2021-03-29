@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, ScrollView, FlatList } from 'react-native';
 import { Collapse, CollapseHeader, CollapseBody } from "accordion-collapse-react-native";
 import Icons from 'react-native-vector-icons/Ionicons';
 import Icon1 from 'react-native-vector-icons/AntDesign';
@@ -11,6 +11,101 @@ import { useNavigation, useTheme } from '@react-navigation/native';
 const EarningDetail = ({ navigation }) => {
         const { colors } = useTheme()
         const theme = useTheme()
+
+        const [week, setWeek] = useState([
+                { 'name': 'Restaurant Name', 'id': '1', 'valid': 'Valid for all users', 'min': 'Min. order amount : 200',  },
+                { 'name': 'Restaurant Name', 'id': '2', 'valid': 'Valid for all users', 'min': 'Min. order amount : 200',  },
+                { 'name': 'Restaurant Name', 'id': '3', 'valid': 'Valid for all users', 'min': 'Min. order amount : 200',  },
+                { 'name': 'Restaurant Name', 'id': '4', 'valid': 'Valid for all users', 'min': 'Min. order amount : 200',  },
+                { 'name': 'Restaurant Name', 'id': '5', 'valid': 'Valid for all users', 'min': 'Min. order amount : 200',  },
+                { 'name': 'Restaurant Name', 'id': '6', 'valid': 'Valid for all users', 'min': 'Min. order amount : 200',  },
+                { 'name': 'Restaurant Name', 'id': '7', 'valid': 'Valid for all users', 'min': 'Min. order amount : 200',  },
+        ])
+
+        const [order, setOrder] = useState([
+                { 'name': 'Restaurant Name', 'id': '1', 'valid': 'Valid for all users', 'min': 'Min. order amount : 200',  },
+                { 'name': 'Restaurant Name', 'id': '2', 'valid': 'Valid for all users', 'min': 'Min. order amount : 200', },
+                { 'name': 'Restaurant Name', 'id': '3', 'valid': 'Valid for all users', 'min': 'Min. order amount : 200',  },
+               
+        ])
+
+        const Item = ({ item, onPress }) => (
+
+                <Collapse>
+
+                        <CollapseHeader>
+
+                                <View style={[styles.view4, { backgroundColor: colors.card }]} >
+                                        <Text
+                                                style={{
+                                                        paddingLeft: 20, marginRight: 85, fontFamily: "OpenSansRegular",
+                                                        color: colors.text,
+                                                }} >wed, 20 Feb</Text>
+                                        <Text style={{
+                                                fontFamily: "OpenSansRegular",
+                                                color: colors.text,
+                                        }}>Rs.20</Text>
+                                        <Icon1 name="down" size={15} style={{ color: "#FDC913" }}></Icon1>
+                                </View>
+
+                        </CollapseHeader>
+                        <CollapseBody>
+
+                                <View >
+                                       
+                                        <FlatList
+                                                data={order}
+                                                renderItem={renderItemOrder}
+                                                keyExtractor={item => item.id}
+                                        />
+
+                                </View>
+
+                        </CollapseBody>
+                </Collapse>
+
+        );
+
+        const ItemOrder = ({ itemorder, onPress }) => (
+                <View style={[styles.View1, { backgroundColor: colors.card }]}>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <Text style={{
+                                        marginLeft: 20, marginTop: 20, fontFamily: "OpenSansRegular",
+                                        color: colors.text,
+                                }}>Restaurant Name</Text>
+                                <Text style={{
+                                        marginTop: 20, marginLeft: 20, fontFamily: "OpenSansRegular",
+                                        color: colors.text,
+                                }}>Rs. 0</Text>
+                                <Icon2 name="arrowright" onPress={() => navigation.navigate("Summary")} style={{ marginLeft: 20, marginTop: 20, color: colors.border }} size={20}></Icon2>
+                        </View>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <Text style={{
+                                        marginTop: 10, marginLeft: 20, fontFamily: "OpenSansRegular",
+                                        color: colors.text,
+                                }}>Time</Text>
+                                <Text style={{
+                                        marginTop: 10, marginLeft: 90, fontFamily: "OpenSansRegular",
+                                        color: colors.text,
+                                }}>Delivered</Text>
+                        </View>
+                </View>
+
+        );
+
+        const renderItem = ({ item }) => (
+                <Item
+                        item={item}
+
+                />
+        );
+
+        const renderItemOrder = ({ itemorder }) => (
+                <ItemOrder
+                        itemorder={itemorder}
+
+                />
+        );
 
         return (
                 <ScrollView showsVerticalScrollIndicator={false}>
@@ -29,7 +124,7 @@ const EarningDetail = ({ navigation }) => {
                                         // style={styles.viewdir}
                                         showsHorizontalScrollIndicator={false}>
                                         <View style={{ flexDirection: 'row' }}>
-                                                <View style={[styles.view5, { backgroundColor: colors.card }]}>
+                                                <View style={[styles.view5, { marginLeft: 10 }, { backgroundColor: colors.card }]}>
                                                         <Text style={{
                                                                 fontFamily: "OpenSansRegular",
                                                                 color: colors.text,
@@ -104,225 +199,14 @@ const EarningDetail = ({ navigation }) => {
                                                 </View>
                                         </View>
                                 </ScrollView>
-                                <Collapse>
+                                <View>
+                                        <FlatList
+                                                data={week}
+                                                renderItem={renderItem}
+                                                keyExtractor={item => item.id}
+                                        />
+                                </View>
 
-                                        <CollapseHeader>
-
-                                                <View style={[styles.view4, { backgroundColor: colors.card }]} >
-                                                        <Text
-                                                                style={{
-                                                                        paddingLeft: 20, marginRight: 85, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }} >wed, 20 Feb</Text>
-                                                        <Text style={{
-                                                                fontFamily: "OpenSansRegular",
-                                                                color: colors.text,
-                                                        }}>Rs.20</Text>
-                                                        <Icon1 name="down" size={15} style={{ color: "#FDC913" }}></Icon1>
-                                                </View>
-
-                                        </CollapseHeader>
-                                        <CollapseBody>
-
-                                                <View style={[styles.View1, { backgroundColor: colors.card }]}>
-                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                                                <Text style={{
-                                                                        marginLeft: 20, marginTop: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Restaurant Name</Text>
-                                                                <Text style={{
-                                                                        marginTop: 20, marginLeft: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Rs. 0</Text>
-                                                                <Icon2 name="arrowright" onPress={() => navigation.navigate("Summary")} style={{ marginLeft: 20, marginTop: 20, color: colors.border }} size={20}></Icon2>
-                                                        </View>
-                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                                                <Text style={{
-                                                                        marginTop: 10, marginLeft: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Time</Text>
-                                                                <Text style={{
-                                                                        marginTop: 10, marginLeft: 90, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Delivered</Text>
-                                                        </View>
-                                                </View>
-
-
-
-                                                <View style={[styles.View1, { backgroundColor: colors.card }]}>
-                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                                                <Text style={{
-                                                                        marginLeft: 20, marginTop: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Restaurant Name</Text>
-                                                                <Text style={{
-                                                                        marginTop: 20, marginLeft: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Rs. 0</Text>
-                                                                <Icon2 name="arrowright" onPress={() => navigation.navigate("Summary")} style={{ marginLeft: 20, marginTop: 20, color: colors.border }} size={20}></Icon2>
-                                                        </View>
-                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                                                <Text style={{
-                                                                        marginTop: 10, marginLeft: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Time</Text>
-                                                                <Text style={{
-                                                                        marginTop: 10, marginLeft: 90, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Delivered</Text>
-                                                        </View>
-                                                </View>
-
-                                        </CollapseBody>
-                                </Collapse>
-
-
-
-                                <Collapse>
-                                        <CollapseHeader>
-                                                <View style={[styles.view4, { backgroundColor: colors.card }]}>
-                                                        <Text
-                                                                style={{
-                                                                        paddingLeft: 20, marginRight: 85, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Tue, 19 Feb</Text>
-                                                        <Text style={{
-                                                                fontFamily: "OpenSansRegular",
-                                                                color: colors.text,
-                                                        }}>Rs.20</Text>
-                                                        <Icon1 name="down" size={15} style={{ color: "#FDC913" }}></Icon1>
-                                                </View>
-
-
-                                        </CollapseHeader>
-
-                                        <CollapseBody>
-
-                                                <View style={[styles.View1, { backgroundColor: colors.card }]}>
-                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                                                <Text style={{
-                                                                        marginLeft: 20, marginTop: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Restaurant Name</Text>
-                                                                <Text style={{
-                                                                        marginTop: 20, marginLeft: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Rs. 0</Text>
-                                                                <Icon2 name="arrowright" onPress={() => navigation.navigate("Summary")} style={{ marginLeft: 20, marginTop: 20, color: colors.border }} size={20}></Icon2>
-                                                        </View>
-                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                                                <Text style={{
-                                                                        marginTop: 10, marginLeft: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Time</Text>
-                                                                <Text style={{
-                                                                        marginTop: 10, marginLeft: 90, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Delivered</Text>
-                                                        </View>
-                                                </View>
-
-
-                                                <View style={[styles.View1, { backgroundColor: colors.card }]}>
-                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                                                <Text style={{
-                                                                        marginLeft: 20, marginTop: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Restaurant Name</Text>
-                                                                <Text style={{
-                                                                        marginTop: 20, marginLeft: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Rs. 0</Text>
-                                                                <Icon2 name="arrowright" onPress={() => navigation.navigate("Summary")} style={{ marginLeft: 20, marginTop: 20, color: colors.border }} size={20}></Icon2>
-                                                        </View>
-                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                                                <Text style={{
-                                                                        marginTop: 10, marginLeft: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Time</Text>
-                                                                <Text style={{
-                                                                        marginTop: 10, marginLeft: 90, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Delivered</Text>
-                                                        </View>
-                                                </View>
-
-
-                                        </CollapseBody>
-                                </Collapse>
-
-
-                                <Collapse>
-                                        <CollapseHeader>
-                                                <View style={[styles.view4, { backgroundColor: colors.card }]} >
-                                                        <Text
-                                                                style={{
-                                                                        paddingLeft: 20, marginRight: 85, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Mon, 18 Feb</Text>
-                                                        <Text style={{
-                                                                fontFamily: "OpenSansRegular",
-                                                                color: colors.text,
-                                                        }}>Rs.20</Text>
-                                                        <Icon1 name="down" size={15} style={{ color: "#FDC913" }}></Icon1>
-                                                </View>
-
-
-                                        </CollapseHeader>
-
-                                        <CollapseBody>
-
-                                                <View style={[styles.View1, { backgroundColor: colors.card }]}>
-                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                                                <Text style={{
-                                                                        marginLeft: 20, marginTop: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Restaurant Name</Text>
-                                                                <Text style={{
-                                                                        marginTop: 20, marginLeft: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Rs. 0</Text>
-                                                                <Icon2 name="arrowright" onPress={() => navigation.navigate("Summary")} style={{ marginLeft: 20, marginTop: 20, color: colors.border }} size={20}></Icon2>
-                                                        </View>
-                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                                                <Text style={{
-                                                                        marginTop: 10, marginLeft: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Time</Text>
-                                                                <Text style={{
-                                                                        marginTop: 10, marginLeft: 90, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Delivered</Text>
-                                                        </View>
-                                                </View>
-
-
-                                                <View style={[styles.View1, { backgroundColor: colors.card }]}>
-                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                                                <Text style={{
-                                                                        marginLeft: 20, marginTop: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Restaurant Name</Text>
-                                                                <Text style={{
-                                                                        marginTop: 20, marginLeft: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Rs. 0</Text>
-                                                                <Icon2 name="arrowright" onPress={() => navigation.navigate("Summary")} style={{ marginLeft: 20, marginTop: 20, color: colors.border }} size={20}></Icon2>
-                                                        </View>
-                                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                                                                <Text style={{
-                                                                        marginTop: 10, marginLeft: 20, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Time</Text>
-                                                                <Text style={{
-                                                                        marginTop: 10, marginLeft: 90, fontFamily: "OpenSansRegular",
-                                                                        color: colors.text,
-                                                                }}>Delivered</Text>
-                                                        </View>
-                                                </View>
-                                        </CollapseBody>
-                                </Collapse>
                         </View>
                 </ScrollView>
 
@@ -342,7 +226,8 @@ const styles = StyleSheet.create({
                 shadowRadius: 5,
                 padding: 10,
                 marginRight: 10,
-                marginBottom: 10
+                marginBottom: 10,
+                margin:1
         },
         view4: {
 
@@ -378,7 +263,7 @@ const styles = StyleSheet.create({
                 // paddingLeft: 120,
                 paddingTop: 10,
                 paddingRight: 20,
-                marginTop: 20,
+                marginTop: 10,
                 marginRight: 30,
                 //flexDirection:'row'
 

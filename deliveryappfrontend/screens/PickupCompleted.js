@@ -16,41 +16,41 @@ const PickupCompleted = ({ navigation }) => {
                 <TouchableOpacity>
                     <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={() => navigation.goBack()} style={styles.menu} />
                 </TouchableOpacity>
-                <Text style={styles.text}>Pickup</Text>
+                <Text style={[styles.text,{color:colors.text}]}>Pickup</Text>
             </View>
             <View style={styles.input}>
                 <Collapse>
                     <CollapseHeader>
-                        <View style={styles.inputcontainer}>
-                            <Text style={styles.textinput}>Pickup Confirmed</Text>
+                        <View style={[styles.inputcontainer,{backgroundColor:colors.card}]}>
+                            <Text style={[styles.textinput,{color:colors.text}]}>Pickup Confirmed</Text>
                             <Icon name="down" size={15} color={colors.border} style={{marginTop:5}} />
 
                         </View>
                     </CollapseHeader>
                     <CollapseBody>
-                        <View style={styles.inputcontainer1}>
-                            <Text style={styles.textinput1}>1 * Milkshake</Text>
-                            <Text style={styles.textinput1}>1 * Burger</Text>
+                        <View style={[styles.inputcontainer1,{backgroundColor:colors.card}]}>
+                            <Text style={[styles.textinput1,{color:colors.text}]}>1 * Milkshake</Text>
+                            <Text style={[styles.textinput1,{color:colors.text}]}>1 * Burger</Text>
                         </View>
                     </CollapseBody>
                 </Collapse>
                 <View style={styles.pad}></View>
                 <Collapse>
                     <CollapseHeader>
-                        <View style={styles.inputcontainer}>
-                            <Text style={styles.textinput}>Payment Successfull</Text>
+                        <View style={[styles.inputcontainer,{backgroundColor:colors.card}]}>
+                            <Text style={[styles.textinput,{color:colors.text}]}>Payment Successfull</Text>
                             <Icon name="down" size={15} color={colors.border} style={{marginTop:5}} />
                         </View>
                     </CollapseHeader>
                     <CollapseBody>
-                        <View style={styles.inputcontainer1}>
-                            <Text style={styles.textinput1}>Rs. 300 paid to Restaurant</Text>
+                        <View style={[styles.inputcontainer1,{backgroundColor:colors.card}]}>
+                            <Text style={[styles.textinput1,{color:colors.text}]}>Rs. 300 paid to Restaurant</Text>
                         </View>
                     </CollapseBody>
                 </Collapse>
             </View>
             <View style={styles.padbutton}>
-                <TouchableOpacity style={styles.inputButton}
+                <TouchableOpacity style={[styles.inputButton,{backgroundColor:colors.primary}]}
                     onPress={() => navigation.navigate("DeliveryMap")}
                 >
                     <Text

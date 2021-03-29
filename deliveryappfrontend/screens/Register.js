@@ -1,7 +1,8 @@
 import React, { useState, createRef } from 'react'
-import { View, Text, TextInput, TouchableOpacity, Keyboard, StyleSheet, StatusBar } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, Keyboard, StyleSheet, StatusBar,ScrollView } from 'react-native'
 import { RadioButton, useTheme } from 'react-native-paper'
 import DropDownPicker from 'react-native-dropdown-picker';
+
 
 const Register = ({ navigation }) => {
 
@@ -84,16 +85,17 @@ const Register = ({ navigation }) => {
 
 
     return (
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
             
             <View style={styles.registercontainer}>
-                <Text style={styles.text}>REGISTRATION</Text>
+                <Text style={[styles.text,{color:colors.text}]}>REGISTRATION</Text>
             </View>
             <View style={styles.inputcontainer}>
 
-                <View style={styles.padcontainer}>
+                <View style={[styles.padcontainer,{backgroundColor:colors.card}]}>
                     <View style={styles.textinput}>
-                        <Text style={styles.textstyle}>Name</Text>
+                        <Text style={[styles.textstyle,{color:colors.text}]}>Name</Text>
                         <TextInput
                             keyboardType="default"
                             onChangeText={(userName) => setUserName(userName)}
@@ -105,11 +107,12 @@ const Register = ({ navigation }) => {
                                 emailInputRef.current.focus()
                             }
                             blurOnSubmit={false}
+                            style={{color:colors.text}}
                         />
-                        <View style={styles.line}></View>
+                        <View style={[styles.line,{borderBottomColor:colors.text}]}></View>
                     </View>
                     <View style={styles.textinput}>
-                        <Text style={styles.textstyle}>Email</Text>
+                        <Text style={[styles.textstyle,{color:colors.text}]}>Email</Text>
                         <TextInput
                             keyboardType="email-address"
                             onChangeText={(userEmail) => setUserEmail(userEmail)}
@@ -120,11 +123,12 @@ const Register = ({ navigation }) => {
                                 phoneInputRef.current &&
                                 phoneInputRef.current.focus()
                             }
-                            blurOnSubmit={false} />
-                        <View style={styles.line}></View>
+                            blurOnSubmit={false} 
+                            style={{color:colors.text}}/>
+                        <View style={[styles.line,{borderBottomColor:colors.text}]}></View>
                     </View>
                     <View style={styles.textinput}>
-                        <Text style={styles.textstyle}>Phone</Text>
+                        <Text style={[styles.textstyle,{color:colors.text}]}>Phone</Text>
                         <TextInput
                             keyboardType="phone-pad"
                             onChangeText={(userPhone) => setUserPhone(userPhone)}
@@ -135,11 +139,12 @@ const Register = ({ navigation }) => {
                                 cityInputRef.current &&
                                 cityInputRef.current.focus()
                             }
-                            blurOnSubmit={false} />
-                        <View style={styles.line}></View>
+                            blurOnSubmit={false}
+                            style={{color:colors.text}} />
+                        <View style={[styles.line,{borderBottomColor:colors.text}]}></View>
                     </View>
                     <View style={styles.textinput}>
-                        <Text style={styles.textstyle}>City</Text>
+                        <Text style={[styles.textstyle,{color:colors.text}]}>City</Text>
                         <TextInput
                             keyboardType="default"
                             onChangeText={(city) => setCity(city)}
@@ -147,11 +152,12 @@ const Register = ({ navigation }) => {
                             returnKeyType="next"
                             ref={cityInputRef}
                             onSubmitEditing={Keyboard.dismiss}
-                            blurOnSubmit={false} />
-                        <View style={styles.line}></View>
+                            blurOnSubmit={false}
+                            style={{color:colors.text}} />
+                        <View style={[styles.line,{borderBottomColor:colors.text}]}></View>
                     </View>
                     <View style={styles.textinput}>
-                        <Text style={styles.textstyle}>Job Type</Text>
+                        <Text style={[styles.textstyle,{color:colors.text}]}>Job Type</Text>
                         <View style={styles.textinputdelivery}>
                             <RadioButton
                                 value="first"
@@ -160,7 +166,7 @@ const Register = ({ navigation }) => {
                                 color="#696969"
 
                             />
-                            <Text style={styles.textstyledelivery}>Full Time</Text>
+                            <Text style={[styles.textstyledelivery,{color:colors.text}]}>Full Time</Text>
 
                             <RadioButton
                                 value="second"
@@ -169,11 +175,11 @@ const Register = ({ navigation }) => {
                                 color="#696969"
                             />
 
-                            <Text style={styles.textstyledelivery}>Part Time</Text>
+                            <Text style={[styles.textstyledelivery,{color:colors.text}]}>Part Time</Text>
                         </View>
                     </View>
                     <View style={styles.textinput}>
-                        <Text style={styles.textstyle}>Vechicle Type</Text>
+                        <Text style={[styles.textstyle,{color:colors.text}]}>Vechicle Type</Text>
                         <View style={styles.textinputdelivery}>
                             <RadioButton
                                 value="first"
@@ -182,7 +188,7 @@ const Register = ({ navigation }) => {
                                 color="#696969"
 
                             />
-                            <Text style={styles.textstyledelivery1}>Bike</Text>
+                            <Text style={[styles.textstyledelivery1,{color:colors.text}]}>Bike</Text>
 
                             <RadioButton
                                 value="second"
@@ -191,11 +197,11 @@ const Register = ({ navigation }) => {
                                 color="#696969"
                             />
 
-                            <Text style={styles.textstyledelivery}>Bicycle</Text>
+                            <Text style={[styles.textstyledelivery,{color:colors.text}]}>Bicycle</Text>
                         </View>
                     </View>
                     <View style={styles.textinput}>
-                        <Text style={styles.textstyle}>Delivery Access</Text>
+                        <Text style={[styles.textstyle,{color:colors.text}]}>Delivery Access</Text>
                         <View style={styles.textinputdelivery}>
                             <RadioButton
                                 value="first"
@@ -204,7 +210,7 @@ const Register = ({ navigation }) => {
                                 color="#696969"
 
                             />
-                            <Text style={styles.textstyledelivery2}>All</Text>
+                            <Text style={[styles.textstyledelivery2,{color:colors.text}]}>All</Text>
 
                             <RadioButton
                                 value="second"
@@ -213,11 +219,11 @@ const Register = ({ navigation }) => {
                                 color="#696969"
                             />
 
-                            <Text style={styles.textstyledelivery}>Choose Restaurant</Text>
+                            <Text style={[styles.textstyledelivery,{color:colors.text}]}>Choose Restaurant</Text>
                         </View>
                     </View>
                     <View style={styles.padbutton}>
-                        <TouchableOpacity style={styles.inputButton}>
+                        <TouchableOpacity style={[styles.inputButton,{backgroundColor:colors.primary}]}>
                             <Text
                                 style={styles.button}
                                 onPress={handleSubmitPress}>REGISTER</Text>
@@ -227,6 +233,7 @@ const Register = ({ navigation }) => {
             </View>
 
         </View>
+        </ScrollView>
     )
 }
 

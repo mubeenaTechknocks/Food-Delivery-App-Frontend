@@ -2,8 +2,11 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icons from 'react-native-vector-icons/Ionicons';
+import {useTheme } from 'react-native-paper'
 
 const Summary = ({navigation}) => {
+    const { colors } = useTheme()
+    const theme = useTheme()
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={{ paddingTop: 10 }}>
@@ -11,50 +14,26 @@ const Summary = ({navigation}) => {
                     <TouchableOpacity onPress={()=>navigation.goBack()}>
                         <Icons name="arrow-back" size={30} style={{ marginLeft: 20, marginRight: 40, color: "#FDC913" }}></Icons>
                     </TouchableOpacity>
-                    <Text style={{ fontSize: 24, marginBottom: 40, color: "#696969", fontFamily: "OpenSansBold", }}>Delivery Summary</Text>
+                    <Text style={[styles.Summary,{color:colors.text}]}>Delivery Summary</Text>
                 </View>
-                <View style={styles.view3}>
-                    <Text style={{
-                        marginTop: 10, marginLeft: 20, fontSize: 16, fontFamily: "OpenSansRegular",
-                        color: "#696969"
-                    }}>Restaurant Name</Text>
-                    <Text style={{
-                        marginTop: 10, marginLeft: 20, fontSize: 16, fontFamily: "OpenSansRegular",
-                        color: "#696969"
-                    }}>Address</Text>
+                <View style={[styles.view3,{backgroundColor:colors.card}]}>
+                    <Text style={[styles.text1,{color:colors.text}]}>Restaurant Name</Text>
+                    <Text style={[styles.text1,{color:colors.text}]}>Address</Text>
 
-                    <View style={styles.view6}>
-                        <Text style={{
-                            marginTop: 10, marginLeft: 20, fontSize: 16, fontFamily: "OpenSansRegular",
-                            color: "#696969"
-                        }}>Order Details</Text>
-                        <Text style={{
-                            marginTop: 10, marginLeft: 20, fontSize: 16, fontFamily: "OpenSansRegular",
-                            color: "#696969"
-                        }}>Food Items</Text>
+                    <View style={[styles.view6,{backgroundColor:colors.card}]}>
+                        <Text style={[styles.text1,{color:colors.text}]}>Order Details</Text>
+                        <Text style={[styles.text1,{color:colors.text}]}>Food Items</Text>
                     </View>
                 </View>
-                <View style={styles.view4}>
-                    <Text style={{
-                        marginLeft: 20, marginTop: 20, fontSize: 16, fontFamily: "OpenSansRegular",
-                        color: "#696969"
-                    }}>Customer Name</Text>
-                    <Text style={{
-                        marginLeft: 20, marginTop: 10, fontSize: 16, fontFamily: "OpenSansRegular",
-                        color: "#696969"
-                    }}>Address</Text>
+                <View style={[styles.view4,{backgroundColor:colors.card}]}>
+                    <Text style={[styles.custom,{color:colors.text}]}>Customer Name</Text>
+                    <Text style={[styles.address,{color:colors.text}]}>Address</Text>
                 </View>
 
-                <View style={styles.view5}>
+                <View style={[styles.view5,{backgroundColor:colors.card}]}>
                     <Text onPress={() => navigation.navigate("COD")}
-                        style={{
-                            paddingLeft: 20, paddingTop: 5, marginRight: 120, fontSize: 16, fontFamily: "OpenSansRegular",
-                            color: "#696969"
-                        }}>Amount</Text>
-                    <Text style={{
-                        paddingTop: 5, fontSize: 16, fontFamily: "OpenSansRegular",
-                        color: "#696969"
-                    }}>Rs.300</Text>
+                        style={[styles.amt,{color:colors.text}]}>Amount</Text>
+                    <Text style={[styles.rs,{color:colors.text}]}>Rs.300</Text>
                 </View>
             </View>
         </ScrollView>
@@ -140,5 +119,46 @@ const styles = StyleSheet.create({
         //flexDirection:'row'
 
     },
+    Summary:{ 
+        fontSize: 24,
+        marginBottom: 40, 
+        color: "#696969",
+        fontFamily: "OpenSansBold", 
+},
+text1:{
+    marginTop: 10,
+    marginLeft: 20,
+    fontSize: 16,
+    fontFamily: "OpenSansRegular",
+    color: "#696969"
+},
+address:{
+    marginLeft: 20,
+    marginTop: 10,
+    fontSize: 16,
+    fontFamily: "OpenSansRegular",
+    color: "#696969"
+},
+custom:{
+    marginLeft: 20,
+    marginTop: 20,
+    fontSize: 16,
+    fontFamily: "OpenSansRegular",
+    color: "#696969"
+},
+amt:{
+    paddingLeft: 20,
+    paddingTop: 5, 
+    marginRight: 120, 
+    fontSize: 16, 
+    fontFamily: "OpenSansRegular",
+    color: "#696969"
+},
+rs:{
+    paddingTop: 5,
+    fontSize: 16, 
+    fontFamily: "OpenSansRegular",
+    color: "#696969"
+}
 
 })

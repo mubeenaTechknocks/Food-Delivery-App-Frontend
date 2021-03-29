@@ -14,26 +14,26 @@ const DeliveryCompleted = ({ navigation }) => {
             <TouchableOpacity>
                     <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={()=>navigation.goBack()} style={styles.menu} />
                 </TouchableOpacity>
-            <Text style={styles.text}>Deliver</Text>
+            <Text style={[styles.text,{color:colors.text}]}>Deliver</Text>
             </View>
-            <View style={styles.inputcontainer}>
+            <View style={[styles.inputcontainer,{backgroundColor:colors.card}]}>
                 <View style={styles.iconcontainer}>
-                    <Icon style={styles.icon} name="delivery-dining" size={25} color="#696969" />
-                    <Text style={styles.res}>Customer Name</Text>
+                    <Icon style={styles.icon} name="delivery-dining" size={25} style={{color:colors.text,paddingRight:10}} />
+                    <Text style={[styles.res,{color:colors.text}]}>Customer Name</Text>
                 </View>
-                <Text style={styles.add}>Address</Text>
+                <Text style={[styles.add,{color:colors.text}]}>Address</Text>
         
                 <View style={styles.detail}>
-                    <View style={styles.detailcontainer}>
-                        <Text style={styles.order}>Order Details</Text>
+                    <View style={[styles.detailcontainer,{backgroundColor:colors.card}]}>
+                        <Text style={[styles.order,{color:colors.text}]}>Order Details</Text>
                         <View>
-                            <Text style={styles.item}>1 * Milkshake</Text>
-                            <Text style={styles.item}>1 * Burger</Text>
+                            <Text style={[styles.item,{color:colors.text}]}>1 * Milkshake</Text>
+                            <Text style={[styles.item,{color:colors.text}]}>1 * Burger</Text>
                         </View>
                     </View>
                 </View>
                 <View style={styles.padbutton}>
-                <TouchableOpacity style={styles.inputButton} onPress={()=>navigation.navigate("SearchOrder")}>
+                <TouchableOpacity style={[styles.inputButton,{backgroundColor:colors.primary}]} onPress={()=>navigation.navigate("SearchOrder")}>
                     <Text
                         style={styles.button}
                     >Delivery Completed</Text>

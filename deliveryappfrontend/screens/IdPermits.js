@@ -2,8 +2,11 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icons from 'react-native-vector-icons/Ionicons';
+import {useTheme } from 'react-native-paper'
 
 const IdPermits = ({ navigation }) => {
+    const { colors } = useTheme()
+    const theme = useTheme()
     return (
 
         <View style={{ paddingTop: 10, paddingBottom: 300 }}>
@@ -13,22 +16,22 @@ const IdPermits = ({ navigation }) => {
                 </TouchableOpacity>
                 <Text style={{
                     fontSize: 24, fontFamily: "OpenSansBold",
-                    marginBottom: 20, color: "#696969"
+                    marginBottom: 20, color:colors.text
                 }}>Id & Permit documents</Text>
             </View>
 
-            <View style={styles.view5}>
+            <View style={[styles.view5,{backgroundColor:colors.card}]}>
                 <Text onPress={() => navigation.navigate("Idcard")}
                     style={{
                         paddingLeft: 105, fontFamily: "OpenSansSemiBold",
-                        paddingTop: 2, color: "#696969", fontSize: 17
+                        paddingTop: 2, color:colors.text, fontSize: 17
                     }}>Id card</Text></View>
 
-            <View style={styles.view5}>
+            <View style={[styles.view5,{backgroundColor:colors.card}]}>
                 <Text onPress={() => navigation.navigate("Document")}
                     style={{
                         paddingLeft: 90, paddingTop: 3, fontFamily: "OpenSansSemiBold",
-                        color: "#696969", fontSize: 17
+                        color:colors.text, fontSize: 17
                     }}>Documents</Text></View>
         </View>
 

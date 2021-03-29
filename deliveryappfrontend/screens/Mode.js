@@ -3,9 +3,11 @@ import { StyleSheet, Text, View, Switch, TouchableOpacity } from 'react-native';
 import { RadioButton, useTheme } from 'react-native-paper';
 import { AuthContext } from '../Components/Context'
 import Icon1 from 'react-native-vector-icons/Ionicons'
+//import {useTheme } from 'react-native-paper'
 
 const Mode = ({ navigation }) => {
-
+    const { colors } = useTheme()
+    const theme = useTheme()
     const [isEnabled, setIsEnabled] = useState(false);
 
     const [checked, setChecked] = useState('first');
@@ -20,13 +22,13 @@ const Mode = ({ navigation }) => {
                 <TouchableOpacity>
                     <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={()=>navigation.goBack()} style={styles.menu} />
                 </TouchableOpacity>
-                <Text style={styles.text}>Mode</Text>
+                <Text style={[styles.text,{color:colors.text}]}>Mode</Text>
             </View>
            <View style={styles.modecontainer}>
-                <View style={styles.mode}>
-                    <Text style={styles.font}>Choose Mode</Text>
+                <View style={[styles.mode,{backgroundColor:colors.card}]}>
+                    <Text style={[styles.font,{color:colors.text}]}>Choose Mode</Text>
                     <View style={styles.switch}>
-                        <Text style={styles.font1}>Dark Mode</Text>
+                        <Text style={[styles.font1,{color:colors.text}]}>Dark Mode</Text>
                         <Switch
                             trackColor={{ false: "#767577", true: "#81b0ff" }}
                             thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}

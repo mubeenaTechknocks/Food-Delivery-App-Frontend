@@ -3,8 +3,13 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Icons from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { color } from 'react-native-reanimated';
+import {useTheme } from 'react-native-paper'
 
 const ProblemDetails = ({ navigation }) => {
+    const { colors } = useTheme()
+    const theme = useTheme()
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={{ paddingTop: 10,height:'100%', justifyContent: 'center', alignContent: 'center',paddingRight:20,paddingLeft:20,paddingBottom:20 }}>
@@ -15,20 +20,17 @@ const ProblemDetails = ({ navigation }) => {
                         </TouchableOpacity>
                     <Text style={{
                         fontSize: 25, marginBottom: 50,
-                        color: "#696969", fontFamily: "OpenSansBold",
+                        fontFamily: "OpenSansBold",color:colors.text
                     }}>Problem Details</Text>
 
                 </View>
-                <View style={styles.view6}>
+                <View style={[styles.view6,{backgroundColor:colors.card}]}>
                     <View style={styles.view4}>
                         <View style={{ flexDirection: 'row' }}>
-                            <Text style={{
-                                marginTop: 20, marginLeft: 20, fontFamily: "OpenSansSemiBold",
-                                color: "#696969"
-                            }}>Problem ID</Text>
+                            <Text style={[styles.problem,{color:colors.text}]}>Problem ID</Text>
                             <TouchableOpacity style={{ paddingTop: 5, paddingLeft: 50 }} >
                                 <Text style={{
-                                    backgroundColor: "#FDC913", fontSize: 15, fontFamily: "OpenSansSemiBold",
+                                    backgroundColor:colors.primary, fontSize: 15, fontFamily: "OpenSansSemiBold",
                                     color: "white",marginLeft:105,padding:10,
                                     borderRadius: 20, marginTop:10
                                 }}>Closed</Text>
@@ -36,7 +38,7 @@ const ProblemDetails = ({ navigation }) => {
                         </View>
                         <Text style={{
                             marginLeft: 20, fontFamily: "OpenSansRegular",
-                            color: "#696969"
+                           color:colors.text
                         }}>1</Text>
                     </View>
 
@@ -44,11 +46,11 @@ const ProblemDetails = ({ navigation }) => {
                     <View style={styles.view4}>
                         <Text style={{
                             marginLeft: 20,marginTop: 10, fontFamily: "OpenSansSemiBold",
-                            color: "#696969"
+                            color:colors.text
                         }}>Reported On</Text>
                         <Text style={{
                             marginLeft: 20, marginTop: 10, fontFamily: "OpenSansRegular",
-                            color: "#696969"
+                            color:colors.text
                         }}>8 Feb, 12.00 pm</Text>
                     </View>
 
@@ -56,48 +58,48 @@ const ProblemDetails = ({ navigation }) => {
                     <View style={styles.view4}>
                         <Text style={{
                             marginLeft: 20,marginTop: 10,fontFamily: "OpenSansSemiBold",
-                            color: "#696969"
+                            color:colors.text
                         }}>Problem</Text>
                         <Text style={{
                             marginLeft: 20, marginTop: 10, fontFamily: "OpenSansRegular",
-                            color: "#696969"
+                            color:colors.text
                         }}>Order Related Problem</Text>
                     </View>
 
                     <View style={styles.view4}>
                         <Text style={{
                             marginLeft: 20,marginTop: 10,  fontFamily: "OpenSansSemiBold",
-                            color: "#696969"
+                            color:colors.text
                         }}>Restaurant Name</Text>
                         <Text style={{
                             marginLeft: 20, marginTop: 10, fontFamily: "OpenSansRegular",
-                            color: "#696969"
+                            color:colors.text
                         }}>ABC</Text>
                     </View>
 
                     <View style={styles.view4}>
                         <Text style={{
                             marginLeft: 20,marginTop: 10,  fontFamily: "OpenSansSemiBold",
-                            color: "#696969"
+                            color:colors.text
                         }}>Reason</Text>
                         <Text style={{
                             marginLeft: 20, marginTop: 10, fontFamily: "OpenSansRegular",
-                            color: "#696969"
+                            color:colors.text
                         }}>Waited for a long time</Text>
                     </View>
 
                     <View style={styles.view4}>
                         <Text style={{
                             marginLeft: 20,marginTop: 10,  fontFamily: "OpenSansSemiBold",
-                            color: "#696969"
+                            color:colors.text
                         }}>Comments</Text>
                         <Text style={{
                             marginLeft: 20, marginTop: 10, fontFamily: "OpenSansRegular",
-                            color: "#696969"
+                            color:colors.text
                         }}>We here noticed the problem</Text>
                         <Text style={{
                             marginLeft: 20, marginTop: 5, fontFamily: "OpenSansRegular",
-                            color: "#696969"
+                            color:colors.text
                         }}>8 Feb, 12.08 pm</Text>
                     </View>
                 </View>
@@ -121,4 +123,8 @@ const styles = StyleSheet.create({
        
 
     },
+    problem:{
+        marginTop: 20, marginLeft: 20, fontFamily: "OpenSansSemiBold",
+      
+    }
 })

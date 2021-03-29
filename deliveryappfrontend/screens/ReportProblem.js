@@ -3,9 +3,16 @@ import { StyleSheet, Text, TextInput, View, ScrollView } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import Icons from 'react-native-vector-icons/Ionicons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import {useTheme,useNavigation } from '@react-navigation/native'
 
+const ReportProblem = ({ route }) => {
+    
+    const { colors } = useTheme()
+    const theme = useTheme()
+    
+    const item = route.params.items
 
-const ReportProblem = ({ navigation }) => {
+    const navigation = useNavigation();
 
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -15,35 +22,38 @@ const ReportProblem = ({ navigation }) => {
                     <TouchableOpacity onPress={()=>navigation.goBack()}>
                     <Icons name="arrow-back" size={30} style={{ marginLeft: 20, marginRight: 20, color: "#FDC913" }}></Icons>
                     </TouchableOpacity>
-                    <Text style={{ fontSize: 24, marginBottom: 30, color: "#696969", fontFamily: "OpenSansBold", }}>Report new Problem</Text>
+                    <Text style={{ fontSize: 24, marginBottom: 30, 
+                        color:colors.text, fontFamily: "OpenSansBold", }}>Report new Problem</Text>
                 </View>
-                <Text style={{ fontSize: 18, marginLeft: 35, color: "#696969", fontFamily: "OpenSansSemiBold", }}>Selected Order</Text>
-                <View style={styles.view6}>
+                <Text style={{ fontSize: 18, marginLeft: 35, color: colors.text,
+                 fontFamily: "OpenSansSemiBold", }}>Selected Order</Text>
+                <View style={[styles.view6,{backgroundColor:colors.card}]}>
                     <Text style={{
                         marginLeft: 10, marginTop: 10, fontFamily: "OpenSansRegular",
-                        color: "#696969"
+                        color: colors.text,
+                        
                     }}>Item: Restaurant Name</Text>
                     <Text style={{
                         marginLeft: 10, marginTop: 10, fontFamily: "OpenSansRegular",
-                        color: "#696969"
+                        color: colors.text,
                     }}>Date, Time</Text>
                 </View>
 
                 <Text style={{
                     marginLeft: 35, fontSize: 18,
-                    color: "#696969", fontFamily: "OpenSansSemiBold",
+                    color: colors.text, fontFamily: "OpenSansSemiBold",
                 }}>Enter Problem Details</Text>
 
-                <View style={styles.view4}>
+                <View style={[styles.view4,{backgroundColor:colors.card}]}>
                     <Text style={{
                         marginLeft: 20, marginTop: 10, fontSize: 18,
-                        color: "#696969", fontFamily: "OpenSansSemiBold",
-                    }}>Restaurant waiting time</Text>
+                        color: colors.text, fontFamily: "OpenSansSemiBold",
+                    }}>{item.name}</Text>
                     <Text style={{
                         marginLeft: 20, marginTop: 10, fontSize: 18,
-                        color: "#696969", fontFamily: "OpenSansSemiBold",
+                        color: colors.text, fontFamily: "OpenSansSemiBold",
                     }}>Please give more Details</Text>
-                    <View style={styles.view5}>
+                    <View style={[styles.view5,{backgroundColor:colors.card}]}>
                         <TextInput style={{
                             marginLeft: 25, marginTop: 10, fontFamily: "OpenSansRegular",
                             color: "#696969"
@@ -54,7 +64,7 @@ const ReportProblem = ({ navigation }) => {
 
                         <TouchableOpacity style={{ paddingTop: 5 }} onPress={() => navigation.navigate("NewProblem")}>
                             <Text style={{
-                                backgroundColor: "#FDC913", fontSize: 15, fontFamily: "OpenSansSemiBold",
+                                backgroundColor:colors.primary, fontSize: 15, fontFamily: "OpenSansSemiBold",
                                 color: "white", height: 38, paddingTop: 8,
                                 paddingLeft: 30, paddingRight: 25, paddingBottom: 10,
                                 borderRadius: 20, width: "87%", marginLeft: 12, marginRight: 10
@@ -63,7 +73,7 @@ const ReportProblem = ({ navigation }) => {
 
                         <TouchableOpacity style={{ paddingTop: 5 }} onPress={() => navigation.navigate("NewProblem")}>
                             <Text style={{
-                                backgroundColor: "#FDC913", fontSize: 15, fontFamily: "OpenSansSemiBold",
+                                backgroundColor:colors.primary, fontSize: 15, fontFamily: "OpenSansSemiBold",
                                 color: "white", height: 38, paddingTop: 8,
                                 paddingLeft: 30, paddingRight: 20, paddingBottom: 10,
                                 borderRadius: 20, width: "86%", marginLeft: 15, marginRight: 15

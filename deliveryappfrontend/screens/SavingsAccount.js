@@ -1,6 +1,7 @@
 import React, { useState, createRef } from 'react'
 import { View, Text, TextInput, StyleSheet, Keyboard, TouchableOpacity, StatusBar } from 'react-native'
 import { RadioButton, useTheme } from 'react-native-paper'
+import { color } from 'react-native-reanimated'
 import Icon1 from 'react-native-vector-icons/Ionicons'
 
 const SavingsAccount = ({ navigation }) => {
@@ -80,17 +81,17 @@ const SavingsAccount = ({ navigation }) => {
                 <TouchableOpacity>
                     <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={()=>navigation.goBack()} style={styles.menu} />
                 </TouchableOpacity>
-                <Text style={styles.text}>Savings Account</Text>
+                <Text style={[styles.text,{color:colors.text}]}>Savings Account</Text>
             </View>
             <View style={styles.inputcontainer}>
 
                 <View style={styles.padcontainer}>
                     <View style={styles.textinput}>
-                        <Text style={styles.textstyle}>Account Number</Text>
+                        <Text style={[styles.textstyle,{color:colors.text}]}>Account Number</Text>
                         <TextInput
                             keyboardType="phone-pad"
                             onChangeText={(accountNumber) => setAccountNumber(accountNumber)}
-
+                            style={{color:colors.text}}
                             returnKeyType="next"
                             ref={accountnumberInputRef}
                             onSubmitEditing={() =>
@@ -102,11 +103,12 @@ const SavingsAccount = ({ navigation }) => {
                         <View style={styles.line}></View>
                     </View>
                     <View style={styles.textinput}>
-                        <Text style={styles.textstyle}>Account Holder Name</Text>
+                        <Text style={[styles.textstyle,{color:colors.text}]}>Account Holder Name</Text>
                         <TextInput
                             keyboardType="default"
                             onChangeText={(accountName) => setAccountName(accountName)}
                             maxLength={10}
+                            style={{color:colors.text}}
                             autoCapitalize="sentences"
                             returnKeyType="next"
                             ref={accountnameInputRef}
@@ -119,11 +121,12 @@ const SavingsAccount = ({ navigation }) => {
                         <View style={styles.line}></View>
                     </View>
                     <View style={styles.textinput}>
-                        <Text style={styles.textstyle}>IFSC Code</Text>
+                        <Text style={[styles.textstyle,{color:colors.text}]}>IFSC Code</Text>
                         <TextInput
                             keyboardType="default"
                             onChangeText={(ifsc) => setIfsc(ifsc)}
                             maxLength={10}
+                            style={{color:colors.text}}
                             returnKeyType="next"
                             ref={ifscInputRef}
                             onSubmitEditing={Keyboard.dismiss}
@@ -132,7 +135,7 @@ const SavingsAccount = ({ navigation }) => {
                     </View>
                 </View>
                 <View style={styles.padbutton}>
-                    <TouchableOpacity style={styles.inputButton}>
+                    <TouchableOpacity style={[styles.inputButton,{backgroundColor:colors.primary}]}>
                         <Text
                             style={styles.button}
                             onPress={handleSubmitPress}>Save</Text>

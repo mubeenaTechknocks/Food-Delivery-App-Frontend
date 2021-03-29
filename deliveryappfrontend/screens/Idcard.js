@@ -6,6 +6,8 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useTheme, Avatar, Drawer } from 'react-native-paper';
 
 const Idcard = ({ navigation }) => {
+  const { colors } = useTheme()
+  const theme = useTheme()
   const [image, setImage] = useState(null);
   const [Id, setId] = useState();
   const [Mobile, setMobile] = useState();
@@ -22,9 +24,9 @@ const Idcard = ({ navigation }) => {
           <TouchableOpacity onPress={()=>navigation.goBack()}>
           <Icons name="arrow-back" size={30} style={{ marginLeft: 20, marginRight: 110, color: "#FDC913" }}></Icons>
           </TouchableOpacity>
-          <Text style={{ fontSize: 24, marginBottom: 20, color: "#696969", fontFamily: "OpenSansBold" }}>ID Card</Text>
+          <Text style={{ fontSize: 24, marginBottom: 20, color:colors.text, fontFamily: "OpenSansBold" }}>ID Card</Text>
         </View>
-        <View style={styles.view3}>
+        <View style={[styles.view3,{backgroundColor:colors.card}]}>
          <Avatar.Image
               source={{
                 uri:
@@ -38,19 +40,19 @@ const Idcard = ({ navigation }) => {
 
           <Text style={{
             marginLeft: 150, fontFamily: "OpenSansSemiBold", marginTop: 20, fontSize: 15,
-            color: "#696969"
+            color: colors.text
           }} >Name</Text>
 
 
           <View style={{ flexDirection: 'row', marginTop: 20, marginLeft: 15 }}>
             <Text style={{
               fontFamily: "OpenSansRegular",
-              color: "#696969"
+              color:colors.text
             }}>ID</Text>
-            <Text style={{ marginLeft: 145 }}>:</Text>
+            <Text style={{ marginLeft: 145,color:colors.text }}>:</Text>
             <TextInput style={{
               fontFamily: "OpenSansRegular", marginLeft: 10,
-              color: "#696969"
+              color: "#696969",color:colors.text 
             }} value={Id} keyboardType="number-pad"
               onChangeText={(text) => setId(text)} ></TextInput>
           </View>
@@ -58,61 +60,61 @@ const Idcard = ({ navigation }) => {
           <View style={{ flexDirection: 'row', marginTop: 20, marginLeft: 15 }}>
             <Text style={{
               fontFamily: "OpenSansRegular",
-              color: "#696969"
+              color: "#696969",color:colors.text 
             }}>Mobile Number</Text>
-            <Text style={{ marginLeft: 55 }}>:</Text>
+            <Text style={{ marginLeft: 55 ,color:colors.text }}>:</Text>
             <TextInput style={{
               fontFamily: "OpenSansRegular", marginLeft: 10,
-              color: "#696969"
+              color: "#696969",color:colors.text 
             }} value={Mobile} keyboardType="number-pad"
               onChangeText={(text) => setMobile(text)}  ></TextInput>
           </View>
 
           <View style={{ flexDirection: 'row', marginTop: 20, marginLeft: 15 }}>
             <Text style={{
-              fontFamily: "OpenSansRegular",
-              color: "#696969"
+              fontFamily: "OpenSansRegular",color:colors.text ,
+            
             }}>Blood group</Text>
-            <Text style={{ marginLeft: 77 }}>:</Text>
+            <Text style={{ marginLeft: 77,color:colors.text  }}>:</Text>
             <TextInput style={{
               fontFamily: "OpenSansRegular", marginLeft: 10,
-              color: "#696969"
+              color: "#696969",color:colors.text 
             }} value={BloodGroup} onChangeText={(text) => setBloodGroup(text)} ></TextInput>
           </View>
 
           <View style={{ flexDirection: 'row', marginTop: 20, marginLeft: 15 }}>
             <Text style={{
               fontFamily: "OpenSansRegular",
-              color: "#696969"
+              color: "#696969",color:colors.text 
             }}>Location</Text>
-            <Text style={{ marginLeft: 101 }}>:</Text>
+            <Text style={{ marginLeft: 101,color:colors.text  }}>:</Text>
             <TextInput style={{
-              fontFamily: "OpenSansRegular", marginLeft: 10,
-              color: "#696969"
+              fontFamily: "OpenSansRegular", marginLeft: 10,color:colors.text ,
+              
             }} value={Location} onChangeText={(text) => setLocation(text)} ></TextInput>
           </View>
 
           <View style={{ flexDirection: 'row', marginTop: 20, marginLeft: 15 }}>
             <Text style={{
               fontFamily: "OpenSansRegular",
-              color: "#696969"
+              color: "#696969",color:colors.text 
             }}>Govt Id Proof</Text>
-            <Text style={{ marginLeft: 70 }}>:</Text>
+            <Text style={{ marginLeft: 70 ,color:colors.text }}>:</Text>
             <TextInput style={{
-              fontFamily: "OpenSansRegular", marginLeft: 10,
-              color: "#696969"
+              fontFamily: "OpenSansRegular", marginLeft: 10,color:colors.text ,
+              
             }} value={IdProof} onChangeText={(text) => setIdProof(text)} ></TextInput>
           </View>
 
           <View style={{ flexDirection: 'row', marginTop: 20, marginLeft: 15 }}>
             <Text style={{
-              fontFamily: "OpenSansRegular",
-              color: "#696969"
+              fontFamily: "OpenSansRegular",color:colors.text ,
+              color: "#696969",color:colors.text 
             }}>Driving Licence</Text>
-            <Text style={{ marginLeft: 56 }}>:</Text>
+            <Text style={{ marginLeft: 56,color:colors.text  }}>:</Text>
             <TextInput style={{
               fontFamily: "OpenSansRegular", marginLeft: 10,
-              color: "#696969"
+              color: "#696969",color:colors.text 
             }} keyboardType="number-pad"
               value={Licence} onChangeText={(text) => setLicence(text)} ></TextInput>
           </View>
@@ -120,21 +122,21 @@ const Idcard = ({ navigation }) => {
           <View style={{ flexDirection: 'row', marginTop: 20, marginLeft: 15 }}>
             <Text style={{
               fontFamily: "OpenSansRegular",
-              color: "#696969"
+              color: "#696969",color:colors.text 
             }} >Emergency Number</Text>
-            <Text style={{ marginLeft: 24 }}>:</Text>
+            <Text style={{ marginLeft: 24 ,color:colors.text }}>:</Text>
             <TextInput style={{
               fontFamily: "OpenSansRegular", marginLeft: 10,
-              color: "#696969"
+              color: "#696969",color:colors.text 
             }} keyboardType="number-pad"
               value={Emergency} onChangeText={(text) => setEmergency(text)} ></TextInput>
           </View>
 
 
-          <View style={styles.view5}>
+          <View style={[styles.view5,{borderColor:colors.text}]}>
             <Text style={{
              fontSize: 15, fontFamily: "OpenSansSemiBold",
-              color: "#696969"
+              color: "#696969",color:colors.text 
             }}>Valid Only For Distribution of Food </Text>
            
           </View>
@@ -172,6 +174,7 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     marginTop: 20,
     padding:20,
+    
     // alignSelf:'center'
     
 

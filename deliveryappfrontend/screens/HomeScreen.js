@@ -1,86 +1,89 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, StatusBar, StyleSheet,PushNotificationIOS, } from 'react-native'
+import { View, Text, TouchableOpacity, StatusBar, StyleSheet,PushNotificationIOS,ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/Entypo'
 import Icon1 from 'react-native-vector-icons/Ionicons'
 
 import { DrawerActions, useTheme } from '@react-navigation/native';
+
 
 const HomeScreen = ({ navigation }) => {
 
     const { colors } = useTheme()
     const theme = useTheme()
     return (
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
             <StatusBar backgroundColor={colors.background} barStyle={theme.dark ? "light-content" : "dark-content"} />
             <View>
-                <View style={styles.iconcontainer}>
+                <View style={[styles.iconcontainer,{backgroundColor:colors.card}]}>
                     <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-                        <Icon name="dots-three-vertical" size={25} color="black" />
+                        <Icon name="dots-three-vertical" size={25} style={{color:colors.text}} />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.icon1} onPress={() => navigation.navigate("Notification")}>
-                        <Icon1 name="notifications" size={25} color="black" />
+                        <Icon1 name="notifications" size={25} style={{color:colors.text}} />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.icon2} onPress={() => navigation.navigate("Map")}>
-                        <Icon1 name="location-sharp" size={25} color="black" />
+                        <Icon1 name="location-sharp" size={25} style={{color:colors.text}}/>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.icon3} onPress={() => navigation.navigate("Help")}>
-                        <Icon1 name="help-circle" size={25} color="black" />
+                        <Icon1 name="help-circle" size={25} style={{color:colors.text}}/>
                     </TouchableOpacity>
 
                 </View>
                 <View style={styles.menucontainer}>
-                    <View style={styles.homecontainer}>
+                    <View style={[styles.homecontainer,{backgroundColor:colors.card}]}>
 
-                        <View style={styles.start}>
+                        <View style={[styles.start,{backgroundColor:colors.card}]}>
                             <TouchableOpacity onPress={() => navigation.navigate("SearchOrder")} >
-                                <Text style={styles.startcontainer}>START DUTY</Text>
+                                <Text style={[styles.startcontainer,{backgroundColor:colors.primary}]}>START DUTY</Text>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.pad}></View>
                         <View >
                             <View style={styles.option}>
-                                <TouchableOpacity style={styles.touch1} onPress={() => navigation.navigate("Earnings")} >
-                                    <Text style={styles.text}>Rs.50</Text>
-                                    <Text style={styles.text}>Today's Earning</Text>
+                                <TouchableOpacity style={[styles.touch1,{backgroundColor:colors.card}]} onPress={() => navigation.navigate("Earnings")} >
+                                    <Text style={[styles.text,{color:colors.text}]}>Rs.50</Text>
+                                    <Text style={[styles.text,{color:colors.text}]}>Today's Earning</Text>
 
                                 </TouchableOpacity>
-                                <TouchableOpacity style={styles.touch1} onPress={() => navigation.navigate("EarningDetail")} >
-                                    <Text style={styles.text}>Rs.100</Text>
-                                    <Text style={styles.text}>Week's Earning</Text>
+                                <TouchableOpacity style={[styles.touch1,{backgroundColor:colors.card}]} onPress={() => navigation.navigate("EarningDetail")} >
+                                    <Text style={[styles.text,{color:colors.text}]}>Rs.100</Text>
+                                    <Text style={[styles.text,{color:colors.text}]}>Week's Earning</Text>
                                 </TouchableOpacity>
                             </View>
                             <View style={styles.option}>
-                                <TouchableOpacity style={styles.touch1} onPress={() => navigation.navigate("COD")} >
-                                    <Text style={styles.text}>Rs.10 </Text>
-                                    <Text style={styles.text}>COD</Text>
+                                <TouchableOpacity style={[styles.touch1,{backgroundColor:colors.card}]} onPress={() => navigation.navigate("COD")} >
+                                    <Text style={[styles.text,{color:colors.text}]}>Rs.10 </Text>
+                                    <Text style={[styles.text,{color:colors.text}]}>COD</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={styles.touch1} onPress={() => navigation.navigate("DeliveryTip")} >
-                                    <Text style={styles.text}>Rs.20</Text>
-                                    <Text style={styles.text}>Delivery Tip</Text>
+                                <TouchableOpacity style={[styles.touch1,{backgroundColor:colors.card}]} onPress={() => navigation.navigate("DeliveryTip")} >
+                                    <Text style={[styles.text,{color:colors.text}]}>Rs.20</Text>
+                                    <Text style={[styles.text,{color:colors.text}]}>Delivery Tip</Text>
                                 </TouchableOpacity>
                             </View>
                             <View style={styles.option}>
-                                <TouchableOpacity style={styles.shift} onPress={() => navigation.navigate("Shift")} >
+                                <TouchableOpacity style={[styles.shift,{backgroundColor:colors.primary}]} onPress={() => navigation.navigate("Shift")} >
                                     <Text style={styles.shifttext}>Shift Details</Text>
                                 </TouchableOpacity>
 
                                 <TouchableOpacity style={styles.login} onPress={() => navigation.navigate("LoginHistory")} >
-                                    <Text style={styles.logintext}>Login History</Text>
+                                    <Text style={[styles.logintext,{color:colors.text}]}>Login History</Text>
 
                                 </TouchableOpacity>
                             </View>
                         </View>
                         <View style={styles.pad1}></View>
-                        <View style={styles.card}>
-                            <Text style={styles.cardtext}>See your ID card</Text>
+                        <View style={[styles.card,{backgroundColor:colors.card}]}>
+                            <Text style={[styles.cardtext,{color:colors.text}]}>See your ID card</Text>
                             <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-                                <Text style={styles.cardcontainer}>GO TO PROFILE</Text>
+                                <Text style={[styles.cardcontainer,{backgroundColor:colors.primary}]}>GO TO PROFILE</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
                 </View>
             </View>
         </View>
+        </ScrollView>
     )
 }
 
@@ -141,7 +144,7 @@ const styles = StyleSheet.create({
         color: '#696969'
     },
     icon1: {
-        paddingLeft: 200,
+        marginLeft: 200,
         paddingRight: 25,
         // paddingTop:5
     },

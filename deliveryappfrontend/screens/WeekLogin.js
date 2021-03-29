@@ -2,68 +2,44 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icons from 'react-native-vector-icons/Ionicons';
+import {useTheme } from 'react-native-paper'
 
 const WeekLogin = ({navigation}) => {
+    const { colors } = useTheme()
+    const theme = useTheme()
     return (
         <View style={{ paddingTop: 10, paddingBottom: 300 }}>
             <View style={{ flexDirection: 'row' }}>
                 <TouchableOpacity onPress={()=>navigation.goBack()}>
                 <Icons name="arrow-back" size={30} style={{ marginLeft: 20, marginRight: 20, color: "#FDC913" }}></Icons>
                 </TouchableOpacity>
-                <Text style={{ fontSize: 24, marginBottom: 5, color: "#696969", fontFamily: "OpenSansBold" }}>Weekly Login Details</Text>
+                <Text style={[styles.WeekLogin,{color:colors.text}]}>Weekly Login Details</Text>
 
             </View>
-            <Text style={{
-                marginLeft: 125, color: "#696969",
-                fontFamily: "OpenSansSemiBold"
-            }}>05 Feb - 08 Feb</Text>
+            <Text style={[styles.feb,{color:colors.text}]}>05 Feb - 08 Feb</Text>
 
-            <View style={styles.view5}>
-                <Text onPress={() => navigation.navigate("COD")}
-                    style={{
-                        paddingLeft: 20, paddingTop: 5, marginRight: 110, color: "#696969",
-                        fontFamily: "OpenSansSemiBold"
-                    }}>Sunday, 08 Feb</Text>
-                <Text style={{
-                    paddingTop: 5, color: "#696969",
-                    fontFamily: "OpenSansSemiBold"
-                }}>3 hr</Text>
+            <View style={[styles.view5,{backgroundColor:colors.card}]}>
+                <Text 
+                    style={[styles.sun,{color:colors.text}]}>Sunday, 08 Feb</Text>
+                <Text style={[styles.hr,{color:colors.text}]}>3 hr</Text>
             </View>
 
-            <View style={styles.view5}>
-                <Text onPress={() => navigation.navigate("COD")}
-                    style={{
-                        paddingLeft: 20, paddingTop: 5, marginRight: 100, color: "#696969",
-                        fontFamily: "OpenSansSemiBold"
-                    }}>Saturday, 07 Feb</Text>
-                <Text style={{
-                    paddingTop: 5, color: "#696969",
-                    fontFamily: "OpenSansSemiBold"
-                }}>2 hr</Text>
+            <View style={[styles.view5,{backgroundColor:colors.card}]}>
+                <Text 
+                    style={[styles.sat,{color:colors.text}]}>Saturday, 07 Feb</Text>
+                <Text style={[styles.hr,{color:colors.text}]}>2 hr</Text>
             </View>
 
-            <View style={styles.view5}>
-                <Text onPress={() => navigation.navigate("COD")}
-                    style={{
-                        paddingLeft: 20, paddingTop: 5, marginRight: 120, color: "#696969",
-                        fontFamily: "OpenSansSemiBold"
-                    }}>Friday, 06 Feb</Text>
-                <Text style={{
-                    paddingTop: 5, color: "#696969",
-                    fontFamily: "OpenSansSemiBold"
-                }}>1 hr</Text>
+            <View style={[styles.view5,{backgroundColor:colors.card}]}>
+                <Text 
+                    style={[styles.friday,{color:colors.text}]}>Friday, 06 Feb</Text>
+                <Text style={[styles.hr,{color:colors.text}]}>1 hr</Text>
             </View>
 
-            <View style={styles.view5}>
-                <Text onPress={() => navigation.navigate("COD")}
-                    style={{
-                        paddingLeft: 20, paddingTop: 5, marginRight: 100, color: "#696969",
-                        fontFamily: "OpenSansSemiBold"
-                    }}>Thursday, 05 Feb</Text>
-                <Text style={{
-                    paddingTop: 5, color: "#696969",
-                    fontFamily: "OpenSansSemiBold"
-                }}>1 hr</Text>
+            <View style={[styles.view5,{backgroundColor:colors.card}]}>
+                <Text 
+                    style={[styles.text1,{color:colors.text}]}>Thursday, 05 Feb</Text>
+                <Text style={[styles.hr,{color:colors.text}]}>1 hr</Text>
             </View>
         </View>
     )
@@ -91,5 +67,49 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
 
     },
+    text1:
+    {
+        paddingLeft: 20, 
+        paddingTop: 5,
+         marginRight: 100, 
+         color: "#696969",
+        fontFamily: "OpenSansSemiBold"
+    },
+    hr:{
+        paddingTop: 5, color: "#696969",
+        fontFamily: "OpenSansSemiBold"
+    },
+    WeekLogin:{
+         fontSize: 24,
+         marginBottom: 5,
+         color: "#696969",
+         fontFamily: "OpenSansBold"
+         },
+    friday:{
+        paddingLeft: 20,
+        paddingTop: 5,
+        marginRight: 120,
+         color: "#696969",
+        fontFamily: "OpenSansSemiBold"
+    },
+    sat:{
+        paddingLeft: 20,
+        paddingTop: 5,
+        marginRight: 100,
+        color: "#696969",
+        fontFamily: "OpenSansSemiBold"
+    },
+    feb:{
+        marginLeft: 125,
+        color: "#696969",
+        fontFamily: "OpenSansSemiBold"
+    },
+    sun:{
+        paddingLeft: 20,
+        paddingTop: 5, 
+        marginRight: 110,
+        color: "#696969",
+        fontFamily: "OpenSansSemiBold"
+    }
 
 })

@@ -14,24 +14,24 @@ const ConfirmOrder = ({navigation}) => {
            
 
             <View >
-                <Text style={styles.text}>Active Delivery</Text>
+                <Text style={[styles.text,{color:colors.text}]}>Active Delivery</Text>
             </View>
-            <View style={styles.inputcontainer}>
+            <View style={[styles.inputcontainer,{backgroundColor:colors.card}]}>
                 <TouchableOpacity style={styles.iconcontainer} onPress={()=>{navigation.navigate("RestaurantMap")}}>
                     <Text style={styles.title}>Pick Up</Text>
                     <Icon name="caretright" size={25} color="white" />
                 </TouchableOpacity>
-                <Text style={styles.caption}>Restaurant Name</Text>
-                <Text style={styles.captionadd}>Address</Text>
+                <Text style={[styles.caption,{color:colors.text}]}>Restaurant Name</Text>
+                <Text style={[styles.captionadd,{color:colors.text}]}>Address</Text>
             </View>
             <View style={styles.pad}></View>
-            <View style={styles.inputcontainer}>
+            <View style={[styles.inputcontainer,,{backgroundColor:colors.card}]}>
                 <TouchableOpacity style={styles.iconcontainer} onPress={()=>{navigation.navigate("DeliveryMap")}}>
                     <Text style={styles.title}>Deliver</Text>
                     <Icon name="caretright" size={25} color="white" />
                 </TouchableOpacity>
-                <Text style={styles.caption}>Customer Name</Text>
-                <Text style={styles.captionadd}>Address</Text>
+                <Text style={[styles.caption,{color:colors.text}]}>Customer Name</Text>
+                <Text style={[styles.captionadd,{color:colors.text}]}>Address</Text>
             </View>
         </View>
     )

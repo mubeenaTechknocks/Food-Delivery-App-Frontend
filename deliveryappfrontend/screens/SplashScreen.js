@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { View, Image, StyleSheet, Text } from 'react-native';
 
 import { ActivityIndicator } from 'react-native';
+import { color } from 'react-native-reanimated';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default class SplashScreen extends Component {
-
+   
     componentDidMount() {
         setTimeout(() => {
             this.props.navigation.navigate('Login')

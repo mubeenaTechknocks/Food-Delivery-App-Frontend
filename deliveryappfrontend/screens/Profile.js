@@ -37,14 +37,14 @@ const Profile = ({ navigation }) => {
     };
 
     return (
-        <View style={[styles.container, { backgroundColor: colors.card }]}>
+        <View style={styles.container}>
             <View style={styles.textcontainer}>
                 <TouchableOpacity>
                     <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={() => navigation.goBack()} style={styles.menu} />
                 </TouchableOpacity>
-                <Text style={styles.text}>Profile</Text>
+                <Text style={[styles.text,{color:colors.text}]}>Profile</Text>
             </View>
-            <View style={styles.inputcontainer}>
+            <View style={[styles.inputcontainer,{backgroundColor:colors.card}]}>
             <Avatar.Image
                     source={{
                         uri:
@@ -57,29 +57,29 @@ const Profile = ({ navigation }) => {
                 <View>
 
                     <TouchableOpacity onPress={pickImage}>
-                        <Icon1 name="camera" size={30} color="#FDC913" style={{ paddingTop: 20, paddingLeft: 145 }}></Icon1>
+                        <Icon1 name="camera" size={30} style={{ paddingTop: 20, paddingLeft: 145,color:colors.text }}></Icon1>
                     </TouchableOpacity>
                 </View>
-                <Text style={styles.name}>Name</Text>
+                <Text style={[styles.name,{color:colors.text}]}>Name</Text>
                 <View style={styles.row}>
-                    <Text style={styles.id}>ID</Text>
-                    <Text style={styles.rate}>Rating : 5</Text>
+                    <Text style={[styles.id,{color:colors.text}]}>ID</Text>
+                    <Text style={[styles.rate,{color:colors.text}]}>Rating : 5</Text>
                 </View>
                 <View style={styles.pad}></View>
                 <View style={styles.list}>
-                    <TouchableOpacity style={styles.touch} onPress={() => navigation.navigate("PersonalDetails")}>
-                        <Text style={styles.touchtext}>Personal Details</Text>
+                    <TouchableOpacity style={[styles.touch,{backgroundColor:colors.notification}]} onPress={() => navigation.navigate("PersonalDetails")}>
+                        <Text style={[styles.touchtext,{color:colors.text}]}>Personal Details</Text>
                     </TouchableOpacity>
                     <View style={styles.pad}></View>
-                    <TouchableOpacity style={styles.touch} onPress={() => navigation.navigate("SavingsAccount")}>
-                        <Text style={styles.touchtext}>Savings Account</Text>
+                    <TouchableOpacity style={[styles.touch,{backgroundColor:colors.notification}]} onPress={() => navigation.navigate("SavingsAccount")}>
+                        <Text style={[styles.touchtext,{color:colors.text}]}>Savings Account</Text>
                     </TouchableOpacity>
                     <View style={styles.pad}></View>
-                    <TouchableOpacity style={styles.touch} onPress={() => navigation.navigate("IdPermits")}>
-                        <Text style={styles.touchtext}>ID & Permit Documents</Text>
+                    <TouchableOpacity style={[styles.touch,{backgroundColor:colors.notification}]} onPress={() => navigation.navigate("IdPermits")}>
+                        <Text style={[styles.touchtext,{color:colors.text}]}>ID & Permit Documents</Text>
                     </TouchableOpacity>
                     <View style={styles.pad}></View>
-                    <TouchableOpacity style={styles.touch}
+                    <TouchableOpacity style={[styles.touch,{backgroundColor:colors.notification}]}
                         onPress={() => Alert.alert(
                             "",
                             "Are you sure want to Logout ?",
@@ -89,7 +89,7 @@ const Profile = ({ navigation }) => {
                             ],
                             { cancelable: false }
                         )}>
-                        <Text style={styles.touchtext}>Logout</Text>
+                        <Text style={[styles.touchtext,{color:colors.text}]}>Logout</Text>
                     </TouchableOpacity>
                 </View>
             </View>

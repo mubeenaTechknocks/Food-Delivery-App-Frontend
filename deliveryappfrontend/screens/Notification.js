@@ -1,28 +1,27 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Icons from 'react-native-vector-icons/Ionicons';
-
+import {useTheme } from 'react-native-paper'
 
 const Notification = ({navigation}) => {
+    const { colors } = useTheme()
+    const theme = useTheme()
     return (
         <View style={{ paddingTop: 10, paddingBottom: 400 }}>
             <View style={{ flexDirection: 'row' }}>
                 <TouchableOpacity onPress={()=>navigation.goBack()}>
                     <Icons name="arrow-back" size={30} style={{ marginLeft: 20, marginRight: 70, color: "#FDC913" }}></Icons>
                 </TouchableOpacity>
-                <Text style={{ fontSize: 24, marginBottom: 40, fontFamily: "OpenSansBold", color: "#696969" }}>Notification</Text>
+                <Text style={[styles.Notification,{color:colors.text}]}>Notification</Text>
             </View>
 
-            <View style={styles.view5}>
+            <View style={[styles.view5,{backgroundColor:colors.card}]}>
                 <Text onPress={() => navigation.navigate("COD")}
-                    style={{
-                        paddingLeft: 20, paddingTop: 5, marginRight: 90, color: "#696969",
-                        fontSize: 18, marginBottom: 20, fontFamily: "OpenSansSemiBold",
-                    }}>Restaurant Name</Text>
+                    style={[styles.name,{color:colors.text}]}>Restaurant Name</Text>
 
                 <TouchableOpacity style={{ paddingTop: 5 }} onPress={() => navigation.navigate("ActiveOrder")}>
                     <Text style={{
-                        backgroundColor: "#FDC913", fontSize: 15, fontFamily: "OpenSansBold",
+                        backgroundColor: colors.primary, fontSize: 15, fontFamily: "OpenSansBold",
                         color: "white", height: 38, paddingTop: 8, 
                         paddingLeft: 36, paddingRight: 20, paddingBottom: 10,
                         borderRadius: 20, width: "46%", marginLeft: 125, marginTop: 20
@@ -55,5 +54,20 @@ const styles = StyleSheet.create({
         //flexDirection:'row'
 
     },
+    Notification:{
+         fontSize: 24,
+         marginBottom: 40, 
+         fontFamily: "OpenSansBold", 
+         color: "#696969"
+     },
+     name:{
+        paddingLeft: 20, 
+        paddingTop: 5, 
+        marginRight: 90, 
+        color: "#696969",
+        fontSize: 18, 
+        marginBottom: 20, 
+        fontFamily: "OpenSansSemiBold",
+    }
 
 })

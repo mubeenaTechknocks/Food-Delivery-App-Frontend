@@ -16,21 +16,21 @@ const ConfirmItem = ({ navigation }) => {
             <TouchableOpacity>
                     <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={()=>navigation.goBack()} style={styles.menu} />
                 </TouchableOpacity>
-                <Text style={styles.text}>Confirm Item</Text>
+                <Text style={[styles.text,{color:colors.text}]}>Confirm Item</Text>
             </View>
-            <View style={styles.inputcontainer}>
-                <View style={styles.iconcontainer}>
-                    <Text style={styles.res}>Pickup 2 items</Text>
+            <View style={[styles.inputcontainer,{backgroundColor:colors.card}]}>
+                <View style={[styles.iconcontainer,{backgroundColor:colors.card}]}>
+                    <Text style={[styles.res,{color:colors.text}]}>Pickup 2 items</Text>
                 </View>
-                <Text style={styles.add}>1 * Milkshake</Text>
-                <Text style={styles.add}>1 * Burger</Text>
+                <Text style={[styles.add,{color:colors.text}]}>1 * Milkshake</Text>
+                <Text style={[styles.add,{color:colors.text}]}>1 * Burger</Text>
           
             <View style={styles.pad}></View>
-            <TouchableOpacity style={styles.detailcontainer}>
-                <Text style={styles.order}>Pay Rs. 300 to Restaurant</Text>
+            <TouchableOpacity style={[styles.detailcontainer,{backgroundColor:colors.card}]}>
+                <Text style={[styles.order,{color:colors.text}]}>Pay Rs. 300 to Restaurant</Text>
             </TouchableOpacity>
             <View style={styles.padbutton}>
-                <TouchableOpacity style={styles.inputButton} onPress={() => Alert.alert(
+                <TouchableOpacity style={[styles.inputButton,{backgroundColor:colors.primary}]} onPress={() => Alert.alert(
                     "Confirm Items",
                     "Are you sure all items are available ?",
                     [

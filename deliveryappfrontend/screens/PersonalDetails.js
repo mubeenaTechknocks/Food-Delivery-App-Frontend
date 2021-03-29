@@ -14,43 +14,43 @@ const PersonalDetails = ({ navigation }) => {
                 <TouchableOpacity>
                     <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={()=>navigation.goBack()} style={styles.menu} />
                 </TouchableOpacity>
-                <Text style={styles.text}>Personal Details</Text>
+                <Text style={[styles.text,{color:colors.text}]}>Personal Details</Text>
             </View>
-            <View style={styles.inputcontainer}>
+            <View style={[styles.inputcontainer,{backgroundColor:colors.card}]}>
                 <View style={styles.row}>
-                    <Text style={styles.text1}>Name</Text>
-                    <Text style={styles.iconname}>:</Text>
+                    <Text style={[styles.text1,{color:colors.text}]}>Name</Text>
+                    <Text style={[styles.iconname,{color:colors.text}]}>:</Text>
 
                 </View>
                 <View style={styles.row}>
-                    <Text style={styles.text1}>ID</Text>
-                    <Text style={styles.iconid}>:</Text>
+                    <Text style={[styles.text1,{color:colors.text}]}>ID</Text>
+                    <Text style={[styles.iconid,{color:colors.text}]}>:</Text>
 
                 </View>
                 <View style={styles.row}>
-                    <Text style={styles.text1}>Account Number</Text>
-                    <Text style={styles.iconnum}>:</Text>
+                    <Text style={[styles.text1,{color:colors.text}]}>Account Number</Text>
+                    <Text style={[styles.iconnum,{color:colors.text}]}>:</Text>
                 </View>
                 <View style={styles.row}>
-                    <Text style={styles.text1}>Joining Date</Text>
-                    <Text style={styles.icondate}>:</Text>
+                    <Text style={[styles.text1,{color:colors.text}]}>Joining Date</Text>
+                    <Text style={[styles.icondate,{color:colors.text}]}>:</Text>
                 </View>
                 <View style={styles.row}>
-                    <Text style={styles.text1}>Zone</Text>
-                    <Text style={styles.iconzone}>:</Text>
+                    <Text style={[styles.text1,{color:colors.text}]}>Zone</Text>
+                    <Text style={[styles.iconzone,{color:colors.text}]}>:</Text>
                 </View>
             </View>
             <View >
-                <Text style={styles.texth}>Emergency Details</Text>
+                <Text style={[styles.texth,{color:colors.text}]}>Emergency Details</Text>
             </View>
-            <View style={styles.inputcontainer}>
+            <View style={[styles.inputcontainer,{backgroundColor:colors.card}]}>
                 <View style={styles.row}>
-                    <Text style={styles.text1}>Emergency contact</Text>
-                    <Text style={styles.iconcon}>:</Text>
+                    <Text style={[styles.text1,{color:colors.text}]}>Emergency contact</Text>
+                    <Text style={[styles.iconcon,{color:colors.text}]}>:</Text>
                 </View>
                 <View style={styles.row}>
-                    <Text style={styles.text1}>Blood Group</Text>
-                    <Text style={styles.icongrp}>:</Text>
+                    <Text style={[styles.text1,{color:colors.text}]}>Blood Group</Text>
+                    <Text style={[styles.icongrp,{color:colors.text}]}>:</Text>
                 </View>
             </View>
 
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         paddingRight: 20,
         paddingTop: 20,
         paddingBottom: 20,
-        borderRadius: 20
+        borderRadius: 10
     },
     row: {
         flexDirection: 'row',

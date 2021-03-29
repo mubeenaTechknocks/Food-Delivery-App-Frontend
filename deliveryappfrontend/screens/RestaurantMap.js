@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, StatusBar } from 'react-native'
+import { View, Text, StyleSheet, StatusBar,ScrollView } from 'react-native'
 import Map from './Map'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -53,30 +53,32 @@ const RestaurantMap = ({navigation}) => {
       }
 
     return (
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
                 
             <View style={styles.mapcontainer}>
                 <Map />
             </View>
             <View>
-                <View style={styles.inputcontainer}>
-                    <Icon name="restaurant" size={30} color="#696969" />
-                    <Text style={styles.text} onPress={()=>navigation.navigate("Pickup")} >Restaurant Name</Text>
+                <View style={[styles.inputcontainer,{backgroundColor:colors.card}]}>
+                    <Icon name="restaurant" size={30} style={{color:colors.text}} />
+                    <Text style={[styles.text,{color:colors.text}]} onPress={()=>navigation.navigate("Pickup")} >Restaurant Name</Text>
                     <TouchableOpacity style={styles.iconcontainer} onPress={handleGetDirections}>
                         <Icon1 name="directions" size={30} color="#696969" />
                     </TouchableOpacity>
                 </View>
                 <View style={styles.add}>
-                    <Text style={styles.addtext} >Address</Text>
+                    <Text style={[styles.addtext,{color:colors.text}]} >Address</Text>
                 </View>
                 <View style={styles.iconcontainer1}>
                         <TouchableOpacity style={styles.icontouch} onPress={() => Linking.openURL('tel:+1234567890')}>
-                            <Icon style={styles.icon} name="call" size={30} color="#696969" />
-                            <Text style={styles.icontext}>call</Text>
+                            <Icon style={styles.icon} name="call" size={30} style={{color:colors.text,paddingRight:10}} />
+                            <Text style={[styles.icontext,{color:colors.text}]}>call</Text>
                         </TouchableOpacity>
                     </View>
             </View>
         </View>
+        </ScrollView>
     )
 }
 

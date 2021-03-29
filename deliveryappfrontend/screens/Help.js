@@ -2,8 +2,11 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Icons from 'react-native-vector-icons/Ionicons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import {useTheme } from 'react-native-paper'
 
 const Help = ({navigation}) => {
+    const { colors } = useTheme()
+    const theme = useTheme()
     return (
         <View style={{ paddingTop: 10, }}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -11,19 +14,19 @@ const Help = ({navigation}) => {
                     <TouchableOpacity onPress={()=>navigation.goBack()}>
                         <Icons name="arrow-back" size={30} style={{ marginLeft: 20, marginRight: 110, color: "#FDC913" }}></Icons>
                     </TouchableOpacity>
-                    <Text style={{ fontSize: 28, marginBottom: 20, color: "#696969", fontFamily: "OpenSansBold", }}>Help</Text>
+                    <Text style={{ fontSize: 28, marginBottom: 20, color:colors.text, fontFamily: "OpenSansBold", }}>Help</Text>
                 </View>
 
-                <View style={styles.view5}>
+                <View style={[styles.view5,{backgroundColor:colors.card}]}>
                     <Text style={{
                         marginLeft: 15, fontSize: 18, marginTop: 5, fontFamily: "OpenSansSemiBold",
-                        color: "#696969"
+                        color: colors.text
                     }}>Report new Problem</Text>
 
                     <TouchableOpacity style={{ paddingTop: 20 }} onPress={() => navigation.navigate("NewProblem")}>
                         <Text style={{
-                            backgroundColor: "#FDC913", fontSize: 18,
-                            color: "white", fontFamily: "OpenSansBold",
+                            backgroundColor: colors.primary, fontSize: 18,
+                            color:"white", fontFamily: "OpenSansBold",
                             borderRadius: 20,  alignSelf:'center',
                             padding:10
                         }}>Report Problem</Text>
@@ -32,29 +35,29 @@ const Help = ({navigation}) => {
 
                 <Text style={{
                     fontSize: 18, marginLeft: 35, marginTop: 20, fontFamily: "OpenSansSemiBold",
-                    color: "#696969"
+                    color:colors.text
                 }}>Problem History</Text>
 
-                <View style={styles.view5}>
+                <View style={[styles.view5,{backgroundColor:colors.card}]}>
                     <View style={{ flexDirection: 'row', marginBottom: 20 }}>
                         <Text style={{
                             marginLeft: 15, fontFamily: "OpenSansRegular",
-                            marginTop: 10, color: "#696969",
+                            marginTop: 10, color: colors.text,
                             fontSize:15
                         }}>Restaurant waiting time</Text>
                         <Text style={{
                             marginLeft: 55, marginTop: 10, fontFamily: "OpenSansRegular",
-                            color: "#696969",fontSize:15
+                            color: colors.text,fontSize:15
                         }}>ID:1</Text>
                     </View>
                     <View style={{ flexDirection: 'row' }}>
                         <Text style={{
                             marginLeft: 15, marginRight: 20, fontFamily: "OpenSansRegular",
-                            color: "#696969",fontSize:15
+                            color:colors.text,fontSize:15
                         }}>08 Feb,12.08 pm</Text>
                         <TouchableOpacity style={{ paddingTop: 5,paddingLeft:50 }} onPress={() => navigation.navigate("ProblemDetails")}>
                             <Text style={{
-                                 backgroundColor: "#FDC913", fontSize: 15, fontFamily: "OpenSansSemiBold",
+                                 backgroundColor:colors.primary, fontSize: 15, fontFamily: "OpenSansSemiBold",
                                  color: "white",  paddingLeft:15,paddingRight:15,paddingTop:10,
                                  paddingBottom:10,
                                  borderRadius: 20, width:80,alignSelf:'center'
@@ -62,25 +65,25 @@ const Help = ({navigation}) => {
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View style={styles.view5}>
+                <View style={[styles.view5,{backgroundColor:colors.card}]}>
                     <View style={{ flexDirection: 'row', marginBottom: 20 }}>
                         <Text style={{
                             marginLeft: 15, marginTop: 10, fontFamily: "OpenSansRegular",
-                            color: "#696969",fontSize:15
+                            color:colors.text,fontSize:15
                         }}>Pickup mile/ Deliver mile</Text>
                         <Text style={{
                             marginLeft: 47, marginTop: 10, fontFamily: "OpenSansRegular",
-                            color: "#696969",fontSize:15
+                            color: colors.text,fontSize:15
                         }}>ID:2</Text>
                     </View>
                     <View style={{ flexDirection: 'row' }}>
                         <Text style={{
                             marginLeft: 15, fontFamily: "OpenSansRegular",
-                            marginRight: 30, color: "#696969",fontSize:15
+                            marginRight: 30, color: colors.text,fontSize:15
                         }}>07 Feb,10.00 pm</Text>
                         <TouchableOpacity style={{ paddingTop: 5,paddingLeft:35  }} onPress={() => navigation.navigate("ProblemDetails")}>
                             <Text style={{
-                                backgroundColor: "#FDC913", fontSize: 15, fontFamily: "OpenSansSemiBold",
+                                backgroundColor:colors.primary, fontSize: 15, fontFamily: "OpenSansSemiBold",
                                 color: "white", paddingLeft:20,paddingRight:15,paddingTop:10,
                                 paddingBottom:10,
                                 borderRadius: 20, width:80,alignSelf:'center'

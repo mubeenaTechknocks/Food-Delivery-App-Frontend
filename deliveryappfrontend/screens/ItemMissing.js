@@ -95,19 +95,19 @@ const ItemMissing = ({ navigation }) => {
                 <TouchableOpacity>
                     <Icon1 name="arrow-back" size={30} color="#FDC913" onPress={()=>navigation.goBack()} style={styles.menu} />
                 </TouchableOpacity>
-                <Text style={styles.text}>Item Missing</Text>
+                <Text style={[styles.text,{color:colors.text}]}>Item Missing</Text>
             </View>
-            <View style={styles.inputcontainer}>
+            <View style={[styles.inputcontainer,{backgroundColor:colors.card}]}>
                 <View style={styles.iconcontainer}>
 
-                    <Text style={styles.res}>Order Details</Text>
+                    <Text style={[styles.res,{color:colors.text}]}>Order Details</Text>
                 </View>
 
                 <View style={styles.detail}>
-                    <View style={styles.detailcontainer}>
-                        <Text style={styles.order}>Food Items</Text>
+                    <View style={[styles.detailcontainer,{backgroundColor:colors.card}]}>
+                        <Text style={[styles.order,{color:colors.text}]}>Food Items</Text>
                         <View style={styles.ordercontainer}>
-                            <Text style={styles.item}>1 * Milkshake</Text>
+                            <Text style={[styles.item,{color:colors.text}]}>1 * Milkshake</Text>
                             <Checkbox
                                 status={item1 ? 'checked' : 'unchecked'}
                                 onPress={() => {
@@ -117,7 +117,7 @@ const ItemMissing = ({ navigation }) => {
                             />
                         </View>
                         <View style={styles.ordercontainer}>
-                            <Text style={styles.item}>1 * Milkshake</Text>
+                            <Text style={[styles.item,{color:colors.text}]}>1 * Milkshake</Text>
                             <Checkbox
                                 status={item2 ? 'checked' : 'unchecked'}
                                 onPress={() => {
@@ -129,8 +129,8 @@ const ItemMissing = ({ navigation }) => {
                     </View>
                 </View>
                 <View style={styles.pad}>
-                    <TouchableOpacity style={styles.detailcontainer}>
-                        <Text style={styles.add} onPress={async () => {
+                    <TouchableOpacity style={[styles.detailcontainer,{backgroundColor:colors.card}]}>
+                        <Text style={[styles.add,{color:colors.text}]} onPress={async () => {
                             await schedulePushNotification();
                         }}>Send Notification to Restaurant</Text>
                     </TouchableOpacity>
