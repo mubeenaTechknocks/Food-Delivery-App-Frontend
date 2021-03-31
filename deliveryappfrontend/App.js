@@ -127,7 +127,7 @@ export default function App() {
       <AuthContext.Provider value={authContext}>
         <NavigationContainer theme={theme}>
           <Stack.Navigator>
-            {/* <Stack.Screen name="SplashScreen" component={SplashScreen}
+            <Stack.Screen name="SplashScreen" component={SplashScreen}
               options={{
                 headerShown: false
               }} />
@@ -149,7 +149,7 @@ export default function App() {
             options={{
               headerShown: false
             }}
-          /> */}
+          />
             <Stack.Screen name="HomeDrawer" component={HomeDrawer}
               options={{
                 headerShown: false

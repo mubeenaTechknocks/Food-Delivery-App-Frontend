@@ -39,7 +39,7 @@ const Document = ({ navigation }) => {
 
         ]}
         defaultValue={items}
-        containerStyle={{ height: 40,  marginLeft:25,marginRight:25 }}
+        containerStyle={{ height: 40,  marginLeft:25,marginRight:25 , marginBottom:20}}
         placeholder="Select Id Proof"
 
         globalTextStyle={{ color: "#696969", fontFamily: "OpenSansRegular" }}
@@ -50,13 +50,13 @@ const Document = ({ navigation }) => {
         onChangeItem={(item) => setItem(item.value)}
 
       />
-
+<View>
       <Text style={{
         marginLeft: 25, marginTop: 20,
         fontFamily: "OpenSansRegular", color: colors.text,fontSize:18
       }}>ID Number</Text>
       <TextInput style={[styles.input, { backgroundColor: colors.notification }]} keyboardType="number-pad"></TextInput>
-
+      </View>
       <TouchableOpacity style={{ paddingTop: 5 }} onPress={() => navigation.navigate("IdPermits")}>
         <Text style={{
           backgroundColor: colors.primary, fontSize: 18, fontFamily: "OpenSansSemiBold",
